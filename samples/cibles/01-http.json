@@ -1,0 +1,46 @@
+{
+  "@timestamp": "2026-11-04T10:00:00.000Z",
+  "ecs": {
+    "version": "8.17.0"
+  },
+  "log": {
+    "level": "INFO",
+    "file": {
+      "path": "/data/uploads/upload-demo/source.jsonl"
+    }
+  },
+  "service": {
+    "name": "task-service"
+  },
+  "message": "Liste des tâches consultée",
+  "event": {
+    "dataset": "saas.http",
+    "kind": "event",
+    "id": "upload-demo:1",
+    "ingested": "2026-11-04T12:00:00.000Z",
+    "duration": 125000000
+  },
+  "loganalyzer": {
+    "upload_id": "upload-demo",
+    "source_line": 1,
+    "original_filename": "logs.jsonl",
+    "schema_version": "1.0"
+  },
+  "user": {
+    "id": "U1"
+  },
+  "organization": {
+    "id": "ORG1"
+  },
+  "url": {
+    "path": "/api/tasks"
+  },
+  "http": {
+    "request": {
+      "method": "GET"
+    },
+    "response": {
+      "status_code": 200
+    }
+  }
+}

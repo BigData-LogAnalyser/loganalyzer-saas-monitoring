@@ -1,0 +1,4 @@
+2026-11-04T10:00:00.000Z	INFO	task-service	Liste des tâches consultée	http	/api/tasks	GET	200	125	U1	ORG1							
+2026-11-04T10:00:01.000Z	ERROR	report-service	Rapport indisponible	application								REPORT_TIMEOUT	Délai de génération dépassé				
+2026-11-04T10:00:02.000Z	WARNING	task-service	Requête SQL lente	sql										list_tasks	1200		
+2026-11-04T11:00:03.000+01:00	INFO	task-service	Tâche créée; titre "Démo"	business					U2	ORG1						task-created	tasks

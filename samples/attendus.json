@@ -1,0 +1,73 @@
+{
+  "valides": {
+    "evenements_par_fichier": 4,
+    "dataset_counts": {
+      "saas.http": 1,
+      "saas.application": 1,
+      "saas.database": 1,
+      "saas.business": 1
+    },
+    "http_moyenne_ms": 125,
+    "http_5xx_percent": 0,
+    "sql_lentes": 1,
+    "utilisateurs_actifs": 2,
+    "logs_erreur": 1,
+    "utilisations_tasks": 1
+  },
+  "invalides_semantiques": [
+    {
+      "ligne_jsonl_txt": 1,
+      "ligne_csv": 2,
+      "field": "service",
+      "code": "REQUIRED_FIELD"
+    },
+    {
+      "ligne_jsonl_txt": 2,
+      "ligne_csv": 3,
+      "field": "timestamp",
+      "code": "INVALID_TIMESTAMP"
+    },
+    {
+      "ligne_jsonl_txt": 3,
+      "ligne_csv": 4,
+      "field": "level",
+      "code": "INVALID_LEVEL"
+    },
+    {
+      "ligne_jsonl_txt": 4,
+      "ligne_csv": 5,
+      "field": "status_code",
+      "code": "INVALID_VALUE"
+    },
+    {
+      "ligne_jsonl_txt": 5,
+      "ligne_csv": 6,
+      "field": "response_time_ms",
+      "code": "INVALID_DURATION"
+    },
+    {
+      "ligne_jsonl_txt": 6,
+      "ligne_csv": 7,
+      "field": "sql_duration_ms",
+      "code": "FIELD_NOT_ALLOWED"
+    }
+  ],
+  "structure": {
+    "json-malforme.jsonl": "JSON_SYNTAX",
+    "json-cle-dupliquee.jsonl": "JSON_DUPLICATE_KEY",
+    "json-type-incorrect.jsonl": "INVALID_TYPE",
+    "csv-entete-incorrect.csv": "CSV_HEADER",
+    "txt-colonnes-manquantes.txt": "ROW_STRUCTURE"
+  },
+  "mixte": {
+    "apercu_valide": 10,
+    "attendus": 12,
+    "indexes": 10,
+    "rejetes": 2,
+    "etat": "PARTIEL",
+    "lignes_rejetees": [
+      11,
+      12
+    ]
+  }
+}

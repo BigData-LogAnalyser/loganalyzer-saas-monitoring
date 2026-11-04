@@ -1,0 +1,38 @@
+{
+  "@timestamp": "2026-11-04T10:00:03.000Z",
+  "ecs": {
+    "version": "8.17.0"
+  },
+  "log": {
+    "level": "INFO",
+    "file": {
+      "path": "/data/uploads/upload-demo/source.jsonl"
+    }
+  },
+  "service": {
+    "name": "task-service"
+  },
+  "message": "Tâche créée; titre \"Démo\"",
+  "event": {
+    "dataset": "saas.business",
+    "kind": "event",
+    "id": "upload-demo:4",
+    "ingested": "2026-11-04T12:00:00.000Z",
+    "action": "task-created"
+  },
+  "loganalyzer": {
+    "upload_id": "upload-demo",
+    "source_line": 4,
+    "original_filename": "logs.jsonl",
+    "schema_version": "1.0"
+  },
+  "user": {
+    "id": "U2"
+  },
+  "organization": {
+    "id": "ORG1"
+  },
+  "saas": {
+    "feature": "tasks"
+  }
+}

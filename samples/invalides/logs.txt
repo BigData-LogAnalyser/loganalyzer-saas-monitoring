@@ -1,0 +1,6 @@
+2026-11-04T10:00:00.000Z	INFO		Liste des tâches consultée	http	/api/tasks	GET	200	125	U1	ORG1							
+2026-11-04T10:00:00	INFO	task-service	Liste des tâches consultée	http	/api/tasks	GET	200	125	U1	ORG1							
+2026-11-04T10:00:00.000Z	FATAL	task-service	Liste des tâches consultée	http	/api/tasks	GET	200	125	U1	ORG1							
+2026-11-04T10:00:00.000Z	INFO	task-service	Liste des tâches consultée	http	/api/tasks	GET	700	125	U1	ORG1							
+2026-11-04T10:00:00.000Z	INFO	task-service	Liste des tâches consultée	http	/api/tasks	GET	200	-1	U1	ORG1							
+2026-11-04T10:00:00.000Z	INFO	task-service	Liste des tâches consultée	http	/api/tasks	GET	200	125	U1	ORG1					100		

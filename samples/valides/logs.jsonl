@@ -1,0 +1,4 @@
+{"timestamp": "2026-11-04T10:00:00.000Z", "level": "INFO", "service": "task-service", "message": "Liste des tâches consultée", "event_type": "http", "endpoint": "/api/tasks", "http_method": "GET", "status_code": 200, "response_time_ms": 125, "user_id": "U1", "organization_id": "ORG1"}
+{"timestamp": "2026-11-04T10:00:01.000Z", "level": "ERROR", "service": "report-service", "message": "Rapport indisponible", "event_type": "application", "error_code": "REPORT_TIMEOUT", "error_message": "Délai de génération dépassé"}
+{"timestamp": "2026-11-04T10:00:02.000Z", "level": "WARNING", "service": "task-service", "message": "Requête SQL lente", "event_type": "sql", "db_query": "list_tasks", "sql_duration_ms": 1200}
+{"timestamp": "2026-11-04T11:00:03.000+01:00", "level": "INFO", "service": "task-service", "message": "Tâche créée; titre \"Démo\"", "event_type": "business", "action": "task-created", "feature": "tasks", "user_id": "U2", "organization_id": "ORG1"}

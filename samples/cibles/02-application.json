@@ -1,0 +1,32 @@
+{
+  "@timestamp": "2026-11-04T10:00:01.000Z",
+  "ecs": {
+    "version": "8.17.0"
+  },
+  "log": {
+    "level": "ERROR",
+    "file": {
+      "path": "/data/uploads/upload-demo/source.jsonl"
+    }
+  },
+  "service": {
+    "name": "report-service"
+  },
+  "message": "Rapport indisponible",
+  "event": {
+    "dataset": "saas.application",
+    "kind": "event",
+    "id": "upload-demo:2",
+    "ingested": "2026-11-04T12:00:00.000Z"
+  },
+  "loganalyzer": {
+    "upload_id": "upload-demo",
+    "source_line": 2,
+    "original_filename": "logs.jsonl",
+    "schema_version": "1.0"
+  },
+  "error": {
+    "code": "REPORT_TIMEOUT",
+    "message": "Délai de génération dépassé"
+  }
+}
