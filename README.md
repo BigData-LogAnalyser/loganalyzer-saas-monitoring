@@ -44,3 +44,10 @@ seront ajoutés progressivement dans le dossier docs/.
 
 Chaque fonctionnalité sera accompagnée de sa documentation
 et des vérifications correspondantes.
+
+## Documentation
+
+- [Cadrage du projet](docs/cadrage.md)
+- [Modèle de logs et correspondances ECS](docs/modele-logs.md)
+- [Formats d’import et règles de validation](docs/formats-import.md)
+- [Exemples de logs et résultats attendus](samples/README.md)
