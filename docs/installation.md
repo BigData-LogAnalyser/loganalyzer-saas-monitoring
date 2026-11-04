@@ -34,7 +34,7 @@ Pour une première installation :
 ```bash
 mkdir -p ~/projets
 cd ~/projets
-git clone https://github.com/KhalilBenZahra1/loganalyzer-saas-monitoring.git
+git clone https://github.com/BigData-LogAnalyser/loganalyzer-saas-monitoring.git
 cd loganalyzer-saas-monitoring
 python3 -m venv .venv
 source .venv/bin/activate
