@@ -29,11 +29,15 @@ l’activité d’une application SaaS.
 
 ## État du projet
 
-Le projet est en phase d’analyse et de conception.
-L’application n’est pas encore disponible pour exécution.
+L’analyse et la conception initiales sont terminées.
+L’environnement Docker comprend sept services opérationnels :
+Flask, Elasticsearch, Logstash, Kibana, MongoDB, Redis et le tracker.
 
-Le cadrage SaaS est défini. Les maquettes et diagrammes
-sont en cours de consolidation dans la documentation.
+La page d’accueil Flask, l’accès à Kibana, les communications
+entre services et la persistance des données ont été vérifiés.
+
+Les fonctionnalités d’import, de recherche, de suivi des imports
+et les indicateurs métier seront développés dans les prochains tickets.
 
 ## Organisation et documentation
 
@@ -51,3 +55,4 @@ et des vérifications correspondantes.
 - [Modèle de logs et correspondances ECS](docs/modele-logs.md)
 - [Formats d’import et règles de validation](docs/formats-import.md)
 - [Exemples de logs et résultats attendus](samples/README.md)
+- [Démarrer l'environnement Docker](docs/docker.md)
