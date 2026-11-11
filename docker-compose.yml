@@ -1,0 +1,175 @@
+services:
+  redis:
+    image: "redis:${REDIS_IMAGE_TAG:?Définir REDIS_IMAGE_TAG dans .env}"
+    networks:
+      - loganalyzer_net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  mongodb:
+    image: "mongo:${MONGODB_IMAGE_TAG:?Définir MONGODB_IMAGE_TAG dans .env}"
+    networks:
+      - loganalyzer_net
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test:
+        - CMD
+        - mongosh
+        - --quiet
+        - --eval
+        - "quit(db.adminCommand({ ping: 1 }).ok ? 0 : 1)"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  elasticsearch:
+    image: "docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION:?Définir ELASTIC_VERSION dans .env}"
+    environment:
+      discovery.type: single-node
+      cluster.name: loganalyzer
+      node.name: loganalyzer-es
+      xpack.security.enabled: "false"
+      xpack.ml.enabled: "false"
+      node.store.allow_mmap: "false"
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
+    mem_limit: 2g
+    networks:
+      - loganalyzer_net
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - "curl -fsS 'http://localhost:9200/_cluster/health?wait_for_status=yellow&timeout=5s' >/dev/null"
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 60s
+
+  kibana:
+    image: "docker.elastic.co/kibana/kibana:${ELASTIC_VERSION:?Définir ELASTIC_VERSION dans .env}"
+    environment:
+      SERVER_HOST: "0.0.0.0"
+      ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
+      NODE_OPTIONS: "--max-old-space-size=512"
+    mem_limit: 1g
+    ports:
+      - "127.0.0.1:${KIBANA_PORT}:5601"
+    networks:
+      - loganalyzer_net
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - "curl -fsS http://localhost:5601/api/status >/dev/null"
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 120s
+
+  logstash:
+    image: "docker.elastic.co/logstash/logstash-wolfi:${ELASTIC_VERSION:?Définir ELASTIC_VERSION dans .env}"
+    environment:
+      LS_JAVA_OPTS: "-Xms512m -Xmx512m"
+      PIPELINE_WORKERS: "1"
+      PIPELINE_ECS_COMPATIBILITY: "disabled"
+      XPACK_MONITORING_ENABLED: "false"
+    mem_limit: 1536m
+    networks:
+      - loganalyzer_net
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+      - logstash_data:/usr/share/logstash/data
+      - uploads:/uploads:ro
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - "curl -fsS http://localhost:9600/_node/pipelines | grep -q '\"main\"'"
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 120s
+
+  webapp:
+    build:
+      context: ./app
+    image: loganalyzer-webapp:scrum13
+    environment:
+      ELASTICSEARCH_HOST: "${ELASTICSEARCH_HOST}"
+      ELASTICSEARCH_PORT: "${ELASTICSEARCH_PORT}"
+      MONGODB_HOST: "${MONGODB_HOST}"
+      MONGODB_PORT: "${MONGODB_PORT}"
+      MONGODB_DATABASE: "${MONGODB_DATABASE}"
+      REDIS_HOST: "${REDIS_HOST}"
+      REDIS_PORT: "${REDIS_PORT}"
+    ports:
+      - "127.0.0.1:${WEB_PORT}:8000"
+    volumes:
+      - uploads:/app/uploads
+    mem_limit: 256m
+    networks:
+      - loganalyzer_net
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://localhost:8000/health', timeout=3)"
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  tracker:
+    build:
+      context: ./tracker
+    image: loganalyzer-tracker:scrum13
+    environment:
+      MONGODB_HOST: "${MONGODB_HOST}"
+      MONGODB_PORT: "${MONGODB_PORT}"
+      MONGODB_DATABASE: "${MONGODB_DATABASE}"
+      ELASTICSEARCH_HOST: "${ELASTICSEARCH_HOST}"
+      ELASTICSEARCH_PORT: "${ELASTICSEARCH_PORT}"
+    mem_limit: 256m
+    networks:
+      - loganalyzer_net
+    volumes:
+      - uploads:/uploads
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "main.py", "--check"]
+      interval: 30s
+      timeout: 20s
+      retries: 5
+      start_period: 20s
+
+networks:
+  loganalyzer_net:
+    driver: bridge
+
+volumes:
+  mongo_data:
+  es_data:
+  logstash_data:
+  uploads:
