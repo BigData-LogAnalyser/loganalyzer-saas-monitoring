@@ -105,6 +105,7 @@ services:
       context: ./app
     image: loganalyzer-webapp:scrum13
     environment:
+      MAX_UPLOAD_BYTES: "${MAX_UPLOAD_BYTES:-104857600}"
       ELASTICSEARCH_HOST: "${ELASTICSEARCH_HOST}"
       ELASTICSEARCH_PORT: "${ELASTICSEARCH_PORT}"
       MONGODB_HOST: "${MONGODB_HOST}"

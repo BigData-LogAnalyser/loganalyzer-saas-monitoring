@@ -57,3 +57,4 @@ et des vérifications correspondantes.
 - [Exemples de logs et résultats attendus](samples/README.md)
 - [Démarrer l'environnement Docker](docs/docker.md)
 - [Générer les logs synthétiques](docs/generateur.md)
+- [Importer et prévisualiser des logs](docs/import.md)
