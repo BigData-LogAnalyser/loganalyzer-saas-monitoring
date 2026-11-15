@@ -56,3 +56,4 @@ et des vérifications correspondantes.
 - [Formats d’import et règles de validation](docs/formats-import.md)
 - [Exemples de logs et résultats attendus](samples/README.md)
 - [Démarrer l'environnement Docker](docs/docker.md)
+- [Générer les logs synthétiques](docs/generateur.md)
