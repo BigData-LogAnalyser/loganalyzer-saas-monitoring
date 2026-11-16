@@ -1,0 +1,12 @@
+{
+  "description": "Ajouter la date de réception dans Elasticsearch",
+  "version": 1,
+  "processors": [
+    {
+      "set": {
+        "field": "event.ingested",
+        "value": "{{{_ingest.timestamp}}}"
+      }
+    }
+  ]
+}

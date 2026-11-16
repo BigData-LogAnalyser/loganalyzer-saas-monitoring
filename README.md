@@ -58,3 +58,4 @@ et des vérifications correspondantes.
 - [Démarrer l'environnement Docker](docs/docker.md)
 - [Générer les logs synthétiques](docs/generateur.md)
 - [Importer et prévisualiser des logs](docs/import.md)
+- [Ingestion et normalisation des logs](docs/ingestion.md)
