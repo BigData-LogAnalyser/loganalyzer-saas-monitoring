@@ -81,6 +81,7 @@ services:
       PIPELINE_WORKERS: "1"
       PIPELINE_ECS_COMPATIBILITY: "disabled"
       XPACK_MONITORING_ENABLED: "false"
+      DEAD_LETTER_QUEUE_ENABLE: "true"
     mem_limit: 1536m
     networks:
       - loganalyzer_net
@@ -88,6 +89,8 @@ services:
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
       - logstash_data:/usr/share/logstash/data
       - uploads:/uploads:ro
+      - ./logstash/scripts:/usr/share/logstash/scripts:ro
+
     depends_on:
       elasticsearch:
         condition: service_healthy
