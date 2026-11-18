@@ -123,32 +123,32 @@ def filter(event)
         ])
         end
 
-  when "csv", "txt"
-    begin
-      cells = if format == "csv"
-        CSV.parse_line(
-          raw,
-          col_sep: ";",
-          liberal_parsing: false
-        )
-      else
-        # -1 conserve les champs vides situés à la fin.
-        raw.split("\t", -1)
+    when "csv", "txt"
+      begin
+        cells = if format == "csv"
+          CSV.parse_line(
+            raw,
+            col_sep: ";",
+            liberal_parsing: false
+          )
+        else
+          # -1 conserve les champs vides situés à la fin.
+          raw.split("\t", -1)
+        end
+
+      rescue CSV::MalformedCSVError
+        return reject_parsing(event, [
+          parsing_error("ROW_STRUCTURE", nil, "Ligne CSV mal formée.")
+        ])
       end
 
-    rescue CSV::MalformedCSVError
-      return reject_parsing(event, [
-        parsing_error("ROW_STRUCTURE", nil, "Ligne CSV mal formée.")
-      ])
-    end
-
-    unless cells && cells.length == @fields.length
-      return reject_parsing(event, [
-        parsing_error(
-          "ROW_STRUCTURE", nil, "Exactement 18 colonnes sont attendues."
-        )
-      ])
-    end
+      unless cells && cells.length == @fields.length
+        return reject_parsing(event, [
+          parsing_error(
+            "ROW_STRUCTURE", nil, "Exactement 18 colonnes sont attendues."
+          )
+        ])
+      end
 
     @fields.zip(cells).each do |field, value|
       # Une cellule vide représente un champ absent.
