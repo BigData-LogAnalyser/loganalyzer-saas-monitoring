@@ -59,4 +59,3 @@ et des vérifications correspondantes.
 - [Générer les logs synthétiques](docs/generateur.md)
 - [Importer et prévisualiser des logs](docs/import.md)
 - [Ingestion et normalisation des logs](docs/ingestion.md)
-- [Suivi des imports](docs/suivi-imports.md)
