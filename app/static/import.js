@@ -189,7 +189,11 @@ async function applyAction(action) {
 
     if (action === "confirm") {
       statusText.textContent =
-        `Import enregistré — état : ${result.status}.`;
+        "Import enregistré. Le suivi est affiché ci-dessous.";
+
+      window.dispatchEvent(new CustomEvent("import-confirmed", {
+        detail: { uploadId: result.upload_id },
+      }));
     } else {
       statusText.textContent =
         "Dépôt annulé ; aucune ingestion déclenchée.";
