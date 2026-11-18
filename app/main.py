@@ -387,3 +387,172 @@ def confirm_import(upload_id):
                 ),
             },
         ), 503
+
+def tracking_client():
+    return MongoClient(
+        host=os.environ.get("MONGODB_HOST", "mongodb"),
+        port=int(os.environ.get("MONGODB_PORT", "27017")),
+        serverSelectionTimeoutMS=3000,
+        connectTimeoutMS=3000,
+        socketTimeoutMS=5000,
+    )
+
+
+def tracking_json_row(row):
+    result = {}
+
+    for key, value in row.items():
+        if isinstance(value, datetime):
+            if value.tzinfo is None:
+                value = value.replace(tzinfo=timezone.utc)
+
+            value = value.astimezone(timezone.utc).isoformat(
+                timespec="milliseconds"
+            ).replace("+00:00", "Z")
+
+        result[key] = value
+
+    return result
+
+
+def tracking_response(**payload):
+    response = jsonify(**payload)
+    response.headers["Cache-Control"] = "no-store"
+    return response
+
+
+def tracking_not_found():
+    return jsonify(error={
+        "code": "IMPORT_NOT_FOUND",
+        "message": "Import introuvable.",
+    }), 404
+
+
+@app.get("/api/imports/<upload_id>")
+def get_import_status(upload_id):
+    if not valid_upload_id(upload_id):
+        return tracking_not_found()
+
+    try:
+        with tracking_client() as client:
+            database = client[
+                os.environ.get("MONGODB_DATABASE", "loganalyzer")
+            ]
+
+            row = database.imports.find_one({"_id": upload_id})
+
+            if row is None:
+                return tracking_not_found()
+
+            fields = (
+                "upload_id", "original_filename", "size_bytes",
+                "schema_version", "status", "expected_count",
+                "indexed_count", "rejected_count", "confirmed_at",
+                "updated_at", "finished_at", "error",
+            )
+
+            result = {
+                field: row.get(field)
+                for field in fields
+            }
+
+            result["reading_complete"] = row.get(
+                "reading_complete", False
+            )
+            result["progress_percent"] = row.get(
+                "progress_percent"
+            )
+
+            return tracking_response(
+                import_record=tracking_json_row(result)
+            )
+
+    except PyMongoError:
+        app.logger.exception("Lecture du suivi MongoDB impossible")
+
+        return jsonify(error={
+            "code": "DATABASE_ERROR",
+            "message": "Le suivi est momentanément indisponible.",
+        }), 503
+
+
+@app.get("/api/imports/<upload_id>/rejections")
+def get_import_rejections(upload_id):
+    if not valid_upload_id(upload_id):
+        return tracking_not_found()
+
+    try:
+        after_line = int(request.args.get("after_line", "0"))
+        limit = int(request.args.get("limit", "20"))
+
+        if after_line < 0 or not 1 <= limit <= 100:
+            raise ValueError()
+
+    except (TypeError, ValueError):
+        return jsonify(error={
+            "code": "INVALID_PARAMETER",
+            "message": (
+                "after_line doit être positif ou nul ; "
+                "limit entre 1 et 100."
+            ),
+        }), 400
+
+    try:
+        with tracking_client() as client:
+            database = client[
+                os.environ.get("MONGODB_DATABASE", "loganalyzer")
+            ]
+
+            if database.imports.find_one(
+                {"_id": upload_id},
+                {"_id": 1},
+            ) is None:
+                return tracking_not_found()
+
+            cursor = database.import_rejections.find(
+                {
+                    "upload_id": upload_id,
+                    "source_line": {"$gt": after_line},
+                },
+                {
+                    "_id": 0,
+                    "upload_id": 1,
+                    "source_line": 1,
+                    "original_filename": 1,
+                    "failure_kind": 1,
+                    "errors": 1,
+                    "raw": 1,
+                    "recorded_at": 1,
+                },
+            ).sort("source_line", 1).limit(limit + 1)
+
+            rows = list(cursor)
+            has_more = len(rows) > limit
+            items = rows[:limit]
+
+            next_line = (
+                items[-1]["source_line"]
+                if has_more else None
+            )
+
+            return tracking_response(
+                upload_id=upload_id,
+                items=[
+                    tracking_json_row(row)
+                    for row in items
+                ],
+                has_more=has_more,
+                next_after_line=next_line,
+            )
+
+    except PyMongoError:
+        app.logger.exception(
+            "Lecture des rejets MongoDB impossible"
+        )
+
+        return jsonify(error={
+            "code": "DATABASE_ERROR",
+            "message": (
+                "Les diagnostics sont momentanément indisponibles."
+            ),
+        }), 503

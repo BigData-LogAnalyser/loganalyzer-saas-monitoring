@@ -22,8 +22,11 @@ Références :
 - Les événements invalides sont conservés séparément avec leurs motifs.
 
 Dans SCRUM-16, les tests transmettent explicitement les lignes à
-Logstash. La prise en charge automatique des imports confirmés
-et leur suivi par le tracker seront développés dans SCRUM-17.
+Logstash. Depuis SCRUM-17, le tracker prend automatiquement en charge
+les imports confirmés, transmet leurs lignes à Logstash et vérifie
+les résultats avant de finaliser leur état.
+
+Voir [Suivi des imports](suivi-imports.md).
 
 Logstash ne parcourt pas automatiquement les brouillons ni tous
 les fichiers du volume uploads.
@@ -48,7 +51,7 @@ Le template s’applique aux nouveaux index loganalyzer-logs-*.
 
 Configuration locale :
 - Un shard primaire.
- accompanies- Zéro réplique, car le déploiement comporte un seul nœud.
+- Zéro réplique, car le déploiement comporte un seul nœud.
 - dynamic: strict pour refuser les champs non déclarés.
 - coerce: false pour les champs numériques concernés.
 - Pipeline final : loganalyzer-ingested-v1.
@@ -203,8 +206,9 @@ Un événement peut avoir plusieurs diagnostics mais représente
 une seule ligne rejetée.
 
 Un renvoi peut ajouter une nouvelle ligne au fichier de rejets.
-Le suivi devra compter les événements distincts par identifiant
-d’import et numéro de ligne.
+Depuis SCRUM-17, le tracker compte les événements distincts par
+identifiant d’import et numéro de ligne. Les répétitions identiques
+ne sont pas comptées plusieurs fois.
 
 Les rejets ne sont pas envoyés dans les index de logs valides.
 
@@ -220,8 +224,17 @@ Elle conserve les échecs pris en charge par cette fonctionnalité,
 notamment certains refus de documents par Elasticsearch.
 
 Une panne de service ne signifie pas que la ligne source est invalide.
-Le suivi des accusés d’indexation, des reprises et des états finaux
-sera complété dans SCRUM-17.
+Depuis SCRUM-17, le tracker vérifie les documents présents dans
+Elasticsearch et les rejets enregistrés avant de finaliser l’import.
+Des résultats manquants après le délai prévu provoquent un échec
+technique explicite.
+
+Les imports restés EN_COURS peuvent être repris. Les imports déjà
+en ECHEC ne sont pas automatiquement relancés.
+
+Le tracker ne lit pas directement la dead letter queue. Un refus
+d’indexation sans résultat exploitable est détecté par l’absence
+du document attendu et l’expiration du délai de vérification.
 
 Le test des 42 événements valide les rejets de données ;
 il ne constitue pas un test de panne ou de reprise technique.

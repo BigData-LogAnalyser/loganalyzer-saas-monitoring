@@ -151,15 +151,21 @@ services:
       MONGODB_DATABASE: "${MONGODB_DATABASE}"
       ELASTICSEARCH_HOST: "${ELASTICSEARCH_HOST}"
       ELASTICSEARCH_PORT: "${ELASTICSEARCH_PORT}"
+      LOGSTASH_URL: "http://logstash:8080/"
+      MAX_UPLOAD_BYTES: "${MAX_UPLOAD_BYTES:-104857600}"
+      IMPORT_RESULT_TIMEOUT: "${IMPORT_RESULT_TIMEOUT:-180}"
     mem_limit: 256m
     networks:
       - loganalyzer_net
     volumes:
       - uploads:/uploads
+      - logstash_data:/logstash-data:ro
     depends_on:
       mongodb:
         condition: service_healthy
       elasticsearch:
+        condition: service_healthy
+      logstash:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "python", "main.py", "--check"]

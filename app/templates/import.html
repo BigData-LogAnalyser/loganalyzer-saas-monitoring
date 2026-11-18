@@ -51,6 +51,61 @@
   </style>
 </head>
 <body>
+<section aria-labelledby="tracking-title">
+  <h2 id="tracking-title">Suivi de l’import</h2>
+
+  <form id="tracking-form">
+    <label for="tracking-id">Identifiant de l’import</label>
+    <input
+      id="tracking-id"
+      type="text"
+      autocomplete="off"
+      placeholder="Identifiant de l’import"
+      style="width: 100%; box-sizing: border-box;">
+    <button type="submit">Consulter l’import</button>
+  </form>
+
+  <p id="tracking-message" role="status" aria-live="polite"></p>
+
+  <div id="tracking-panel" hidden>
+    <p>
+      <strong>Fichier :</strong>
+      <span id="tracking-filename"></span>
+    </p>
+
+    <p>
+      <strong>État :</strong>
+      <span id="tracking-status"></span>
+    </p>
+
+    <p>
+      Attendus : <strong id="tracking-expected">—</strong>
+      · Indexés : <strong id="tracking-indexed">—</strong>
+      · Rejetés : <strong id="tracking-rejected">—</strong>
+    </p>
+
+    <progress
+      id="tracking-progress"
+      max="100"
+      aria-label="Progression du traitement">
+    </progress>
+
+    <p id="tracking-percent"></p>
+    <p id="tracking-explanation"></p>
+    <p id="tracking-error" role="alert" hidden></p>
+
+    <h3>Diagnostics et événements rejetés</h3>
+    <p id="tracking-no-rejections">
+      Aucun diagnostic disponible pour le moment.
+    </p>
+
+    <ol id="tracking-rejections"></ol>
+
+    <button id="tracking-more" type="button" hidden>
+      Afficher les diagnostics suivants
+    </button>
+  </div>
+</section>
 <main id="import-app" data-max-bytes="{{ max_upload_bytes }}">
   <h1>Importer des logs</h1>
   <p>Déposez votre fichier, vérifiez l’aperçu puis confirmez l’import.</p>
@@ -106,5 +161,6 @@
   </section>
 </main>
 <script src="{{ url_for('static', filename='import.js') }}" defer></script>
+<script src="{{ url_for('static', filename='tracking.js') }}" defer></script>
 </body>
 </html>
