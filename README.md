@@ -60,3 +60,5 @@ et des vérifications correspondantes.
 - [Importer et prévisualiser des logs](docs/import.md)
 - [Ingestion et normalisation des logs](docs/ingestion.md)
 - [Suivi des imports](docs/suivi-imports.md)
+
+- [Rapport technique — ingestion](docs/rapport.md)
