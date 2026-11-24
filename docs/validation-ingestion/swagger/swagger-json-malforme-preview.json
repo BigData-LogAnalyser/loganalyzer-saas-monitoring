@@ -1,0 +1,31 @@
+{
+  "original_filename": "json-malforme.jsonl",
+  "preview": {
+    "can_confirm": false,
+    "errors": [
+      {
+        "code": "JSON_SYNTAX",
+        "field": null,
+        "message": "Ligne JSON mal formée.",
+        "source_line": 1
+      }
+    ],
+    "events": [
+      {
+        "errors": [
+          {
+            "code": "JSON_SYNTAX",
+            "field": null,
+            "message": "Ligne JSON mal formée."
+          }
+        ],
+        "event": null,
+        "source_line": 1
+      }
+    ],
+    "preview_count": 1,
+    "preview_limit": 10,
+    "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+  },
+  "size_bytes": 14
+}

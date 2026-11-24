@@ -1,0 +1,31 @@
+{
+  "original_filename": "txt-colonnes-manquantes.txt",
+  "preview": {
+    "can_confirm": false,
+    "errors": [
+      {
+        "code": "ROW_STRUCTURE",
+        "field": null,
+        "message": "18 colonnes attendues ; 2 reçues.",
+        "source_line": 1
+      }
+    ],
+    "events": [
+      {
+        "errors": [
+          {
+            "code": "ROW_STRUCTURE",
+            "field": null,
+            "message": "18 colonnes attendues ; 2 reçues."
+          }
+        ],
+        "event": null,
+        "source_line": 1
+      }
+    ],
+    "preview_count": 1,
+    "preview_limit": 10,
+    "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+  },
+  "size_bytes": 26
+}

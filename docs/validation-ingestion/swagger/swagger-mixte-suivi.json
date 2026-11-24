@@ -1,0 +1,18 @@
+{
+  "import_record": {
+    "confirmed_at": "2026-11-24T20:25:59.791Z",
+    "error": null,
+    "expected_count": 12,
+    "finished_at": "2026-11-24T20:26:02.652Z",
+    "indexed_count": 10,
+    "original_filename": "mixte.jsonl",
+    "progress_percent": 100,
+    "reading_complete": true,
+    "rejected_count": 2,
+    "schema_version": "1.0",
+    "size_bytes": 3424,
+    "status": "PARTIEL",
+    "updated_at": "2026-11-24T20:26:02.652Z",
+    "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+  }
+}

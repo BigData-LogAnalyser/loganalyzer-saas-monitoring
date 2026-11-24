@@ -35,6 +35,13 @@ app.config["MAX_CONTENT_LENGTH"] = MAX_UPLOAD_BYTES + 1024 * 1024
 
 UPLOAD_ROOT = Path(os.environ.get("UPLOAD_DIR", "/app/uploads"))
 
+if __package__:
+    from .api_docs import register_api_docs
+else:
+    from api_docs import register_api_docs
+
+register_api_docs(app, MAX_UPLOAD_BYTES)
+
 
 @app.get("/")
 def home():

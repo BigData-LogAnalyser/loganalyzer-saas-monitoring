@@ -1,0 +1,18 @@
+{
+  "import_record": {
+    "confirmed_at": "2026-11-24T19:56:03.437Z",
+    "error": null,
+    "expected_count": 4,
+    "finished_at": "2026-11-24T19:56:06.415Z",
+    "indexed_count": 4,
+    "original_filename": "logs.txt",
+    "progress_percent": 100,
+    "reading_complete": true,
+    "rejected_count": 0,
+    "schema_version": "1.0",
+    "size_bytes": 472,
+    "status": "TERMINE",
+    "updated_at": "2026-11-24T19:56:06.415Z",
+    "upload_id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab"
+  }
+}

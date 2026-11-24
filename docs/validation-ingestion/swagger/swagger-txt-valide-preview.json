@@ -1,0 +1,73 @@
+{
+  "original_filename": "logs.txt",
+  "preview": {
+    "can_confirm": true,
+    "errors": [],
+    "events": [
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 1
+      },
+      {
+        "errors": [],
+        "event": {
+          "error_code": "REPORT_TIMEOUT",
+          "error_message": "Délai de génération dépassé",
+          "event_type": "application",
+          "level": "ERROR",
+          "message": "Rapport indisponible",
+          "service": "report-service",
+          "timestamp": "2026-11-04T10:00:01.000Z"
+        },
+        "source_line": 2
+      },
+      {
+        "errors": [],
+        "event": {
+          "db_query": "list_tasks",
+          "event_type": "sql",
+          "level": "WARNING",
+          "message": "Requête SQL lente",
+          "service": "task-service",
+          "sql_duration_ms": 1200,
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        "source_line": 3
+      },
+      {
+        "errors": [],
+        "event": {
+          "action": "task-created",
+          "event_type": "business",
+          "feature": "tasks",
+          "level": "INFO",
+          "message": "Tâche créée; titre \"Démo\"",
+          "organization_id": "ORG1",
+          "service": "task-service",
+          "timestamp": "2026-11-04T11:00:03.000+01:00",
+          "user_id": "U2"
+        },
+        "source_line": 4
+      }
+    ],
+    "preview_count": 4,
+    "preview_limit": 10,
+    "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+  },
+  "size_bytes": 472,
+  "state": "BROUILLON",
+  "upload_id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab"
+}
