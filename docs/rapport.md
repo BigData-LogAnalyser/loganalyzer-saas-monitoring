@@ -173,3 +173,148 @@ Résultats détaillés :
 - [Formats d’import](formats-import.md)
 - [Ingestion et normalisation](ingestion.md)
 - [Suivi des imports](suivi-imports.md)
+
+## 2. Documentation de l’API et essais avec Swagger
+
+### Intégration
+
+Swagger UI est accessible à l’adresse http://localhost:8000/api/docs.
+La description OpenAPI 3.0.3 est fournie par /api/openapi.json.
+
+Le fichier app/api_docs.py construit cette description. Il est raccordé
+à Flask depuis app/main.py et copié dans l’image Docker de l’application.
+
+Aucune dépendance Python supplémentaire n’a été ajoutée.
+Les fichiers JavaScript et CSS de Swagger UI sont chargés depuis
+jsDelivr ; leur chargement nécessite un accès Internet.
+
+La documentation décrit six routes : santé de Flask, prévisualisation,
+confirmation, annulation d’un brouillon, suivi et consultation des rejets.
+
+### Méthode
+
+Les essais ont été réalisés manuellement le 24 novembre 2026
+avec les fichiers de référence de samples/.
+
+Swagger a servi à envoyer les requêtes et à consulter les réponses
+réelles de l’API Flask. Les documents indexés ont ensuite été recherchés
+dans Elasticsearch depuis la console Dev Tools de Kibana, en filtrant
+sur l’identifiant de chaque import.
+
+Les exemples affichés dans la documentation Swagger sont distincts
+des réponses réellement obtenues dans Server response.
+
+Le contrôle GET /health a renvoyé HTTP 200 avec status égal à ok.
+Il vérifie que Flask répond, sans contrôler les autres services.
+
+![Réponse réelle de la route health](captures/ingestion/swagger/swagger-health-200.png)
+
+### Fichiers valides
+
+Les fichiers CSV, JSONL et TXT valides ont été prévisualisés,
+confirmés et traités jusqu’à l’état TERMINE.
+
+| Format | Attendus | Indexés | Rejetés | État final |
+|---|---:|---:|---:|---|
+| CSV | 4 | 4 | 0 | TERMINE |
+| JSONL | 4 | 4 | 0 | TERMINE |
+| TXT | 4 | 4 | 0 | TERMINE |
+
+Les recherches Elasticsearch ont retrouvé quatre documents par import.
+Les contrôles ont porté sur les identifiants, la provenance,
+les champs normalisés et la présence de event.ingested.
+
+Les résultats détaillés du suivi sont conservés ici :
+
+- [Suivi CSV](validation-ingestion/swagger/swagger-csv-valide-suivi.json)
+- [Suivi JSONL](validation-ingestion/swagger/swagger-jsonl-valide-suivi.json)
+- [Suivi TXT](validation-ingestion/swagger/swagger-txt-valide-suivi.json)
+
+Les réponses finales ont été récupérées depuis les routes de suivi
+de la même API afin de conserver les bilans des imports essayés
+dans Swagger. Cette récupération ne relance pas leur traitement.
+
+![Documents CSV dans Elasticsearch](captures/ingestion/swagger/swagger-csv-valide-elasticsearch.png)
+
+![Documents JSONL dans Elasticsearch](captures/ingestion/swagger/swagger-jsonl-valide-elasticsearch.png)
+
+![Suivi final du fichier TXT](captures/ingestion/swagger/swagger-txt-valide-termine.png)
+
+### Fichier mixte
+
+Le fichier mixte.jsonl contient douze événements.
+Les dix premiers sont valides et permettent la confirmation de l’aperçu.
+Les lignes 11 et 12 sont rejetées pendant le traitement Logstash.
+
+Le résultat observé est PARTIEL : 12 attendus, 10 indexés et 2 rejetés.
+La progression atteint 100 %, car les douze événements ont un résultat.
+
+La consultation des rejets renvoie :
+
+- Ligne 11 : REQUIRED_FIELD sur service.
+- Ligne 12 : INVALID_TIMESTAMP sur timestamp.
+- Le contenu original de chaque ligne dans raw.
+
+La recherche Elasticsearch retrouve uniquement les lignes 1 à 10,
+avec des identifiants conformes et event.ingested renseigné.
+Les lignes 11 et 12 sont absentes des documents indexés.
+
+- [Suivi du fichier mixte](validation-ingestion/swagger/swagger-mixte-suivi.json)
+- [Diagnostics des deux rejets](validation-ingestion/swagger/swagger-mixte-rejets.json)
+
+![Import mixte partiellement accepté](captures/ingestion/swagger/swagger-mixte-partiel.png)
+
+![Documents du fichier mixte dans Elasticsearch](captures/ingestion/swagger/swagger-mixte-elasticsearch.png)
+
+### Fichiers invalides dès la prévisualisation
+
+Les trois fichiers contenant des erreurs de données renvoient
+can_confirm égal à false, sans identifiant permettant la confirmation.
+
+Les diagnostics attendus sont retrouvés : champ obligatoire absent,
+date incorrecte, niveau non autorisé, statut HTTP hors limites,
+durée invalide et champ interdit pour la famille.
+
+Les erreurs concernent les lignes 2 à 7 du CSV et les lignes 1 à 6
+des fichiers JSONL et TXT.
+
+- [CSV invalide](validation-ingestion/swagger/swagger-csv-invalide-preview.json)
+- [JSONL invalide](validation-ingestion/swagger/swagger-jsonl-invalide-preview.json)
+- [TXT invalide](validation-ingestion/swagger/swagger-txt-invalide-preview.json)
+
+Cinq fichiers supplémentaires vérifient les erreurs de structure
+et de type :
+
+| Fichier | Diagnostic constaté |
+|---|---|
+| json-malforme.jsonl | JSON_SYNTAX |
+| json-cle-dupliquee.jsonl | JSON_DUPLICATE_KEY |
+| json-type-incorrect.jsonl | INVALID_TYPE sur status_code |
+| csv-entete-incorrect.csv | CSV_HEADER |
+| txt-colonnes-manquantes.txt | ROW_STRUCTURE : 18 colonnes attendues, 2 reçues |
+
+- [JSON mal formé](validation-ingestion/swagger/swagger-json-malforme-preview.json)
+- [Clé JSON dupliquée](validation-ingestion/swagger/swagger-json-cle-dupliquee-preview.json)
+- [Type JSON incorrect](validation-ingestion/swagger/swagger-json-type-incorrect-preview.json)
+- [En-tête CSV incorrect](validation-ingestion/swagger/swagger-csv-entete-incorrect-preview.json)
+- [Colonnes TXT manquantes](validation-ingestion/swagger/swagger-txt-colonnes-manquantes-preview.json)
+
+Ces fichiers sont bloqués par Flask avant confirmation.
+Ils ne sont pas transmis à Logstash. Les JSON téléchargés conservent
+les corps des réponses, mais pas les codes HTTP ni leurs en-têtes.
+
+### Bilan et portée
+
+Les douze scénarios d’ingestion ont été rejoués manuellement :
+trois fichiers valides, trois fichiers avec erreurs de données,
+cinq fichiers avec erreurs de structure ou de type et un fichier mixte.
+
+Pour les quatre imports confirmés retenus dans ce bilan,
+24 événements sont attendus : 22 sont indexés et 2 sont rejetés.
+
+Le scénario technique HTTP 503 reste documenté dans la première
+section à partir du test automatisé. Il n’a pas été rejoué avec Swagger.
+
+Swagger facilite la documentation et les appels manuels de l’API.
+Il ne remplace pas les scripts qui comparent automatiquement
+les résultats aux références et ne rédige pas le rapport.

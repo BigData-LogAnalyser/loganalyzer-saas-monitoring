@@ -1,0 +1,18 @@
+{
+  "import_record": {
+    "confirmed_at": "2026-11-24T19:49:56.752Z",
+    "error": null,
+    "expected_count": 4,
+    "finished_at": "2026-11-24T19:49:59.871Z",
+    "indexed_count": 4,
+    "original_filename": "logs.jsonl",
+    "progress_percent": 100,
+    "reading_complete": true,
+    "rejected_count": 0,
+    "schema_version": "1.0",
+    "size_bytes": 973,
+    "status": "TERMINE",
+    "updated_at": "2026-11-24T19:49:59.871Z",
+    "upload_id": "82e2d472-d986-485d-80cb-35eb9fb5cd03"
+  }
+}

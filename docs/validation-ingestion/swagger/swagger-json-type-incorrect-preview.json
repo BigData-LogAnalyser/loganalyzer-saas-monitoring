@@ -1,0 +1,43 @@
+{
+  "original_filename": "json-type-incorrect.jsonl",
+  "preview": {
+    "can_confirm": false,
+    "errors": [
+      {
+        "code": "INVALID_TYPE",
+        "field": "status_code",
+        "message": "Un entier est attendu.",
+        "source_line": 1
+      }
+    ],
+    "events": [
+      {
+        "errors": [
+          {
+            "code": "INVALID_TYPE",
+            "field": "status_code",
+            "message": "Un entier est attendu."
+          }
+        ],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": "200",
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 1
+      }
+    ],
+    "preview_count": 1,
+    "preview_limit": 10,
+    "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+  },
+  "size_bytes": 298
+}

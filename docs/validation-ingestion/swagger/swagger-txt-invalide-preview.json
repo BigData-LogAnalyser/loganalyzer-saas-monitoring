@@ -1,0 +1,187 @@
+{
+  "original_filename": "logs.txt",
+  "preview": {
+    "can_confirm": false,
+    "errors": [
+      {
+        "code": "REQUIRED_FIELD",
+        "field": "service",
+        "message": "Champ requis absent.",
+        "source_line": 1
+      },
+      {
+        "code": "INVALID_TIMESTAMP",
+        "field": "timestamp",
+        "message": "Date ou fuseau non conforme.",
+        "source_line": 2
+      },
+      {
+        "code": "INVALID_LEVEL",
+        "field": "level",
+        "message": "Niveau de log non autorisé.",
+        "source_line": 3
+      },
+      {
+        "code": "INVALID_VALUE",
+        "field": "status_code",
+        "message": "Statut attendu entre 100 et 599.",
+        "source_line": 4
+      },
+      {
+        "code": "INVALID_DURATION",
+        "field": "response_time_ms",
+        "message": "Entier décimal sans signe attendu.",
+        "source_line": 5
+      },
+      {
+        "code": "FIELD_NOT_ALLOWED",
+        "field": "sql_duration_ms",
+        "message": "Champ interdit pour cette famille.",
+        "source_line": 6
+      }
+    ],
+    "events": [
+      {
+        "errors": [
+          {
+            "code": "REQUIRED_FIELD",
+            "field": "service",
+            "message": "Champ requis absent."
+          }
+        ],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 1
+      },
+      {
+        "errors": [
+          {
+            "code": "INVALID_TIMESTAMP",
+            "field": "timestamp",
+            "message": "Date ou fuseau non conforme."
+          }
+        ],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00",
+          "user_id": "U1"
+        },
+        "source_line": 2
+      },
+      {
+        "errors": [
+          {
+            "code": "INVALID_LEVEL",
+            "field": "level",
+            "message": "Niveau de log non autorisé."
+          }
+        ],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "FATAL",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 3
+      },
+      {
+        "errors": [
+          {
+            "code": "INVALID_VALUE",
+            "field": "status_code",
+            "message": "Statut attendu entre 100 et 599."
+          }
+        ],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 700,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 4
+      },
+      {
+        "errors": [
+          {
+            "code": "INVALID_DURATION",
+            "field": "response_time_ms",
+            "message": "Entier décimal sans signe attendu."
+          }
+        ],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 5
+      },
+      {
+        "errors": [
+          {
+            "code": "FIELD_NOT_ALLOWED",
+            "field": "sql_duration_ms",
+            "message": "Champ interdit pour cette famille."
+          }
+        ],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "sql_duration_ms": 100,
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 6
+      }
+    ],
+    "preview_count": 6,
+    "preview_limit": 10,
+    "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+  },
+  "size_bytes": 676
+}

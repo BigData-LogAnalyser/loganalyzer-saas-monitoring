@@ -1,0 +1,185 @@
+{
+  "original_filename": "mixte.jsonl",
+  "preview": {
+    "can_confirm": true,
+    "errors": [],
+    "events": [
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 1
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 2
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 3
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 4
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 5
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 6
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 7
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 8
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 9
+      },
+      {
+        "errors": [],
+        "event": {
+          "endpoint": "/api/tasks",
+          "event_type": "http",
+          "http_method": "GET",
+          "level": "INFO",
+          "message": "Liste des tâches consultée",
+          "organization_id": "ORG1",
+          "response_time_ms": 125,
+          "service": "task-service",
+          "status_code": 200,
+          "timestamp": "2026-11-04T10:00:00.000Z",
+          "user_id": "U1"
+        },
+        "source_line": 10
+      }
+    ],
+    "preview_count": 10,
+    "preview_limit": 10,
+    "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+  },
+  "size_bytes": 3424,
+  "state": "BROUILLON",
+  "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+}

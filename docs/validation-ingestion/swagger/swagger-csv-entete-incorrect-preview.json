@@ -1,0 +1,19 @@
+{
+  "original_filename": "csv-entete-incorrect.csv",
+  "preview": {
+    "can_confirm": false,
+    "errors": [
+      {
+        "code": "CSV_HEADER",
+        "field": null,
+        "message": "L’en-tête CSV ne respecte pas le contrat.",
+        "source_line": null
+      }
+    ],
+    "events": [],
+    "preview_count": 0,
+    "preview_limit": 10,
+    "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+  },
+  "size_bytes": 42
+}

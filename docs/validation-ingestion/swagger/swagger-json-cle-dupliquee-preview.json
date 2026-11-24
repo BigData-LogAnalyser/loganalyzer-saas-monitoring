@@ -1,0 +1,31 @@
+{
+  "original_filename": "json-cle-dupliquee.jsonl",
+  "preview": {
+    "can_confirm": false,
+    "errors": [
+      {
+        "code": "JSON_DUPLICATE_KEY",
+        "field": null,
+        "message": "Clé dupliquée : timestamp.",
+        "source_line": 1
+      }
+    ],
+    "events": [
+      {
+        "errors": [
+          {
+            "code": "JSON_DUPLICATE_KEY",
+            "field": null,
+            "message": "Clé dupliquée : timestamp."
+          }
+        ],
+        "event": null,
+        "source_line": 1
+      }
+    ],
+    "preview_count": 1,
+    "preview_limit": 10,
+    "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+  },
+  "size_bytes": 72
+}
