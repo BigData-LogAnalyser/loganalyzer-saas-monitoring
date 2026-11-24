@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "INVALID_FILTER",
+    "field": "end",
+    "message": "La fin de période doit être postérieure ou égale au début."
+  }
+}

@@ -42,6 +42,14 @@ else:
 
 register_api_docs(app, MAX_UPLOAD_BYTES)
 
+if __package__:
+    from .search import register_search
+else:
+    from search import register_search
+
+register_search(app)
+
+
 
 @app.get("/")
 def home():

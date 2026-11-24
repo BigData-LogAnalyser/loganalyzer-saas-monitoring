@@ -554,7 +554,12 @@ def register_api_docs(app, max_upload_bytes):
 
     @docs.get("/api/openapi.json")
     def openapi_spec():
-        response = jsonify(build_spec(max_upload_bytes))
+        if __package__:
+            from .search_docs import extend_search_spec
+        else:
+            from search_docs import extend_search_spec
+
+        response = jsonify(extend_search_spec(build_spec(max_upload_bytes)))
         response.headers["Cache-Control"] = "no-store"
         return response
 

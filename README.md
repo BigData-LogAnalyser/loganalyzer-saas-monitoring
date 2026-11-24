@@ -62,3 +62,5 @@ et des vérifications correspondantes.
 - [Suivi des imports](docs/suivi-imports.md)
 
 - [Rapport technique — ingestion](docs/rapport.md)
+
+- [Recherche et filtres : API, vérifications et limites](docs/recherche.md)

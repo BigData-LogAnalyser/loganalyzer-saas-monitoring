@@ -1,0 +1,2522 @@
+{
+  "accessible_pages": 2,
+  "filters": {
+    "end": "2026-11-04T10:00:00.000Z",
+    "level": "INFO",
+    "order": "desc",
+    "page": 1,
+    "q": "Liste des tâches",
+    "service": "task-service",
+    "sort": "date",
+    "start": "2026-11-04T10:00:00.000Z"
+  },
+  "has_next": true,
+  "has_previous": false,
+  "items": [
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "00630930-4301-41ad-9462-ca93c12e4dfb:1",
+          "ingested": "2026-11-18T07:26:04.020506601Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "00630930-4301-41ad-9462-ca93c12e4dfb"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "00630930-4301-41ad-9462-ca93c12e4dfb:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:2",
+          "ingested": "2026-11-18T10:56:40.804887577Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+          "schema_version": "1.0",
+          "source_line": 2,
+          "upload_id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:1",
+          "ingested": "2026-11-18T13:07:59.028763602Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:1",
+          "ingested": "2026-11-18T10:56:49.113918817Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:1",
+          "ingested": "2026-11-18T07:45:49.617653219Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "1c7a141c-c942-4664-b164-b688f73096cd:1",
+          "ingested": "2026-11-18T10:56:45.051836203Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "1c7a141c-c942-4664-b164-b688f73096cd"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "1c7a141c-c942-4664-b164-b688f73096cd:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:1",
+          "ingested": "2026-11-18T07:46:35.939065500Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:10",
+          "ingested": "2026-11-18T07:46:35.941129023Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 10,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:10",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:2",
+          "ingested": "2026-11-18T07:46:35.939566552Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 2,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:3",
+          "ingested": "2026-11-18T07:46:35.939790357Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 3,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:4",
+          "ingested": "2026-11-18T07:46:35.939990091Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 4,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:5",
+          "ingested": "2026-11-18T07:46:35.940168893Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 5,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:6",
+          "ingested": "2026-11-18T07:46:35.940351288Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 6,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:6",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:7",
+          "ingested": "2026-11-18T07:46:35.940521281Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 7,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:7",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:8",
+          "ingested": "2026-11-18T07:46:35.940697719Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 8,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:8",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:9",
+          "ingested": "2026-11-18T07:46:35.940891011Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/24aa3d43-bc8e-476f-ab69-95fb605f92d7/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 9,
+          "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7:9",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:1",
+          "ingested": "2026-11-18T07:28:03.912430546Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:2",
+          "ingested": "2026-11-18T07:26:07.499572282Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "source_line": 2,
+          "upload_id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "3c546159-5a46-4963-8a78-0bf2bffb53f6:1",
+          "ingested": "2026-11-18T07:47:08.002851587Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/3c546159-5a46-4963-8a78-0bf2bffb53f6/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "3c546159-5a46-4963-8a78-0bf2bffb53f6"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "3c546159-5a46-4963-8a78-0bf2bffb53f6:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:1",
+          "ingested": "2026-11-24T20:26:00.741171492Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:10",
+          "ingested": "2026-11-24T20:26:00.741848739Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 10,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:10",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:2",
+          "ingested": "2026-11-24T20:26:00.741370712Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 2,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:3",
+          "ingested": "2026-11-24T20:26:00.741441398Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 3,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:4",
+          "ingested": "2026-11-24T20:26:00.741497156Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 4,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:5",
+          "ingested": "2026-11-24T20:26:00.741551800Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 5,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:6",
+          "ingested": "2026-11-24T20:26:00.741623853Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 6,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:6",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:7",
+          "ingested": "2026-11-24T20:26:00.741677637Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 7,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:7",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:8",
+          "ingested": "2026-11-24T20:26:00.741732056Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 8,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:8",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:9",
+          "ingested": "2026-11-24T20:26:00.741784164Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/4c66bb86-0528-4d22-96cf-6fd45bf5b1f8/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 9,
+          "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8:9",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:1",
+          "ingested": "2026-11-24T19:56:04.534936794Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7090def1-0abd-4e45-93f0-96b556372c29:1",
+          "ingested": "2026-11-18T07:26:09.556995589Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7090def1-0abd-4e45-93f0-96b556372c29/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "7090def1-0abd-4e45-93f0-96b556372c29"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7090def1-0abd-4e45-93f0-96b556372c29:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:1",
+          "ingested": "2026-11-18T07:47:36.187085181Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:10",
+          "ingested": "2026-11-18T07:47:36.190440712Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 10,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:10",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:2",
+          "ingested": "2026-11-18T07:47:36.187872615Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 2,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:3",
+          "ingested": "2026-11-18T07:47:36.188262752Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 3,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:4",
+          "ingested": "2026-11-18T07:47:36.188519252Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 4,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:5",
+          "ingested": "2026-11-18T07:47:36.188866179Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 5,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:6",
+          "ingested": "2026-11-18T07:47:36.189109285Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 6,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:6",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:7",
+          "ingested": "2026-11-18T07:47:36.189325137Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 7,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:7",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:8",
+          "ingested": "2026-11-18T07:47:36.189542388Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 8,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:8",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:9",
+          "ingested": "2026-11-18T07:47:36.190145262Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/75f90f4f-6938-49ba-acea-90dabcc6431e/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 9,
+          "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "75f90f4f-6938-49ba-acea-90dabcc6431e:9",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:1",
+          "ingested": "2026-11-18T07:28:08.147913784Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 1,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:1",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:10",
+          "ingested": "2026-11-18T07:28:08.150986151Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 10,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:10",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:2",
+          "ingested": "2026-11-18T07:28:08.148406679Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 2,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:3",
+          "ingested": "2026-11-18T07:28:08.148589177Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 3,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:4",
+          "ingested": "2026-11-18T07:28:08.148792860Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 4,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:5",
+          "ingested": "2026-11-18T07:28:08.149538420Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 5,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:6",
+          "ingested": "2026-11-18T07:28:08.149756168Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 6,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:6",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:7",
+          "ingested": "2026-11-18T07:28:08.150282404Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 7,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:7",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:00.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.http",
+          "duration": 125000000,
+          "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:8",
+          "ingested": "2026-11-18T07:28:08.150483830Z",
+          "kind": "event"
+        },
+        "http": {
+          "request": {
+            "method": "GET"
+          },
+          "response": {
+            "status_code": 200
+          }
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7b6c0456-3e1c-49c4-812e-a9e17eacd624/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "mixte.jsonl",
+          "schema_version": "1.0",
+          "source_line": 8,
+          "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+        },
+        "message": "Liste des tâches consultée",
+        "organization": {
+          "id": "ORG1"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "url": {
+          "path": "/api/tasks"
+        },
+        "user": {
+          "id": "U1"
+        }
+      },
+      "id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624:8",
+      "index": "loganalyzer-logs-2026.11.04"
+    }
+  ],
+  "page": 1,
+  "page_size": 50,
+  "pagination_limited": false,
+  "total": 91,
+  "total_pages": 2
+}

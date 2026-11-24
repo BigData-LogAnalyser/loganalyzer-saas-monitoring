@@ -1,0 +1,21 @@
+{
+  "accessible_pages": 0,
+  "filters": {
+    "end": "2026-11-05T23:59:59.000Z",
+    "level": "INFO",
+    "order": "desc",
+    "page": 1,
+    "q": "Liste des tâches",
+    "service": "task-service",
+    "sort": "date",
+    "start": "2026-11-05T00:00:00.000Z"
+  },
+  "has_next": false,
+  "has_previous": false,
+  "items": [],
+  "page": 1,
+  "page_size": 50,
+  "pagination_limited": false,
+  "total": 0,
+  "total_pages": 0
+}
