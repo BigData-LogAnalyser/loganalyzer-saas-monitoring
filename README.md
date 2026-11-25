@@ -64,3 +64,5 @@ et des vérifications correspondantes.
 - [Rapport technique — ingestion](docs/rapport.md)
 
 - [Recherche et filtres : API, vérifications et limites](docs/recherche.md)
+
+[Détail des logs et export CSV — SCRUM-20](docs/detail-export.md)

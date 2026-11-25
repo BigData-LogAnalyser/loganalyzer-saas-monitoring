@@ -191,4 +191,169 @@ def extend_search_spec(spec):
         },
     }
 
+    return extend_log_actions_spec(spec)
+
+
+def extend_log_actions_spec(spec):
+    from copy import deepcopy
+
+    if __package__:
+        from .log_export import CSV_COLUMNS, EXPORT_MAX_ROWS, EXPORT_MAX_BYTES
+    else:
+        from log_export import CSV_COLUMNS, EXPORT_MAX_ROWS, EXPORT_MAX_BYTES
+
+    spec.setdefault("tags", []).append({
+        "name": "Détail et export",
+        "description": "Consulter un document et exporter une recherche.",
+    })
+
+    error_schema = {"$ref": "#/components/schemas/SearchError"}
+
+    def json_response(description, schema):
+        return {
+            "description": description,
+            "content": {"application/json": {"schema": schema}},
+        }
+
+    spec["components"]["schemas"]["LogDetail"] = {
+        "type": "object",
+        "required": ["id", "index", "document"],
+        "properties": {
+            "id": {"type": "string"},
+            "index": {"type": "string"},
+            "document": {
+                "type": "object",
+                "additionalProperties": True,
+                "description": (
+                    "Document Elasticsearch complet, "
+                    "y compris les champs techniques de recherche."
+                ),
+            },
+        },
+    }
+
+    spec["paths"]["/api/v1/logs/{log_id}"] = {
+        "get": {
+            "tags": ["Détail et export"],
+            "operationId": "getLogDetail",
+            "summary": "Consulter tous les champs d’un log",
+            "description": (
+                "Utiliser id et index provenant d’un résultat de recherche. "
+                "Sans index, la recherche porte sur les index loganalyzer-logs-*. "
+                "Si le même identifiant existe dans plusieurs index, "
+                "le paramètre index est nécessaire."
+            ),
+            "parameters": [
+                {
+                    "name": "log_id",
+                    "in": "path",
+                    "required": True,
+                    "description": "Identifiant exact du document.",
+                    "schema": {"type": "string"},
+                },
+                {
+                    "name": "index",
+                    "in": "query",
+                    "required": False,
+                    "description": "Index exact du résultat sélectionné.",
+                    "schema": {
+                        "type": "string",
+                        "pattern": r"^loganalyzer-logs-[0-9]{4}[.][0-9]{2}[.][0-9]{2}$",
+                    },
+                },
+            ],
+            "responses": {
+                "200": json_response(
+                    "Document trouvé.",
+                    {"$ref": "#/components/schemas/LogDetail"},
+                ),
+                "400": json_response(
+                    "Paramètre index incorrect, répété ou paramètre inconnu.",
+                    error_schema,
+                ),
+                "404": json_response(
+                    "Log introuvable : consulter error.message.",
+                    error_schema,
+                ),
+                "409": json_response(
+                    "Identifiant présent dans plusieurs index : préciser index.",
+                    error_schema,
+                ),
+                "503": json_response(
+                    "Consultation temporairement indisponible.",
+                    error_schema,
+                ),
+            },
+        },
+    }
+
+    parameters = deepcopy(spec["paths"]["/api/v1/logs"]["get"]["parameters"])
+    parameters = [
+        parameter for parameter in parameters
+        if parameter["name"] != "page"
+    ]
+
+    spec["paths"]["/api/v1/logs/export"] = {
+        "get": {
+            "tags": ["Détail et export"],
+            "operationId": "exportLogsCsv",
+            "summary": "Exporter tous les résultats filtrés en CSV",
+            "description": (
+                "Réutilise les critères et le tri de la recherche. "
+                "Toutes les pages sont exportées ; le paramètre page est refusé. "
+                f"Maximum : {EXPORT_MAX_ROWS} documents et "
+                f"{EXPORT_MAX_BYTES // (1024 * 1024)} Mio. "
+                "Un dépassement est refusé avec HTTP 422, sans CSV tronqué. "
+                "Le fichier utilise UTF-8 avec BOM, le séparateur point-virgule "
+                "et des fins de ligne CRLF. "
+                "Les champs absents donnent des cellules vides. "
+                "Les champs calculés search_text et search_values sont exclus. "
+                "Une apostrophe protège les cellules textuelles susceptibles "
+                "d’être interprétées comme des formules par un tableur. "
+                "Une recherche vide produit un fichier contenant les en-têtes. "
+                "La recherche est exécutée à nouveau au moment de l’export. "
+                "La confirmation affichée dans /logs appartient à l’interface : "
+                "Execute dans Swagger appelle directement l’API. "
+                "Colonnes : " + ", ".join(CSV_COLUMNS) + "."
+            ),
+            "parameters": parameters,
+            "responses": {
+                "200": {
+                    "description": "Fichier CSV à télécharger.",
+                    "headers": {
+                        "Content-Disposition": {
+                            "description": "Nom du fichier à télécharger.",
+                            "schema": {"type": "string"},
+                        },
+                        "X-Export-Count": {
+                            "description": "Nombre de documents exportés.",
+                            "schema": {"type": "integer", "minimum": 0},
+                        },
+                        "X-Export-Limit": {
+                            "description": "Limite du nombre de documents.",
+                            "schema": {"type": "integer"},
+                        },
+                    },
+                    "content": {
+                        "text/csv": {
+                            "schema": {"type": "string", "format": "binary"}
+                        },
+                    },
+                },
+                "400": json_response(
+                    "Critères invalides ou paramètre page fourni.",
+                    error_schema,
+                ),
+                "422": json_response(
+                    "Limite de nombre de documents ou de taille dépassée.",
+                    error_schema,
+                ),
+                "503": json_response(
+                    "Export indisponible ou résultats incomplets.",
+                    error_schema,
+                ),
+            },
+        },
+    }
+
     return spec

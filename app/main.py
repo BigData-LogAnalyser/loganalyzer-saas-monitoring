@@ -49,6 +49,22 @@ else:
 
 register_search(app)
 
+if __package__:
+    from .log_actions import register_log_actions
+else:
+    from log_actions import register_log_actions
+
+register_log_actions(app)
+
+if __package__:
+    from .log_export import register_log_export
+else:
+    from log_export import register_log_export
+
+register_log_export(app)
+
+
+
 
 
 @app.get("/")
