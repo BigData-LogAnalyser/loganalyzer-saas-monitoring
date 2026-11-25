@@ -22,7 +22,7 @@ SORT_FIELDS = {
 }
 
 ALLOWED_PARAMETERS = {
-    "q", "level", "service", "start", "end", "sort", "order", "page",
+    "q", "general", "level", "service", "start", "end", "sort", "order", "page",
 }
 
 DATE_PATTERN = re.compile(
@@ -86,6 +86,16 @@ def parse_parameters(args):
     if len(values["q"]) > 500:
         raise InvalidFilter("q", "Le texte est limité à 500 caractères.")
 
+    if len(values["general"]) > 500:
+        raise InvalidFilter(
+            "general", "La recherche générale est limitée à 500 caractères."
+        )
+
+    if len(values["general"].split()) > 10:
+        raise InvalidFilter(
+            "general", "La recherche générale est limitée à 10 termes."
+        )
+
     if values["level"] and values["level"] not in LEVELS:
         raise InvalidFilter(
             "level",
@@ -142,6 +152,7 @@ def parse_parameters(args):
 
     return {
         "q": values["q"],
+        "general": values["general"],
         "level": values["level"],
         "service": values["service"],
         "start": (
@@ -156,6 +167,48 @@ def parse_parameters(args):
         "order": order,
         "page": page,
     }
+
+
+
+def build_general_query(value):
+    terms = []
+
+    for word in value.split():
+        # *, ? et \ saisis par l'utilisateur restent des caractères littéraux.
+        escaped = (
+            word.replace("\\", "\\\\")
+            .replace("*", "\\*")
+            .replace("?", "\\?")
+        )
+
+        terms.append({
+            "bool": {
+                "should": [
+                    {
+                        "wildcard": {
+                            "loganalyzer.search_values": {
+                                "value": f"*{escaped}*",
+                                "case_insensitive": True,
+                            }
+                        }
+                    },
+                    {
+                        "match": {
+                            "loganalyzer.search_text": {
+                                "query": word,
+                                "operator": "and",
+                                "fuzziness": "AUTO",
+                                "prefix_length": 0,
+                                "max_expansions": 50,
+                            }
+                        }
+                    },
+                ],
+                "minimum_should_match": 1,
+            }
+        })
+
+    return {"bool": {"must": terms}}
 
 
 def build_query(parameters):
@@ -189,6 +242,9 @@ def build_query(parameters):
                 "operator": "and",
             }
         })
+
+    if parameters["general"]:
+        must.append(build_general_query(parameters["general"]))
 
     return {"bool": {"must": must, "filter": filters}}
 

@@ -1,0 +1,3875 @@
+{
+  "accessible_pages": 4,
+  "filters": {
+    "end": null,
+    "general": "4",
+    "level": "",
+    "order": "desc",
+    "page": 1,
+    "q": "",
+    "service": "",
+    "sort": "date",
+    "start": null
+  },
+  "has_next": true,
+  "has_previous": false,
+  "items": [
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "00630930-4301-41ad-9462-ca93c12e4dfb:4",
+          "ingested": "2026-11-18T07:26:04.140438029Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "00630930-4301-41ad-9462-ca93c12e4dfb:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:26:04.140438029Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "00630930-4301-41ad-9462-ca93c12e4dfb",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "00630930-4301-41ad-9462-ca93c12e4dfb:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:26:04.140438029Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "00630930-4301-41ad-9462-ca93c12e4dfb",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "00630930-4301-41ad-9462-ca93c12e4dfb"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "00630930-4301-41ad-9462-ca93c12e4dfb:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:5",
+          "ingested": "2026-11-18T10:56:40.930274183Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "saas.business",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:5",
+            "task-created",
+            "event",
+            "2026-11-18T10:56:40.930274183Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "5",
+            "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "saas.business",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:5",
+            "task-created",
+            "event",
+            "2026-11-18T10:56:40.930274183Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "5",
+            "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 5,
+          "upload_id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:4",
+          "ingested": "2026-11-18T13:07:59.135723071Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:4",
+            "task-created",
+            "event",
+            "2026-11-18T13:07:59.135723071Z",
+            "ORG1",
+            "task-service",
+            "4",
+            "logs.jsonl",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f",
+            "1.0",
+            "INFO",
+            "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:4",
+            "task-created",
+            "event",
+            "2026-11-18T13:07:59.135723071Z",
+            "ORG1",
+            "task-service",
+            "4",
+            "logs.jsonl",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f",
+            "1.0",
+            "INFO",
+            "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:4",
+          "ingested": "2026-11-18T10:56:49.114284749Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "saas.business",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:4",
+            "task-created",
+            "event",
+            "2026-11-18T10:56:49.114284749Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "4",
+            "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "saas.business",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:4",
+            "task-created",
+            "event",
+            "2026-11-18T10:56:49.114284749Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "4",
+            "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:4",
+          "ingested": "2026-11-18T07:45:49.618793143Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:45:49.618793143Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:45:49.618793143Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "1c7a141c-c942-4664-b164-b688f73096cd:4",
+          "ingested": "2026-11-18T10:56:45.052758264Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "saas.business",
+            "1c7a141c-c942-4664-b164-b688f73096cd:4",
+            "task-created",
+            "event",
+            "2026-11-18T10:56:45.052758264Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "4",
+            "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+            "1c7a141c-c942-4664-b164-b688f73096cd",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "saas.business",
+            "1c7a141c-c942-4664-b164-b688f73096cd:4",
+            "task-created",
+            "event",
+            "2026-11-18T10:56:45.052758264Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "4",
+            "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+            "1c7a141c-c942-4664-b164-b688f73096cd",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "1c7a141c-c942-4664-b164-b688f73096cd"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "1c7a141c-c942-4664-b164-b688f73096cd:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:4",
+          "ingested": "2026-11-18T07:28:03.914005879Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:28:03.914005879Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:28:03.914005879Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:5",
+          "ingested": "2026-11-18T07:26:07.500377858Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be:5",
+            "task-created",
+            "event",
+            "2026-11-18T07:26:07.500377858Z",
+            "ORG1",
+            "5",
+            "logs.csv",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be:5",
+            "task-created",
+            "event",
+            "2026-11-18T07:26:07.500377858Z",
+            "ORG1",
+            "5",
+            "logs.csv",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 5,
+          "upload_id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "3c546159-5a46-4963-8a78-0bf2bffb53f6:4",
+          "ingested": "2026-11-18T07:47:08.003772812Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/3c546159-5a46-4963-8a78-0bf2bffb53f6/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "3c546159-5a46-4963-8a78-0bf2bffb53f6:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:47:08.003772812Z",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "3c546159-5a46-4963-8a78-0bf2bffb53f6",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/3c546159-5a46-4963-8a78-0bf2bffb53f6/source.txt",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "3c546159-5a46-4963-8a78-0bf2bffb53f6:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:47:08.003772812Z",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "3c546159-5a46-4963-8a78-0bf2bffb53f6",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/3c546159-5a46-4963-8a78-0bf2bffb53f6/source.txt",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "3c546159-5a46-4963-8a78-0bf2bffb53f6"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "3c546159-5a46-4963-8a78-0bf2bffb53f6:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:4",
+          "ingested": "2026-11-24T19:56:04.535750804Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "saas.business",
+            "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:4",
+            "task-created",
+            "event",
+            "2026-11-24T19:56:04.535750804Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/uploads/confirmed/6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "saas.business",
+            "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:4",
+            "task-created",
+            "event",
+            "2026-11-24T19:56:04.535750804Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/uploads/confirmed/6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "7090def1-0abd-4e45-93f0-96b556372c29:4",
+          "ingested": "2026-11-18T07:26:09.557718700Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7090def1-0abd-4e45-93f0-96b556372c29/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "7090def1-0abd-4e45-93f0-96b556372c29:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:26:09.557718700Z",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "7090def1-0abd-4e45-93f0-96b556372c29",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/7090def1-0abd-4e45-93f0-96b556372c29/source.txt",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "7090def1-0abd-4e45-93f0-96b556372c29:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:26:09.557718700Z",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "7090def1-0abd-4e45-93f0-96b556372c29",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/7090def1-0abd-4e45-93f0-96b556372c29/source.txt",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "7090def1-0abd-4e45-93f0-96b556372c29"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "7090def1-0abd-4e45-93f0-96b556372c29:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "82e2d472-d986-485d-80cb-35eb9fb5cd03:4",
+          "ingested": "2026-11-24T19:49:57.980086204Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/82e2d472-d986-485d-80cb-35eb9fb5cd03/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "saas.business",
+            "82e2d472-d986-485d-80cb-35eb9fb5cd03:4",
+            "task-created",
+            "event",
+            "2026-11-24T19:49:57.980086204Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "82e2d472-d986-485d-80cb-35eb9fb5cd03",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/uploads/confirmed/82e2d472-d986-485d-80cb-35eb9fb5cd03/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "saas.business",
+            "82e2d472-d986-485d-80cb-35eb9fb5cd03:4",
+            "task-created",
+            "event",
+            "2026-11-24T19:49:57.980086204Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "82e2d472-d986-485d-80cb-35eb9fb5cd03",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/uploads/confirmed/82e2d472-d986-485d-80cb-35eb9fb5cd03/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "82e2d472-d986-485d-80cb-35eb9fb5cd03"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "82e2d472-d986-485d-80cb-35eb9fb5cd03:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "8dfb1ef6-10e8-4901-bf37-ef161aeec77d:4",
+          "ingested": "2026-11-18T13:09:28.717538827Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/8dfb1ef6-10e8-4901-bf37-ef161aeec77d/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "8dfb1ef6-10e8-4901-bf37-ef161aeec77d:4",
+            "task-created",
+            "event",
+            "2026-11-18T13:09:28.717538827Z",
+            "ORG1",
+            "task-service",
+            "4",
+            "logs.jsonl",
+            "8dfb1ef6-10e8-4901-bf37-ef161aeec77d",
+            "1.0",
+            "INFO",
+            "/uploads/confirmed/8dfb1ef6-10e8-4901-bf37-ef161aeec77d/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "8dfb1ef6-10e8-4901-bf37-ef161aeec77d:4",
+            "task-created",
+            "event",
+            "2026-11-18T13:09:28.717538827Z",
+            "ORG1",
+            "task-service",
+            "4",
+            "logs.jsonl",
+            "8dfb1ef6-10e8-4901-bf37-ef161aeec77d",
+            "1.0",
+            "INFO",
+            "/uploads/confirmed/8dfb1ef6-10e8-4901-bf37-ef161aeec77d/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "8dfb1ef6-10e8-4901-bf37-ef161aeec77d"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "8dfb1ef6-10e8-4901-bf37-ef161aeec77d:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "990c1e94-06ce-4192-8438-f8bcd5b577e5:5",
+          "ingested": "2026-11-18T07:28:01.829262960Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/990c1e94-06ce-4192-8438-f8bcd5b577e5/source.csv"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "990c1e94-06ce-4192-8438-f8bcd5b577e5:5",
+            "task-created",
+            "event",
+            "2026-11-18T07:28:01.829262960Z",
+            "ORG1",
+            "5",
+            "logs.csv",
+            "990c1e94-06ce-4192-8438-f8bcd5b577e5",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/990c1e94-06ce-4192-8438-f8bcd5b577e5/source.csv",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "990c1e94-06ce-4192-8438-f8bcd5b577e5:5",
+            "task-created",
+            "event",
+            "2026-11-18T07:28:01.829262960Z",
+            "ORG1",
+            "5",
+            "logs.csv",
+            "990c1e94-06ce-4192-8438-f8bcd5b577e5",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/990c1e94-06ce-4192-8438-f8bcd5b577e5/source.csv",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 5,
+          "upload_id": "990c1e94-06ce-4192-8438-f8bcd5b577e5"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "990c1e94-06ce-4192-8438-f8bcd5b577e5:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "b166e3d2-3a16-4148-b022-9b2cd89c2c71:4",
+          "ingested": "2026-11-18T07:26:05.378702872Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/b166e3d2-3a16-4148-b022-9b2cd89c2c71/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "b166e3d2-3a16-4148-b022-9b2cd89c2c71:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:26:05.378702872Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "b166e3d2-3a16-4148-b022-9b2cd89c2c71",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/b166e3d2-3a16-4148-b022-9b2cd89c2c71/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "b166e3d2-3a16-4148-b022-9b2cd89c2c71:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:26:05.378702872Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "b166e3d2-3a16-4148-b022-9b2cd89c2c71",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/b166e3d2-3a16-4148-b022-9b2cd89c2c71/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "b166e3d2-3a16-4148-b022-9b2cd89c2c71"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "b166e3d2-3a16-4148-b022-9b2cd89c2c71:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc:4",
+          "ingested": "2026-11-18T13:47:17.057168474Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/ca5cdac3-c9e2-41e8-a723-c690aaa7eccc/source.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc:4",
+            "task-created",
+            "event",
+            "2026-11-18T13:47:17.057168474Z",
+            "ORG1",
+            "task-service",
+            "4",
+            "logs.jsonl",
+            "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc",
+            "1.0",
+            "INFO",
+            "/uploads/confirmed/ca5cdac3-c9e2-41e8-a723-c690aaa7eccc/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc:4",
+            "task-created",
+            "event",
+            "2026-11-18T13:47:17.057168474Z",
+            "ORG1",
+            "task-service",
+            "4",
+            "logs.jsonl",
+            "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc",
+            "1.0",
+            "INFO",
+            "/uploads/confirmed/ca5cdac3-c9e2-41e8-a723-c690aaa7eccc/source.jsonl",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "e9883619-082c-447a-9922-6300143337c4:5",
+          "ingested": "2026-11-24T19:00:18.483939707Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/e9883619-082c-447a-9922-6300143337c4/source.csv"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "saas.business",
+            "e9883619-082c-447a-9922-6300143337c4:5",
+            "task-created",
+            "event",
+            "2026-11-24T19:00:18.483939707Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "5",
+            "logs.csv",
+            "e9883619-082c-447a-9922-6300143337c4",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/uploads/confirmed/e9883619-082c-447a-9922-6300143337c4/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "saas.business",
+            "e9883619-082c-447a-9922-6300143337c4:5",
+            "task-created",
+            "event",
+            "2026-11-24T19:00:18.483939707Z",
+            "Tâche créée; titre \"Démo\"",
+            "ORG1",
+            "5",
+            "logs.csv",
+            "e9883619-082c-447a-9922-6300143337c4",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/uploads/confirmed/e9883619-082c-447a-9922-6300143337c4/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 5,
+          "upload_id": "e9883619-082c-447a-9922-6300143337c4"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "e9883619-082c-447a-9922-6300143337c4:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "e9ec3980-31d2-40cc-b375-568b88bc027d:4",
+          "ingested": "2026-11-18T07:28:05.993095616Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/e9ec3980-31d2-40cc-b375-568b88bc027d/source.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "e9ec3980-31d2-40cc-b375-568b88bc027d:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:28:05.993095616Z",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "e9ec3980-31d2-40cc-b375-568b88bc027d",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/e9ec3980-31d2-40cc-b375-568b88bc027d/source.txt",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "e9ec3980-31d2-40cc-b375-568b88bc027d:4",
+            "task-created",
+            "event",
+            "2026-11-18T07:28:05.993095616Z",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "e9ec3980-31d2-40cc-b375-568b88bc027d",
+            "1.0",
+            "task-service",
+            "INFO",
+            "/uploads/confirmed/e9ec3980-31d2-40cc-b375-568b88bc027d/source.txt",
+            "tasks",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "e9ec3980-31d2-40cc-b375-568b88bc027d"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "e9ec3980-31d2-40cc-b375-568b88bc027d:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "scrum16-valides-csv:5",
+          "ingested": "2026-11-16T18:42:00.356121451Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.csv"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "scrum16-valides-csv:5",
+            "task-created",
+            "event",
+            "2026-11-16T18:42:00.356121451Z",
+            "ORG1",
+            "5",
+            "logs.csv",
+            "scrum16-valides-csv",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.csv",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "scrum16-valides-csv:5",
+            "task-created",
+            "event",
+            "2026-11-16T18:42:00.356121451Z",
+            "ORG1",
+            "5",
+            "logs.csv",
+            "scrum16-valides-csv",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.csv",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 5,
+          "upload_id": "scrum16-valides-csv"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "scrum16-valides-csv:5",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "scrum16-valides-jsonl:4",
+          "ingested": "2026-11-16T18:42:00.356309239Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.jsonl"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "scrum16-valides-jsonl:4",
+            "task-created",
+            "event",
+            "2026-11-16T18:42:00.356309239Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "scrum16-valides-jsonl",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "scrum16-valides-jsonl:4",
+            "task-created",
+            "event",
+            "2026-11-16T18:42:00.356309239Z",
+            "ORG1",
+            "4",
+            "logs.jsonl",
+            "scrum16-valides-jsonl",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "scrum16-valides-jsonl"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "scrum16-valides-jsonl:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:03.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "action": "task-created",
+          "dataset": "saas.business",
+          "id": "scrum16-valides-txt:4",
+          "ingested": "2026-11-16T18:42:00.356488032Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.txt"
+          },
+          "level": "INFO"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "scrum16-valides-txt:4",
+            "task-created",
+            "event",
+            "2026-11-16T18:42:00.356488032Z",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "scrum16-valides-txt",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.txt",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "search_values": [
+            "U2",
+            "Tâche créée; titre \"Démo\"",
+            "saas.business",
+            "scrum16-valides-txt:4",
+            "task-created",
+            "event",
+            "2026-11-16T18:42:00.356488032Z",
+            "ORG1",
+            "4",
+            "logs.txt",
+            "scrum16-valides-txt",
+            "1.0",
+            "task-service",
+            "tasks",
+            "INFO",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.txt",
+            "8.17.0",
+            "2026-11-04T10:00:03.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "scrum16-valides-txt"
+        },
+        "message": "Tâche créée; titre \"Démo\"",
+        "organization": {
+          "id": "ORG1"
+        },
+        "saas": {
+          "feature": "tasks"
+        },
+        "service": {
+          "name": "task-service"
+        },
+        "user": {
+          "id": "U2"
+        }
+      },
+      "id": "scrum16-valides-txt:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "00630930-4301-41ad-9462-ca93c12e4dfb:3",
+          "ingested": "2026-11-18T07:26:04.140155072Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "00630930-4301-41ad-9462-ca93c12e4dfb:3",
+            "event",
+            "2026-11-18T07:26:04.140155072Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "00630930-4301-41ad-9462-ca93c12e4dfb",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "00630930-4301-41ad-9462-ca93c12e4dfb:3",
+            "event",
+            "2026-11-18T07:26:04.140155072Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "00630930-4301-41ad-9462-ca93c12e4dfb",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "00630930-4301-41ad-9462-ca93c12e4dfb"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "00630930-4301-41ad-9462-ca93c12e4dfb:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:4",
+          "ingested": "2026-11-18T10:56:40.930024594Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:4",
+            "event",
+            "2026-11-18T10:56:40.930024594Z",
+            "1200000000",
+            "Requête SQL lente",
+            "4",
+            "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:4",
+            "event",
+            "2026-11-18T10:56:40.930024594Z",
+            "1200000000",
+            "Requête SQL lente",
+            "4",
+            "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:3",
+          "ingested": "2026-11-18T13:07:59.135508736Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:3",
+            "event",
+            "2026-11-18T13:07:59.135508736Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:3",
+            "event",
+            "2026-11-18T13:07:59.135508736Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:3",
+          "ingested": "2026-11-18T10:56:49.114222570Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:3",
+            "event",
+            "2026-11-18T10:56:49.114222570Z",
+            "1200000000",
+            "Requête SQL lente",
+            "3",
+            "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:3",
+            "event",
+            "2026-11-18T10:56:49.114222570Z",
+            "1200000000",
+            "Requête SQL lente",
+            "3",
+            "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:3",
+          "ingested": "2026-11-18T07:45:49.618554082Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:3",
+            "event",
+            "2026-11-18T07:45:49.618554082Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:3",
+            "event",
+            "2026-11-18T07:45:49.618554082Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "1c7a141c-c942-4664-b164-b688f73096cd:3",
+          "ingested": "2026-11-18T10:56:45.052469108Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "1c7a141c-c942-4664-b164-b688f73096cd:3",
+            "event",
+            "2026-11-18T10:56:45.052469108Z",
+            "1200000000",
+            "Requête SQL lente",
+            "3",
+            "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+            "1c7a141c-c942-4664-b164-b688f73096cd",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "1c7a141c-c942-4664-b164-b688f73096cd:3",
+            "event",
+            "2026-11-18T10:56:45.052469108Z",
+            "1200000000",
+            "Requête SQL lente",
+            "3",
+            "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+            "1c7a141c-c942-4664-b164-b688f73096cd",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "1c7a141c-c942-4664-b164-b688f73096cd"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "1c7a141c-c942-4664-b164-b688f73096cd:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:3",
+          "ingested": "2026-11-18T07:28:03.913559137Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:3",
+            "event",
+            "2026-11-18T07:28:03.913559137Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:3",
+            "event",
+            "2026-11-18T07:28:03.913559137Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:4",
+          "ingested": "2026-11-18T07:26:07.500239423Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be:4",
+            "event",
+            "2026-11-18T07:26:07.500239423Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "4",
+            "logs.csv",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be:4",
+            "event",
+            "2026-11-18T07:26:07.500239423Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "4",
+            "logs.csv",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "3c546159-5a46-4963-8a78-0bf2bffb53f6:3",
+          "ingested": "2026-11-18T07:47:08.003586018Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/3c546159-5a46-4963-8a78-0bf2bffb53f6/source.txt"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "3c546159-5a46-4963-8a78-0bf2bffb53f6:3",
+            "event",
+            "2026-11-18T07:47:08.003586018Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.txt",
+            "3c546159-5a46-4963-8a78-0bf2bffb53f6",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/3c546159-5a46-4963-8a78-0bf2bffb53f6/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "3c546159-5a46-4963-8a78-0bf2bffb53f6:3",
+            "event",
+            "2026-11-18T07:47:08.003586018Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.txt",
+            "3c546159-5a46-4963-8a78-0bf2bffb53f6",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/3c546159-5a46-4963-8a78-0bf2bffb53f6/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "3c546159-5a46-4963-8a78-0bf2bffb53f6"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "3c546159-5a46-4963-8a78-0bf2bffb53f6:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:3",
+          "ingested": "2026-11-24T19:56:04.535565487Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab/source.txt"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:3",
+            "event",
+            "2026-11-24T19:56:04.535565487Z",
+            "1200000000",
+            "Requête SQL lente",
+            "3",
+            "logs.txt",
+            "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:3",
+            "event",
+            "2026-11-24T19:56:04.535565487Z",
+            "1200000000",
+            "Requête SQL lente",
+            "3",
+            "logs.txt",
+            "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "7090def1-0abd-4e45-93f0-96b556372c29:3",
+          "ingested": "2026-11-18T07:26:09.557556104Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/7090def1-0abd-4e45-93f0-96b556372c29/source.txt"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "7090def1-0abd-4e45-93f0-96b556372c29:3",
+            "event",
+            "2026-11-18T07:26:09.557556104Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.txt",
+            "7090def1-0abd-4e45-93f0-96b556372c29",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/7090def1-0abd-4e45-93f0-96b556372c29/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "7090def1-0abd-4e45-93f0-96b556372c29:3",
+            "event",
+            "2026-11-18T07:26:09.557556104Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.txt",
+            "7090def1-0abd-4e45-93f0-96b556372c29",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/7090def1-0abd-4e45-93f0-96b556372c29/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "7090def1-0abd-4e45-93f0-96b556372c29"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "7090def1-0abd-4e45-93f0-96b556372c29:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "82e2d472-d986-485d-80cb-35eb9fb5cd03:3",
+          "ingested": "2026-11-24T19:49:57.979944046Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/82e2d472-d986-485d-80cb-35eb9fb5cd03/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "82e2d472-d986-485d-80cb-35eb9fb5cd03:3",
+            "event",
+            "2026-11-24T19:49:57.979944046Z",
+            "1200000000",
+            "Requête SQL lente",
+            "3",
+            "logs.jsonl",
+            "82e2d472-d986-485d-80cb-35eb9fb5cd03",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/82e2d472-d986-485d-80cb-35eb9fb5cd03/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "82e2d472-d986-485d-80cb-35eb9fb5cd03:3",
+            "event",
+            "2026-11-24T19:49:57.979944046Z",
+            "1200000000",
+            "Requête SQL lente",
+            "3",
+            "logs.jsonl",
+            "82e2d472-d986-485d-80cb-35eb9fb5cd03",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/82e2d472-d986-485d-80cb-35eb9fb5cd03/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "82e2d472-d986-485d-80cb-35eb9fb5cd03"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "82e2d472-d986-485d-80cb-35eb9fb5cd03:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "8dfb1ef6-10e8-4901-bf37-ef161aeec77d:3",
+          "ingested": "2026-11-18T13:09:28.717390817Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/8dfb1ef6-10e8-4901-bf37-ef161aeec77d/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "8dfb1ef6-10e8-4901-bf37-ef161aeec77d:3",
+            "event",
+            "2026-11-18T13:09:28.717390817Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "8dfb1ef6-10e8-4901-bf37-ef161aeec77d",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/8dfb1ef6-10e8-4901-bf37-ef161aeec77d/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "8dfb1ef6-10e8-4901-bf37-ef161aeec77d:3",
+            "event",
+            "2026-11-18T13:09:28.717390817Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "8dfb1ef6-10e8-4901-bf37-ef161aeec77d",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/8dfb1ef6-10e8-4901-bf37-ef161aeec77d/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "8dfb1ef6-10e8-4901-bf37-ef161aeec77d"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "8dfb1ef6-10e8-4901-bf37-ef161aeec77d:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "990c1e94-06ce-4192-8438-f8bcd5b577e5:4",
+          "ingested": "2026-11-18T07:28:01.829015221Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/990c1e94-06ce-4192-8438-f8bcd5b577e5/source.csv"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "990c1e94-06ce-4192-8438-f8bcd5b577e5:4",
+            "event",
+            "2026-11-18T07:28:01.829015221Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "4",
+            "logs.csv",
+            "990c1e94-06ce-4192-8438-f8bcd5b577e5",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/990c1e94-06ce-4192-8438-f8bcd5b577e5/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "990c1e94-06ce-4192-8438-f8bcd5b577e5:4",
+            "event",
+            "2026-11-18T07:28:01.829015221Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "4",
+            "logs.csv",
+            "990c1e94-06ce-4192-8438-f8bcd5b577e5",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/990c1e94-06ce-4192-8438-f8bcd5b577e5/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "990c1e94-06ce-4192-8438-f8bcd5b577e5"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "990c1e94-06ce-4192-8438-f8bcd5b577e5:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "b166e3d2-3a16-4148-b022-9b2cd89c2c71:3",
+          "ingested": "2026-11-18T07:26:05.378386034Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/b166e3d2-3a16-4148-b022-9b2cd89c2c71/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "b166e3d2-3a16-4148-b022-9b2cd89c2c71:3",
+            "event",
+            "2026-11-18T07:26:05.378386034Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "b166e3d2-3a16-4148-b022-9b2cd89c2c71",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/b166e3d2-3a16-4148-b022-9b2cd89c2c71/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "b166e3d2-3a16-4148-b022-9b2cd89c2c71:3",
+            "event",
+            "2026-11-18T07:26:05.378386034Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "b166e3d2-3a16-4148-b022-9b2cd89c2c71",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/b166e3d2-3a16-4148-b022-9b2cd89c2c71/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "b166e3d2-3a16-4148-b022-9b2cd89c2c71"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "b166e3d2-3a16-4148-b022-9b2cd89c2c71:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc:3",
+          "ingested": "2026-11-18T13:47:17.056879585Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/ca5cdac3-c9e2-41e8-a723-c690aaa7eccc/source.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc:3",
+            "event",
+            "2026-11-18T13:47:17.056879585Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/ca5cdac3-c9e2-41e8-a723-c690aaa7eccc/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc:3",
+            "event",
+            "2026-11-18T13:47:17.056879585Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/ca5cdac3-c9e2-41e8-a723-c690aaa7eccc/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "ca5cdac3-c9e2-41e8-a723-c690aaa7eccc:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "e9883619-082c-447a-9922-6300143337c4:4",
+          "ingested": "2026-11-24T19:00:18.483644443Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/e9883619-082c-447a-9922-6300143337c4/source.csv"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "e9883619-082c-447a-9922-6300143337c4:4",
+            "event",
+            "2026-11-24T19:00:18.483644443Z",
+            "1200000000",
+            "Requête SQL lente",
+            "4",
+            "logs.csv",
+            "e9883619-082c-447a-9922-6300143337c4",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/e9883619-082c-447a-9922-6300143337c4/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "e9883619-082c-447a-9922-6300143337c4:4",
+            "event",
+            "2026-11-24T19:00:18.483644443Z",
+            "1200000000",
+            "Requête SQL lente",
+            "4",
+            "logs.csv",
+            "e9883619-082c-447a-9922-6300143337c4",
+            "1.0",
+            "task-service",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/e9883619-082c-447a-9922-6300143337c4/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "e9883619-082c-447a-9922-6300143337c4"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "e9883619-082c-447a-9922-6300143337c4:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "e9ec3980-31d2-40cc-b375-568b88bc027d:3",
+          "ingested": "2026-11-18T07:28:05.992899866Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/e9ec3980-31d2-40cc-b375-568b88bc027d/source.txt"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "e9ec3980-31d2-40cc-b375-568b88bc027d:3",
+            "event",
+            "2026-11-18T07:28:05.992899866Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.txt",
+            "e9ec3980-31d2-40cc-b375-568b88bc027d",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/e9ec3980-31d2-40cc-b375-568b88bc027d/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "e9ec3980-31d2-40cc-b375-568b88bc027d:3",
+            "event",
+            "2026-11-18T07:28:05.992899866Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.txt",
+            "e9ec3980-31d2-40cc-b375-568b88bc027d",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/uploads/confirmed/e9ec3980-31d2-40cc-b375-568b88bc027d/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "e9ec3980-31d2-40cc-b375-568b88bc027d"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "e9ec3980-31d2-40cc-b375-568b88bc027d:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "scrum16-valides-csv:4",
+          "ingested": "2026-11-16T18:42:00.356064848Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.csv"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "scrum16-valides-csv:4",
+            "event",
+            "2026-11-16T18:42:00.356064848Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "4",
+            "logs.csv",
+            "scrum16-valides-csv",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "scrum16-valides-csv:4",
+            "event",
+            "2026-11-16T18:42:00.356064848Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "4",
+            "logs.csv",
+            "scrum16-valides-csv",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.csv",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 4,
+          "upload_id": "scrum16-valides-csv"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "scrum16-valides-csv:4",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "scrum16-valides-jsonl:3",
+          "ingested": "2026-11-16T18:42:00.356264194Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.jsonl"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "scrum16-valides-jsonl:3",
+            "event",
+            "2026-11-16T18:42:00.356264194Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "scrum16-valides-jsonl",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "scrum16-valides-jsonl:3",
+            "event",
+            "2026-11-16T18:42:00.356264194Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.jsonl",
+            "scrum16-valides-jsonl",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "scrum16-valides-jsonl"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "scrum16-valides-jsonl:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:02.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "event": {
+          "dataset": "saas.database",
+          "duration": 1200000000,
+          "id": "scrum16-valides-txt:3",
+          "ingested": "2026-11-16T18:42:00.356444800Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.txt"
+          },
+          "level": "WARNING"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.database",
+            "scrum16-valides-txt:3",
+            "event",
+            "2026-11-16T18:42:00.356444800Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.txt",
+            "scrum16-valides-txt",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "search_values": [
+            "saas.database",
+            "scrum16-valides-txt:3",
+            "event",
+            "2026-11-16T18:42:00.356444800Z",
+            "1200000000",
+            "Requête SQL lente",
+            "task-service",
+            "3",
+            "logs.txt",
+            "scrum16-valides-txt",
+            "1.0",
+            "list_tasks",
+            "WARNING",
+            "/home/khalil/projets/loganalyzer-saas-monitoring/samples/valides/logs.txt",
+            "8.17.0",
+            "2026-11-04T10:00:02.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "scrum16-valides-txt"
+        },
+        "message": "Requête SQL lente",
+        "saas": {
+          "database": {
+            "query_name": "list_tasks"
+          }
+        },
+        "service": {
+          "name": "task-service"
+        }
+      },
+      "id": "scrum16-valides-txt:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:01.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "error": {
+          "code": "REPORT_TIMEOUT",
+          "message": "Délai de génération dépassé"
+        },
+        "event": {
+          "dataset": "saas.application",
+          "id": "00630930-4301-41ad-9462-ca93c12e4dfb:2",
+          "ingested": "2026-11-18T07:26:04.139606235Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl"
+          },
+          "level": "ERROR"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.application",
+            "00630930-4301-41ad-9462-ca93c12e4dfb:2",
+            "event",
+            "2026-11-18T07:26:04.139606235Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "2",
+            "logs.jsonl",
+            "00630930-4301-41ad-9462-ca93c12e4dfb",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "search_values": [
+            "saas.application",
+            "00630930-4301-41ad-9462-ca93c12e4dfb:2",
+            "event",
+            "2026-11-18T07:26:04.139606235Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "2",
+            "logs.jsonl",
+            "00630930-4301-41ad-9462-ca93c12e4dfb",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/00630930-4301-41ad-9462-ca93c12e4dfb/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "source_line": 2,
+          "upload_id": "00630930-4301-41ad-9462-ca93c12e4dfb"
+        },
+        "message": "Rapport indisponible",
+        "service": {
+          "name": "report-service"
+        }
+      },
+      "id": "00630930-4301-41ad-9462-ca93c12e4dfb:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:01.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "error": {
+          "code": "REPORT_TIMEOUT",
+          "message": "Délai de génération dépassé"
+        },
+        "event": {
+          "dataset": "saas.application",
+          "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:3",
+          "ingested": "2026-11-18T10:56:40.929597027Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv"
+          },
+          "level": "ERROR"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.application",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:3",
+            "event",
+            "2026-11-18T10:56:40.929597027Z",
+            "Rapport indisponible",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "3",
+            "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2",
+            "1.0",
+            "report-service",
+            "ERROR",
+            "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "search_values": [
+            "saas.application",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:3",
+            "event",
+            "2026-11-18T10:56:40.929597027Z",
+            "Rapport indisponible",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "3",
+            "scrum18-20261118T105637Z-a9564dca-valide-csv.csv",
+            "09a93f47-e63f-4a90-b97e-e3a53fd63ce2",
+            "1.0",
+            "report-service",
+            "ERROR",
+            "/uploads/confirmed/09a93f47-e63f-4a90-b97e-e3a53fd63ce2/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2"
+        },
+        "message": "Rapport indisponible",
+        "service": {
+          "name": "report-service"
+        }
+      },
+      "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:01.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "error": {
+          "code": "REPORT_TIMEOUT",
+          "message": "Délai de génération dépassé"
+        },
+        "event": {
+          "dataset": "saas.application",
+          "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:2",
+          "ingested": "2026-11-18T13:07:59.135135255Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl"
+          },
+          "level": "ERROR"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.application",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:2",
+            "event",
+            "2026-11-18T13:07:59.135135255Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "2",
+            "logs.jsonl",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "search_values": [
+            "saas.application",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:2",
+            "event",
+            "2026-11-18T13:07:59.135135255Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "2",
+            "logs.jsonl",
+            "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "source_line": 2,
+          "upload_id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f"
+        },
+        "message": "Rapport indisponible",
+        "service": {
+          "name": "report-service"
+        }
+      },
+      "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:01.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "error": {
+          "code": "REPORT_TIMEOUT",
+          "message": "Délai de génération dépassé"
+        },
+        "event": {
+          "dataset": "saas.application",
+          "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:2",
+          "ingested": "2026-11-18T10:56:49.114147766Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt"
+          },
+          "level": "ERROR"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.application",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:2",
+            "event",
+            "2026-11-18T10:56:49.114147766Z",
+            "Rapport indisponible",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "2",
+            "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1",
+            "1.0",
+            "report-service",
+            "ERROR",
+            "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "search_values": [
+            "saas.application",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:2",
+            "event",
+            "2026-11-18T10:56:49.114147766Z",
+            "Rapport indisponible",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "2",
+            "scrum18-20261118T105637Z-a9564dca-valide-txt.txt",
+            "0ffaf2dc-18cd-47ce-b6df-93a332530ef1",
+            "1.0",
+            "report-service",
+            "ERROR",
+            "/uploads/confirmed/0ffaf2dc-18cd-47ce-b6df-93a332530ef1/source.txt",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "source_line": 2,
+          "upload_id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1"
+        },
+        "message": "Rapport indisponible",
+        "service": {
+          "name": "report-service"
+        }
+      },
+      "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:01.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "error": {
+          "code": "REPORT_TIMEOUT",
+          "message": "Délai de génération dépassé"
+        },
+        "event": {
+          "dataset": "saas.application",
+          "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:2",
+          "ingested": "2026-11-18T07:45:49.618298350Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl"
+          },
+          "level": "ERROR"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.application",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:2",
+            "event",
+            "2026-11-18T07:45:49.618298350Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "2",
+            "logs.jsonl",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "search_values": [
+            "saas.application",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:2",
+            "event",
+            "2026-11-18T07:45:49.618298350Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "2",
+            "logs.jsonl",
+            "10538eaa-7b37-47c6-a6b3-4f9f51fc6402",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/10538eaa-7b37-47c6-a6b3-4f9f51fc6402/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "source_line": 2,
+          "upload_id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402"
+        },
+        "message": "Rapport indisponible",
+        "service": {
+          "name": "report-service"
+        }
+      },
+      "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:01.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "error": {
+          "code": "REPORT_TIMEOUT",
+          "message": "Délai de génération dépassé"
+        },
+        "event": {
+          "dataset": "saas.application",
+          "id": "1c7a141c-c942-4664-b164-b688f73096cd:2",
+          "ingested": "2026-11-18T10:56:45.052232037Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl"
+          },
+          "level": "ERROR"
+        },
+        "loganalyzer": {
+          "original_filename": "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.application",
+            "1c7a141c-c942-4664-b164-b688f73096cd:2",
+            "event",
+            "2026-11-18T10:56:45.052232037Z",
+            "Rapport indisponible",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "2",
+            "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+            "1c7a141c-c942-4664-b164-b688f73096cd",
+            "1.0",
+            "report-service",
+            "ERROR",
+            "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "search_values": [
+            "saas.application",
+            "1c7a141c-c942-4664-b164-b688f73096cd:2",
+            "event",
+            "2026-11-18T10:56:45.052232037Z",
+            "Rapport indisponible",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "2",
+            "scrum18-20261118T105637Z-a9564dca-valide-jsonl.jsonl",
+            "1c7a141c-c942-4664-b164-b688f73096cd",
+            "1.0",
+            "report-service",
+            "ERROR",
+            "/uploads/confirmed/1c7a141c-c942-4664-b164-b688f73096cd/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "source_line": 2,
+          "upload_id": "1c7a141c-c942-4664-b164-b688f73096cd"
+        },
+        "message": "Rapport indisponible",
+        "service": {
+          "name": "report-service"
+        }
+      },
+      "id": "1c7a141c-c942-4664-b164-b688f73096cd:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:01.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "error": {
+          "code": "REPORT_TIMEOUT",
+          "message": "Délai de génération dépassé"
+        },
+        "event": {
+          "dataset": "saas.application",
+          "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:2",
+          "ingested": "2026-11-18T07:28:03.913162686Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl"
+          },
+          "level": "ERROR"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.jsonl",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.application",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:2",
+            "event",
+            "2026-11-18T07:28:03.913162686Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "2",
+            "logs.jsonl",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "search_values": [
+            "saas.application",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:2",
+            "event",
+            "2026-11-18T07:28:03.913162686Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "2",
+            "logs.jsonl",
+            "352eac00-49a1-4cfc-8dae-50d68f9d5a1f",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/352eac00-49a1-4cfc-8dae-50d68f9d5a1f/source.jsonl",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "source_line": 2,
+          "upload_id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f"
+        },
+        "message": "Rapport indisponible",
+        "service": {
+          "name": "report-service"
+        }
+      },
+      "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:2",
+      "index": "loganalyzer-logs-2026.11.04"
+    },
+    {
+      "document": {
+        "@timestamp": "2026-11-04T10:00:01.000Z",
+        "ecs": {
+          "version": "8.17.0"
+        },
+        "error": {
+          "code": "REPORT_TIMEOUT",
+          "message": "Délai de génération dépassé"
+        },
+        "event": {
+          "dataset": "saas.application",
+          "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:3",
+          "ingested": "2026-11-18T07:26:07.500055944Z",
+          "kind": "event"
+        },
+        "log": {
+          "file": {
+            "path": "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv"
+          },
+          "level": "ERROR"
+        },
+        "loganalyzer": {
+          "original_filename": "logs.csv",
+          "schema_version": "1.0",
+          "search_text": [
+            "saas.application",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be:3",
+            "event",
+            "2026-11-18T07:26:07.500055944Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "3",
+            "logs.csv",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "search_values": [
+            "saas.application",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be:3",
+            "event",
+            "2026-11-18T07:26:07.500055944Z",
+            "Délai de génération dépassé",
+            "REPORT_TIMEOUT",
+            "Rapport indisponible",
+            "report-service",
+            "3",
+            "logs.csv",
+            "37a8e1c9-2eda-49d1-a666-4c49ba9793be",
+            "1.0",
+            "ERROR",
+            "/uploads/confirmed/37a8e1c9-2eda-49d1-a666-4c49ba9793be/source.csv",
+            "8.17.0",
+            "2026-11-04T10:00:01.000Z"
+          ],
+          "source_line": 3,
+          "upload_id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be"
+        },
+        "message": "Rapport indisponible",
+        "service": {
+          "name": "report-service"
+        }
+      },
+      "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:3",
+      "index": "loganalyzer-logs-2026.11.04"
+    }
+  ],
+  "page": 1,
+  "page_size": 50,
+  "pagination_limited": false,
+  "total": 154,
+  "total_pages": 4
+}

@@ -1,11 +1,19 @@
 {
-  "description": "Ajouter la date de réception dans Elasticsearch",
-  "version": 1,
+  "description": "Conserver la date de réception et préparer la recherche générale",
+  "version": 2,
   "processors": [
     {
       "set": {
         "field": "event.ingested",
-        "value": "{{{_ingest.timestamp}}}"
+        "value": "{{{_ingest.timestamp}}}",
+        "override": false
+      }
+    },
+    {
+      "script": {
+        "tag": "build_general_search",
+        "lang": "painless",
+        "source": "ctx.loganalyzer.remove('search_text');\nctx.loganalyzer.remove('search_values');\n\ndef pending = new ArrayList();\ndef values = new ArrayList();\n\nfor (def entry : ctx.entrySet()) {\n    if (!entry.getKey().startsWith('_') && entry.getKey() != '@version') {\n        pending.add(entry.getValue());\n    }\n}\n\nwhile (!pending.isEmpty()) {\n    def value = pending.remove(pending.size() - 1);\n\n    if (value instanceof Map) {\n        for (def child : value.values()) {\n            pending.add(child);\n        }\n    } else if (value instanceof List) {\n        for (def child : value) {\n            pending.add(child);\n        }\n    } else if (value != null) {\n        values.add(value.toString());\n    }\n}\n\nctx.loganalyzer.search_text = values;\nctx.loganalyzer.search_values = values;"
       }
     }
   ]
