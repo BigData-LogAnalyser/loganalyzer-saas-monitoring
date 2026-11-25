@@ -9,6 +9,10 @@
   const pageInformation = document.getElementById("page-information");
   const previous = document.getElementById("previous-page");
   const next = document.getElementById("next-page");
+  const exportButton = document.getElementById("export-csv");
+  const exportMessage = document.getElementById("export-message");
+  let exportFilters = null;
+  let exporting = false;
 
   let activeFilters = new URLSearchParams();
   let currentPage = 1;
@@ -60,6 +64,8 @@
     pageInformation.textContent = "";
     results.setAttribute("aria-busy", "true");
     setMessage("Recherche en cours…");
+    exportFilters = null;
+    exportButton.disabled = true;
 
     try {
       const response = await fetch(`/api/v1/logs?${parameters}`, {
@@ -79,6 +85,13 @@
       if (controller !== activeController) return;
 
       currentPage = data.page;
+      exportFilters = new URLSearchParams();
+      for (const [key, value] of Object.entries(data.filters)) {
+        if (key !== "page" && value !== null && value !== "") {
+          exportFilters.set(key, String(value));
+        }
+      }
+      exportButton.disabled = exporting;
       count.textContent =
         `${data.total} résultat(s) — ${data.items.length} affiché(s) sur cette page.`;
 
@@ -92,6 +105,16 @@
         appendCell(row, documentData.log?.level);
         appendCell(row, documentData.service?.name);
         appendCell(row, documentData.message);
+
+        const actionsCell = document.createElement("td");
+        const detailsButton = document.createElement("button");
+        detailsButton.type = "button";
+        detailsButton.textContent = "Détails";
+        detailsButton.dataset.logId = item.id;
+        detailsButton.dataset.logIndex = item.index;
+        actionsCell.append(detailsButton);
+        row.append(actionsCell);
+
 
         fragment.append(row);
       }
@@ -134,6 +157,68 @@
       }
     }
   }
+
+
+  exportButton.addEventListener("click", async () => {
+    if (!exportFilters || exporting) return;
+
+    const confirmed = window.confirm(
+      "Confirmer l’export CSV\n\n" +
+      "Tous les logs correspondant à la recherche affichée seront exportés, " +
+      "toutes pages confondues, dans le même ordre.\n\n" +
+      "Le fichier contient 28 colonnes séparées par un point-virgule. " +
+      "L’encodage UTF-8 avec une marque de reconnaissance facilite " +
+      "l’affichage des accents dans Excel.\n\n" +
+      "Limites : 10 000 logs et 20 Mio. " +
+      "Un dépassement sera refusé sans fichier tronqué.\n\n" +
+      "Les résultats sont recherchés à nouveau au moment de l’export.\n\n" +
+      "Cliquez sur OK pour télécharger, ou sur Annuler."
+    );
+
+    if (!confirmed) return;
+
+    const parameters = new URLSearchParams(exportFilters);
+    exporting = true;
+    exportButton.disabled = true;
+    exportMessage.textContent = "Préparation du CSV…";
+
+    try {
+      const response = await fetch(`/api/v1/logs/export?${parameters}`, {
+        headers: {Accept: "text/csv, application/json"},
+        cache: "no-store",
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(
+          data.error?.message || `Erreur HTTP ${response.status}.`
+        );
+      }
+
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      const filename = response.headers
+        .get("Content-Disposition")?.match(/filename="([^"]+)"/)?.[1];
+
+      link.href = url;
+      link.download = filename || "loganalyzer-export.csv";
+      document.body.append(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+      exportMessage.textContent =
+        `${response.headers.get("X-Export-Count")} log(s) exporté(s).`;
+    } catch (error) {
+      exportMessage.textContent = error instanceof TypeError
+        ? "Impossible de joindre le serveur pour l’export."
+        : error.message;
+    } finally {
+      exporting = false;
+      exportButton.disabled = exportFilters === null;
+    }
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
