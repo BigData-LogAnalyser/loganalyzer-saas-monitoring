@@ -1,0 +1,22 @@
+{
+  "accessible_pages": 0,
+  "filters": {
+    "end": null,
+    "general": "zzzzaucunresultatscrum19zzzz",
+    "level": "",
+    "order": "desc",
+    "page": 1,
+    "q": "",
+    "service": "",
+    "sort": "date",
+    "start": null
+  },
+  "has_next": false,
+  "has_previous": false,
+  "items": [],
+  "page": 1,
+  "page_size": 50,
+  "pagination_limited": false,
+  "total": 0,
+  "total_pages": 0
+}

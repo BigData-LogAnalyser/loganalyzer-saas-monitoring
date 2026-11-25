@@ -90,6 +90,7 @@ def extend_search_spec(spec):
                 "type": "object",
                 "properties": {
                     "q": {"type": "string"},
+                    "general": {"type": "string"},
                     "level": {"type": "string"},
                     "service": {"type": "string"},
                     "start": {
@@ -127,6 +128,18 @@ def extend_search_spec(spec):
                 "Les résultats peuvent évoluer si de nouveaux logs sont indexés."
             ),
             "parameters": [
+                parameter(
+                    "general",
+                    "Recherche dans les valeurs de tous les champs du document, "
+                    "y compris dates, nombres et identifiants techniques. "
+                    "Combine fragments littéraux sans distinction de casse "
+                    "et mots proches avec fuzziness AUTO. "
+                    "Tous les termes doivent correspondre au même événement. "
+                    "Maximum 500 caractères et 10 termes. "
+                    "Se combine avec q et les autres filtres.",
+                    {"type": "string", "maxLength": 500},
+                ),
+
                 parameter("q", "Texte recherché dans les messages.", {
                     "type": "string", "maxLength": 500,
                 }),

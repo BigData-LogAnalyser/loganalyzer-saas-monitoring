@@ -1,13 +1,15 @@
 {
-  "index_patterns": ["loganalyzer-logs-*"],
+  "index_patterns": [
+    "loganalyzer-logs-*"
+  ],
   "priority": 200,
-  "version": 1,
+  "version": 2,
   "_meta": {
     "description": "Logs SaaS LogAnalyzer — contrat SCRUM-10 v1.0",
     "ecs_version": "8.17.0"
   },
   "template": {
-        "settings": {
+    "settings": {
       "number_of_shards": 1,
       "number_of_replicas": 0,
       "index.final_pipeline": "loganalyzer-ingested-v1"
@@ -25,22 +27,30 @@
         },
         "ecs": {
           "properties": {
-            "version": { "type": "keyword" }
+            "version": {
+              "type": "keyword"
+            }
           }
         },
         "log": {
           "properties": {
-            "level": { "type": "keyword" },
+            "level": {
+              "type": "keyword"
+            },
             "file": {
               "properties": {
-                "path": { "type": "keyword" }
+                "path": {
+                  "type": "keyword"
+                }
               }
             }
           }
         },
         "service": {
           "properties": {
-            "name": { "type": "keyword" }
+            "name": {
+              "type": "keyword"
+            }
           }
         },
         "message": {
@@ -48,9 +58,15 @@
         },
         "event": {
           "properties": {
-            "dataset": { "type": "keyword" },
-            "kind": { "type": "keyword" },
-            "id": { "type": "keyword" },
+            "dataset": {
+              "type": "keyword"
+            },
+            "kind": {
+              "type": "keyword"
+            },
+            "id": {
+              "type": "keyword"
+            },
             "ingested": {
               "type": "date",
               "format": "strict_date_optional_time"
@@ -59,41 +75,66 @@
               "type": "long",
               "coerce": false
             },
-            "action": { "type": "keyword" }
+            "action": {
+              "type": "keyword"
+            }
           }
         },
         "loganalyzer": {
           "properties": {
-            "upload_id": { "type": "keyword" },
+            "upload_id": {
+              "type": "keyword"
+            },
             "source_line": {
               "type": "long",
               "coerce": false
             },
-            "original_filename": { "type": "keyword" },
-            "schema_version": { "type": "keyword" }
+            "original_filename": {
+              "type": "keyword"
+            },
+            "schema_version": {
+              "type": "keyword"
+            },
+            "search_text": {
+              "type": "text",
+              "analyzer": "standard"
+            },
+            "search_values": {
+              "type": "wildcard"
+            }
           }
         },
         "user": {
           "properties": {
-            "id": { "type": "keyword" }
+            "id": {
+              "type": "keyword"
+            }
           }
         },
         "organization": {
           "properties": {
-            "id": { "type": "keyword" }
+            "id": {
+              "type": "keyword"
+            }
           }
         },
         "url": {
           "properties": {
-            "path": { "type": "wildcard" }
+            "path": {
+              "type": "wildcard"
+            }
           }
         },
         "http": {
           "properties": {
             "request": {
               "properties": {
-                "method": { "type": "keyword" },
-                "id": { "type": "keyword" }
+                "method": {
+                  "type": "keyword"
+                },
+                "id": {
+                  "type": "keyword"
+                }
               }
             },
             "response": {
@@ -108,16 +149,24 @@
         },
         "error": {
           "properties": {
-            "code": { "type": "keyword" },
-            "message": { "type": "match_only_text" }
+            "code": {
+              "type": "keyword"
+            },
+            "message": {
+              "type": "match_only_text"
+            }
           }
         },
         "saas": {
           "properties": {
-            "feature": { "type": "keyword" },
+            "feature": {
+              "type": "keyword"
+            },
             "database": {
               "properties": {
-                "query_name": { "type": "keyword" }
+                "query_name": {
+                  "type": "keyword"
+                }
               }
             }
           }
