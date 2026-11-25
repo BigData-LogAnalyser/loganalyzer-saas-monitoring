@@ -1,0 +1,74 @@
+{
+  "filters": {
+    "end": null,
+    "order": "desc",
+    "page": 2,
+    "sort": "date",
+    "start": null,
+    "status": ""
+  },
+  "has_next": false,
+  "has_previous": true,
+  "items": [
+    {
+      "confirmed_at": "2026-11-15T20:41:28.143Z",
+      "expected_count": 4,
+      "finished_at": "2026-11-18T07:26:11.453Z",
+      "indexed_count": 4,
+      "original_filename": "logs.txt",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 0,
+      "size_bytes": 472,
+      "status": "TERMINE",
+      "updated_at": "2026-11-18T07:26:11.453Z",
+      "upload_id": "7090def1-0abd-4e45-93f0-96b556372c29"
+    },
+    {
+      "confirmed_at": "2026-11-15T20:41:13.134Z",
+      "expected_count": 4,
+      "finished_at": "2026-11-18T07:26:09.364Z",
+      "indexed_count": 4,
+      "original_filename": "logs.csv",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 0,
+      "size_bytes": 669,
+      "status": "TERMINE",
+      "updated_at": "2026-11-18T07:26:09.364Z",
+      "upload_id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be"
+    },
+    {
+      "confirmed_at": "2026-11-15T20:40:41.840Z",
+      "expected_count": 4,
+      "finished_at": "2026-11-18T07:26:07.264Z",
+      "indexed_count": 4,
+      "original_filename": "logs.jsonl",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 0,
+      "size_bytes": 973,
+      "status": "TERMINE",
+      "updated_at": "2026-11-18T07:26:07.264Z",
+      "upload_id": "b166e3d2-3a16-4148-b022-9b2cd89c2c71"
+    },
+    {
+      "confirmed_at": "2026-11-15T19:49:01.735Z",
+      "expected_count": 4,
+      "finished_at": "2026-11-18T07:26:05.162Z",
+      "indexed_count": 4,
+      "original_filename": "logs.jsonl",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 0,
+      "size_bytes": 973,
+      "status": "TERMINE",
+      "updated_at": "2026-11-18T07:26:05.162Z",
+      "upload_id": "00630930-4301-41ad-9462-ca93c12e4dfb"
+    }
+  ],
+  "page": 2,
+  "page_size": 20,
+  "total": 24,
+  "total_pages": 2
+}

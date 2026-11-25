@@ -1,0 +1,9 @@
+{
+  "checks_passed": [
+    "Tri date asc sur 24 fichiers",
+    "Tri date desc sur 24 fichiers",
+    "Tri size asc sur 24 fichiers",
+    "Tri size desc sur 24 fichiers",
+    "Nom approché, statut et période combinés"
+  ]
+}

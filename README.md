@@ -66,3 +66,5 @@ et des vérifications correspondantes.
 - [Recherche et filtres : API, vérifications et limites](docs/recherche.md)
 
 [Détail des logs et export CSV — SCRUM-20](docs/detail-export.md)
+
+[Consultation des fichiers importés — SCRUM-21](docs/fichiers.md)
