@@ -1,0 +1,102 @@
+{
+  "filters": {
+    "end": null,
+    "order": "desc",
+    "page": 1,
+    "sort": "date",
+    "start": null,
+    "status": "PARTIEL"
+  },
+  "has_next": false,
+  "has_previous": false,
+  "items": [
+    {
+      "confirmed_at": "2026-11-24T20:25:59.791Z",
+      "expected_count": 12,
+      "finished_at": "2026-11-24T20:26:02.652Z",
+      "indexed_count": 10,
+      "original_filename": "mixte.jsonl",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 2,
+      "size_bytes": 3424,
+      "status": "PARTIEL",
+      "updated_at": "2026-11-24T20:26:02.652Z",
+      "upload_id": "4c66bb86-0528-4d22-96cf-6fd45bf5b1f8"
+    },
+    {
+      "confirmed_at": "2026-11-18T13:09:45.043Z",
+      "expected_count": 12,
+      "finished_at": "2026-11-18T13:09:48.822Z",
+      "indexed_count": 10,
+      "original_filename": "mixte.jsonl",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 2,
+      "size_bytes": 3424,
+      "status": "PARTIEL",
+      "updated_at": "2026-11-18T13:09:48.822Z",
+      "upload_id": "9fde5f68-e0a5-4c7c-b36a-5bd04dc91158"
+    },
+    {
+      "confirmed_at": "2026-11-18T10:56:51.584Z",
+      "expected_count": 12,
+      "finished_at": "2026-11-18T10:56:55.116Z",
+      "indexed_count": 10,
+      "original_filename": "scrum18-20261118T105637Z-a9564dca-mixte-jsonl.jsonl",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 2,
+      "size_bytes": 3424,
+      "status": "PARTIEL",
+      "updated_at": "2026-11-18T10:56:55.116Z",
+      "upload_id": "a311b598-d959-4e0e-93cf-e405034cd843"
+    },
+    {
+      "confirmed_at": "2026-11-18T07:47:34.457Z",
+      "expected_count": 12,
+      "finished_at": "2026-11-18T07:47:38.062Z",
+      "indexed_count": 10,
+      "original_filename": "mixte.jsonl",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 2,
+      "size_bytes": 3424,
+      "status": "PARTIEL",
+      "updated_at": "2026-11-18T07:47:38.062Z",
+      "upload_id": "75f90f4f-6938-49ba-acea-90dabcc6431e"
+    },
+    {
+      "confirmed_at": "2026-11-18T07:46:34.205Z",
+      "expected_count": 12,
+      "finished_at": "2026-11-18T07:46:37.748Z",
+      "indexed_count": 10,
+      "original_filename": "mixte.jsonl",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 2,
+      "size_bytes": 3424,
+      "status": "PARTIEL",
+      "updated_at": "2026-11-18T07:46:37.748Z",
+      "upload_id": "24aa3d43-bc8e-476f-ab69-95fb605f92d7"
+    },
+    {
+      "confirmed_at": "2026-11-18T07:28:01.040Z",
+      "expected_count": 12,
+      "finished_at": "2026-11-18T07:28:10.099Z",
+      "indexed_count": 10,
+      "original_filename": "mixte.jsonl",
+      "progress_percent": 100,
+      "reading_complete": true,
+      "rejected_count": 2,
+      "size_bytes": 3424,
+      "status": "PARTIEL",
+      "updated_at": "2026-11-18T07:28:10.099Z",
+      "upload_id": "7b6c0456-3e1c-49c4-812e-a9e17eacd624"
+    }
+  ],
+  "page": 1,
+  "page_size": 20,
+  "total": 6,
+  "total_pages": 1
+}

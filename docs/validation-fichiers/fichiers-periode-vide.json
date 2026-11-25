@@ -1,0 +1,17 @@
+{
+  "filters": {
+    "end": "2000-01-02T00:00:00.000Z",
+    "order": "desc",
+    "page": 1,
+    "sort": "date",
+    "start": "2000-01-01T00:00:00.000Z",
+    "status": ""
+  },
+  "has_next": false,
+  "has_previous": false,
+  "items": [],
+  "page": 1,
+  "page_size": 20,
+  "total": 0,
+  "total_pages": 0
+}

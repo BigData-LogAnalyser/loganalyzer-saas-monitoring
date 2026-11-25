@@ -587,3 +587,11 @@ def get_import_rejections(upload_id):
                 "Les diagnostics sont momentanément indisponibles."
             ),
         }), 503
+
+# Liste des fichiers : réutilisation du suivi MongoDB existant.
+if __package__:
+    from .files import register_files
+else:
+    from files import register_files
+
+register_files(app, tracking_client, tracking_json_row)

@@ -283,11 +283,18 @@
     startTracking(event.detail.uploadId);
   });
 
-  try {
-    const saved = localStorage.getItem(storageKey);
+  // Un import sélectionné dans la liste a priorité sur le dernier import.
+  const parameters = new URLSearchParams(window.location.search);
 
-    if (saved) {
-      startTracking(saved);
-    }
-  } catch {}
+  if (parameters.has("upload_id")) {
+    startTracking(parameters.get("upload_id"));
+  } else {
+    try {
+      const saved = localStorage.getItem(storageKey);
+
+      if (saved) {
+        startTracking(saved);
+      }
+    } catch {}
+  }
 })();
