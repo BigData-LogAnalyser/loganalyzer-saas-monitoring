@@ -138,6 +138,16 @@
           `Page ${data.page} / ${data.accessible_pages}`;
       }
 
+      if (
+        data.history?.recorded === false &&
+        data.history.reason === "unavailable"
+      ) {
+        setMessage(
+          `${message.textContent} ${data.history.message}`,
+          true
+        );
+      }
+
       previous.disabled = !data.has_previous;
       next.disabled = !data.has_next;
 

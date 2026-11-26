@@ -1,0 +1,71 @@
+{
+  "has_next": false,
+  "has_previous": false,
+  "items": [
+    {
+      "criteria": {
+        "end": null,
+        "general": "demo",
+        "level": "",
+        "order": "desc",
+        "q": "",
+        "service": "",
+        "sort": "date",
+        "start": null
+      },
+      "executed_at": "2026-11-26T12:23:28.301Z",
+      "id": "441735cb-4e0b-424f-8ae3-4372eb5d420b",
+      "result_count": 21
+    },
+    {
+      "criteria": {
+        "end": null,
+        "general": "",
+        "level": "",
+        "order": "desc",
+        "q": "demo",
+        "service": "",
+        "sort": "date",
+        "start": null
+      },
+      "executed_at": "2026-11-26T12:23:21.225Z",
+      "id": "eed20028-4016-4ef9-a3f2-ce9b53a7a6ee",
+      "result_count": 0
+    },
+    {
+      "criteria": {
+        "end": null,
+        "general": "",
+        "level": "",
+        "order": "desc",
+        "q": "",
+        "service": "",
+        "sort": "date",
+        "start": null
+      },
+      "executed_at": "2026-11-26T12:23:04.359Z",
+      "id": "df209acc-2205-4cdb-a522-dd1f0bd4f105",
+      "result_count": 154
+    },
+    {
+      "criteria": {
+        "end": null,
+        "general": "",
+        "level": "INFO",
+        "order": "desc",
+        "q": "scrum22-verification-d872b03524c547b2989498cc1ca1108a",
+        "service": "task-service",
+        "sort": "date",
+        "start": null
+      },
+      "executed_at": "2026-11-26T12:13:18.230Z",
+      "id": "cb7526d6-c570-4b65-bdda-7a21e36b4b29",
+      "result_count": 0
+    }
+  ],
+  "page": 1,
+  "page_size": 20,
+  "scope": "application",
+  "total": 4,
+  "total_pages": 1
+}
