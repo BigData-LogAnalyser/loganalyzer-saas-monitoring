@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard — LogAnalyzer</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: #f4f6fa; color: #172b45;
+      font-family: system-ui, sans-serif; line-height: 1.5;
+    }
+    main { max-width: 1280px; margin: auto; padding: 28px 20px; }
+    nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    section, article {
+      background: white; padding: 24px; border-radius: 12px;
+      margin: 20px 0;
+    }
+    h1, h2, h3 { line-height: 1.25; }
+    .filters, .cards {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    label { display: flex; flex-direction: column; gap: 6px; }
+    input, button { font: inherit; padding: 10px; }
+    input { width: 100%; min-width: 0; }
+    button { cursor: pointer; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .cards article { margin: 0; border: 1px solid #dce3ed; }
+    .value { font-size: 2rem; font-weight: 700; margin: 12px 0; }
+    .hint { color: #465972; font-size: .95rem; }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td {
+      padding: 12px; border-bottom: 1px solid #dce3ed;
+      text-align: left; vertical-align: top;
+    }
+    td { overflow-wrap: anywhere; }
+    [hidden] { display: none !important; }
+    #dashboard-message[data-error="true"] { color: #a11b1b; }
+  </style>
+</head>
+<body>
+<main>
+  <nav aria-label="Navigation principale">
+    <a href="{{ url_for('stats.dashboard_page') }}" aria-current="page">Dashboard</a>
+    <a href="{{ url_for('home') }}">Importer des logs</a>
+    <a href="{{ url_for('search.search_page') }}">Rechercher des logs</a>
+    <a href="/files">Fichiers importés</a>
+    <a href="/search-history">Historique des recherches</a>
+    <a href="{{ url_for('api_docs.swagger_ui') }}">Swagger</a>
+  </nav>
+
+  <h1>Dashboard SaaS</h1>
+
+  <section aria-labelledby="filters-title">
+    <h2 id="filters-title">Période et filtres</h2>
+    <form id="dashboard-form">
+      <div class="filters">
+        <label>Début inclus — UTC
+          <input id="dashboard-start" type="datetime-local" step="0.001">
+        </label>
+        <label>Fin exclue — UTC
+          <input id="dashboard-end" type="datetime-local" step="0.001">
+        </label>
+        <label>Service
+          <input id="dashboard-service" type="text" maxlength="64"
+                 placeholder="Tous les services">
+        </label>
+        <label>Organisation
+          <input id="dashboard-organization" type="text" maxlength="128"
+                 placeholder="Toutes les organisations">
+        </label>
+      </div>
+      <p class="hint">
+        Sans dates : les 24 dernières heures.
+        Avec une fin seule : les 24 heures précédant cette fin.
+        Avec un début seul : de ce début à maintenant.
+        Les événements sont sélectionnés selon leur date, pas leur date d’import.
+      </p>
+      <div class="actions">
+        <button type="submit">Afficher / Actualiser</button>
+        <button id="dashboard-reset" type="button">Réinitialiser</button>
+      </div>
+    </form>
+  </section>
+
+  <p id="dashboard-message" role="status" aria-live="polite"></p>
+
+  <div id="dashboard-results" hidden>
+    <p id="dashboard-period"></p>
+    <p id="dashboard-generated" class="hint"></p>
+
+    <div class="cards" aria-label="Cartes de synthèse">
+      <article>
+        <h2>Total des logs</h2>
+        <p id="card-total" class="value"></p>
+        <p class="hint">Toutes les dates ; filtres service et organisation.</p>
+      </article>
+      <article>
+        <h2>Logs du jour</h2>
+        <p id="card-today" class="value"></p>
+        <p id="dashboard-today" class="hint"></p>
+      </article>
+      <article>
+        <h2>Logs ERROR / CRITICAL</h2>
+        <p id="card-errors" class="value"></p>
+        <p class="hint">Période sélectionnée ; filtres service et organisation.</p>
+      </article>
+      <article>
+        <h2>Fichiers importés</h2>
+        <p id="card-files" class="value"></p>
+        <p class="hint">
+          Imports confirmés, tous statuts et toutes dates.
+          Compteur global indépendant des filtres sur les logs.
+        </p>
+      </article>
+    </div>
+
+    <section>
+      <h2>Temps de réponse HTTP moyen par endpoint</h2>
+      <p class="hint">Événements HTTP avec endpoint et durée valides.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th scope="col">Endpoint</th>
+            <th scope="col">Requêtes mesurées</th>
+            <th scope="col">Moyenne — ms</th>
+          </tr></thead>
+          <tbody id="dashboard-latency"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Taux de réponses HTTP 5xx par service</h2>
+      <p class="hint">
+        100 × réponses de statut 500 à 599 / réponses de statut 100 à 599.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th scope="col">Service</th>
+            <th scope="col">Réponses HTTP</th>
+            <th scope="col">Réponses 5xx</th>
+            <th scope="col">Taux — %</th>
+          </tr></thead>
+          <tbody id="dashboard-http"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Requêtes SQL lentes</h2>
+      <p id="dashboard-sql-summary"></p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th scope="col">Date — Africa/Tunis</th>
+            <th scope="col">Service</th>
+            <th scope="col">Nom de requête</th>
+            <th scope="col">Durée — ms</th>
+          </tr></thead>
+          <tbody id="dashboard-sql"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>Utilisateurs actifs</h2>
+      <p id="dashboard-users" class="value"></p>
+      <p class="hint">
+        Nombre exact d’identifiants utilisateur distincts dans les événements
+        HTTP ou métier de la période. Ce compteur ne mesure pas des connexions
+        simultanées.
+      </p>
+    </section>
+
+    <section>
+      <h2>Utilisation des fonctionnalités</h2>
+      <p class="hint">
+        Actions métier admissibles, classées par nombre d’utilisations décroissant.
+      </p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th scope="col">Fonctionnalité</th>
+            <th scope="col">Utilisations</th>
+          </tr></thead>
+          <tbody id="dashboard-features"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="{{ url_for('static', filename='dashboard.js') }}" defer></script>
+</body>
+</html>

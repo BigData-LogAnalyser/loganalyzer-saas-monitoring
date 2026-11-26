@@ -1,0 +1,9 @@
+{
+  "checks_passed": [
+    "Filtre report-service : erreurs applicatives présentes, sans les indicateurs HTTP, SQL ou métier des autres services",
+    "Organisation absente : aucun log admissible ; compteur global des fichiers conservé",
+    "Période vide : indicateurs de période vides ; total toutes dates et fichiers conservés",
+    "Dates UTC et dates avec décalage +01:00 : mêmes résultats",
+    "Période inversée : HTTP 400, INVALID_FILTER sur end"
+  ]
+}

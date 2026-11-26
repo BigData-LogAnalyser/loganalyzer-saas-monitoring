@@ -1,0 +1,67 @@
+{
+  "method": "Calculs Elasticsearch du module stats, lectures limitées à un import de référence",
+  "upload_id": "00630930-4301-41ad-9462-ca93c12e4dfb",
+  "clock_utc": "2026-11-04T12:00:00+00:00",
+  "checks_passed": [
+    "4 événements au total",
+    "4 événements dans la journée Africa/Tunis de référence",
+    "1 événement ERROR/CRITICAL",
+    "Moyenne HTTP : 125 ms",
+    "Taux HTTP 5xx : 0 % sur une réponse",
+    "1 exécution SQL lente à 1200 ms",
+    "2 utilisateurs actifs distincts",
+    "1 utilisation de tasks",
+    "Bornes de journée converties correctement en UTC"
+  ],
+  "result": {
+    "cards": {
+      "total_logs": 4,
+      "today_logs": 4,
+      "error_logs": 1
+    },
+    "today": {
+      "date": "2026-11-04",
+      "start": "2026-11-03T23:00:00.000Z",
+      "end": "2026-11-04T23:00:00.000Z"
+    },
+    "saas": {
+      "http_latency_by_endpoint": [
+        {
+          "endpoint": "/api/tasks",
+          "request_count": 1,
+          "average_ms": 125.0
+        }
+      ],
+      "http_5xx_by_service": [
+        {
+          "service": "task-service",
+          "response_count": 1,
+          "error_count": 0,
+          "error_rate_percent": 0.0
+        }
+      ],
+      "slow_sql": {
+        "threshold_ms": 1000,
+        "execution_count": 1,
+        "slowest": [
+          {
+            "id": "00630930-4301-41ad-9462-ca93c12e4dfb:3",
+            "index": "loganalyzer-logs-2026.11.04",
+            "timestamp": "2026-11-04T10:00:02.000Z",
+            "service": "task-service",
+            "query_name": "list_tasks",
+            "duration_ms": 1200.0
+          }
+        ]
+      },
+      "active_users": 2,
+      "active_users_exact": true,
+      "feature_usage": [
+        {
+          "feature": "tasks",
+          "usage_count": 1
+        }
+      ]
+    }
+  }
+}

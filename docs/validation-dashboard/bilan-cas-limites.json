@@ -1,0 +1,14 @@
+{
+  "method": "Agrégations réelles sur un index Elasticsearch temporaire",
+  "temporary_index_deleted": true,
+  "fixture_count": 16,
+  "checks_passed": [
+    "Journée Africa/Tunis : minuit inclus, minuit suivant exclu ; ERROR et CRITICAL comptés",
+    "Durées HTTP 100, 200, 300 ms : moyenne 200 ms ; durée absente exclue et autre famille ignorée",
+    "Deux réponses 5xx sur quatre réponses HTTP : 50 %",
+    "SQL : seuil strict vérifié à 1000, 1199 et 1200 ms",
+    "Utilisateurs U1, U2 et U3 : trois distincts, malgré les actions répétées",
+    "Fonctionnalités : tasks deux utilisations, reports une ; classement décroissant",
+    "Période d’une milliseconde : début inclus, fin exclue"
+  ]
+}

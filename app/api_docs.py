@@ -571,7 +571,13 @@ def register_api_docs(app, max_upload_bytes):
             from search_history_docs import extend_search_history_spec
 
         spec = extend_files_spec(spec)
-        response = jsonify(extend_search_history_spec(spec))
+        if __package__:
+            from .stats_docs import extend_stats_spec
+        else:
+            from stats_docs import extend_stats_spec
+
+        spec = extend_search_history_spec(spec)
+        response = jsonify(extend_stats_spec(spec))
         response.headers["Cache-Control"] = "no-store"
         return response
 

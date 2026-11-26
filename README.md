@@ -70,3 +70,7 @@ et des vérifications correspondantes.
 [Consultation des fichiers importés — SCRUM-21](docs/fichiers.md)
 
 [Historique des recherches — SCRUM-22](docs/historique-recherches.md)
+
+[Dashboard SaaS — SCRUM-23](docs/dashboard.md)
+
+[Formules des KPI](docs/formules-kpi.md)
