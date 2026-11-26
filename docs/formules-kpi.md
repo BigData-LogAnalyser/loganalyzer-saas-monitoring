@@ -157,9 +157,12 @@ Les quatre événements appartiennent à cette journée dans Africa/Tunis.
 Une absence d’événement produit un compteur nul.
 Une moyenne ou un taux sans population admissible est présenté comme N/D.
 
-Une panne MongoDB, une erreur Elasticsearch, un dépassement du délai
-ou un résultat Elasticsearch incomplet produit HTTP 503.
+Lorsqu’aucun cache valide n’est disponible, une panne MongoDB,
+une erreur Elasticsearch, un dépassement du délai ou un résultat
+Elasticsearch incomplet produit HTTP 503.
 L’API ne retourne pas de chiffres partiels.
+Une réponse complète déjà en cache peut être réutilisée jusqu’à
+son expiration, en conservant sa date de calcul initiale.
 
 Les agrégations composites sont parcourues par pages de 500 groupes,
 avec une limite de 200 requêtes par parcours.
@@ -168,3 +171,5 @@ Le dépassement de cette limite interrompt le calcul en HTTP 503.
 Les calculs utilisent plusieurs requêtes successives et les deux bases.
 Ils ne constituent pas un instantané transactionnel commun.
 Les validations chiffrées sont réalisées sur des données stables.
+
+[Contrat de fraîcheur du cache Redis](cache-redis.md)

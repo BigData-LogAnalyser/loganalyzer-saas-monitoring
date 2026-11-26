@@ -1,0 +1,15 @@
+{
+  "method": "Flask test_client, Redis et sources réels ; pannes Redis simulées",
+  "test_ttl_seconds": 2,
+  "test_keys_cleaned": true,
+  "checks_passed": [
+    "MISS puis HIT : réponse identique ; aucun nouvel accès Elasticsearch ou MongoDB sur HIT",
+    "Dates équivalentes en UTC et +01:00 : même entrée de cache",
+    "Services différents : entrées distinctes et résultats propres à chaque filtre",
+    "Valeur Redis de type string et expiration positive ne dépassant pas le TTL configuré",
+    "Entrée illisible : nouveau calcul et remplacement par une réponse valide",
+    "Expiration réelle dans Redis : nouveau calcul avec une nouvelle date",
+    "Redis indisponible en lecture : HTTP 200, BYPASS et calcul depuis les sources",
+    "Redis indisponible en écriture : résultat calculé conservé en HTTP 200"
+  ]
+}

@@ -116,6 +116,7 @@ services:
       MONGODB_DATABASE: "${MONGODB_DATABASE}"
       REDIS_HOST: "${REDIS_HOST}"
       REDIS_PORT: "${REDIS_PORT}"
+      STATS_CACHE_TTL_SECONDS: "${STATS_CACHE_TTL_SECONDS:-60}"
     ports:
       - "127.0.0.1:${WEB_PORT}:8000"
     volumes:
