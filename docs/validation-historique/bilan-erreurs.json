@@ -1,0 +1,11 @@
+{
+  "method": "Flask test_client avec dépendances simulées",
+  "checks_passed": [
+    "Page invalide : HTTP 400 sans accès MongoDB",
+    "Consultation avec MongoDB indisponible : HTTP 503",
+    "Écriture MongoDB indisponible : résultats HTTP 200 et avertissement d’historique",
+    "Pagination : aucune tentative d’écriture MongoDB",
+    "Filtre invalide : aucun enregistrement",
+    "Échec Elasticsearch : aucun enregistrement"
+  ]
+}

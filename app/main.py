@@ -595,3 +595,12 @@ else:
     from files import register_files
 
 register_files(app, tracking_client, tracking_json_row)
+
+
+# Historique commun : réutilisation de la connexion MongoDB du suivi.
+if __package__:
+    from .search_history import register_search_history
+else:
+    from search_history import register_search_history
+
+register_search_history(app, tracking_client, tracking_json_row)

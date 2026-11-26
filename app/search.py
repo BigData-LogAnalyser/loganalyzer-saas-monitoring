@@ -10,6 +10,12 @@ from elasticsearch.exceptions import ApiError
 from flask import Blueprint, current_app, jsonify, render_template, request
 
 
+if __package__:
+    from .search_history import record_search
+else:
+    from search_history import record_search
+
+
 PAGE_SIZE = 50
 MAX_PAGE = 200
 
@@ -279,6 +285,8 @@ def register_search(app):
                 "message": str(error),
             }), 400
 
+        executed_at = datetime.now(timezone.utc)
+
         host = os.environ.get("ELASTICSEARCH_HOST", "elasticsearch")
         port = int(os.environ.get("ELASTICSEARCH_PORT", "9200"))
         url = os.environ.get(
@@ -334,7 +342,10 @@ def register_search(app):
             for hit in result["hits"]["hits"]
         ]
 
+        history_status = record_search(parameters, total, executed_at)
+
         response = jsonify(
+            history=history_status,
             items=items,
             total=total,
             page=parameters["page"],
