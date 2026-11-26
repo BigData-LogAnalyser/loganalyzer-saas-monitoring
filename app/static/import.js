@@ -44,24 +44,59 @@ function showPreview(result) {
   const preview = result.preview;
   previewBody.replaceChildren();
 
+  function cell(value) {
+    const td = document.createElement("td");
+    td.textContent = value == null ? "—" : String(value);
+    return td;
+  }
+
+  const colors = {
+    DEBUG: "#718096",
+    INFO: "#1268ed",
+    WARNING: "#a97400",
+    ERROR: "#c52e42",
+    CRITICAL: "#781b27",
+  };
+
   for (const row of preview.events) {
     const tr = document.createElement("tr");
-    const lineCell = document.createElement("td");
-    const eventCell = document.createElement("td");
-    const checkCell = document.createElement("td");
+    const event = row.event || {};
+    const invalid = row.errors.length > 0;
+
+    if (invalid) tr.classList.add("invalid-row");
+
+    const levelCell = document.createElement("td");
+    const badge = document.createElement("span");
+    badge.className = "level-badge";
+    badge.textContent = event.level || "—";
+    badge.style.color = colors[event.level] || "#5d6d82";
+    levelCell.append(badge);
+
+    const messageCell = cell(
+      row.event === null ? "Ligne non décodable" : event.message
+    );
+    const details = document.createElement("details");
+    const summary = document.createElement("summary");
     const code = document.createElement("pre");
 
-    lineCell.textContent = row.source_line;
-    code.textContent = row.event === null
-      ? "Ligne non décodable"
-      : JSON.stringify(row.event, null, 2);
-    checkCell.textContent = row.errors.length
-      ? "Invalide"
-      : "Valide dans l’aperçu";
+    summary.textContent = "Voir le document";
+    code.textContent = JSON.stringify(row.event, null, 2);
+    details.append(summary, code);
+    messageCell.append(details);
 
-    eventCell.appendChild(code);
-    tr.append(lineCell, eventCell, checkCell);
-    previewBody.appendChild(tr);
+    const check = cell(invalid ? "Invalide" : "Valide dans l’aperçu");
+    check.className = invalid ? "check-invalid" : "check-valid";
+
+    tr.append(
+      cell(row.source_line),
+      cell(event.timestamp),
+      levelCell,
+      cell(event.service),
+      messageCell,
+      cell(event.event_type),
+      check
+    );
+    previewBody.append(tr);
   }
 
   previewSummary.textContent =
@@ -78,6 +113,10 @@ function uploadFile(file) {
       "Confirmez ou annulez le dépôt actuel avant d’en choisir un autre.";
     return;
   }
+
+  window.dispatchEvent(new CustomEvent("import-file-selected", {
+    detail: { name: file.name, size: file.size },
+  }));
 
   showErrors([]);
   previewSection.hidden = true;

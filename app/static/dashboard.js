@@ -153,6 +153,8 @@
     message.dataset.error = "false";
     message.textContent = "Calcul des indicateurs…";
     form.setAttribute("aria-busy", "true");
+    form.querySelector('button[type="submit"]').disabled = true;
+    byId("dashboard-loading").hidden = false;
 
     try {
       const response = await fetch(`/api/v1/stats?${parameters}`, {
@@ -172,6 +174,9 @@
       if (active !== controller) return;
 
       render(data);
+      document.dispatchEvent(
+        new CustomEvent("dashboard:loaded", { detail: data })
+      );
       results.hidden = false;
       message.textContent = "Indicateurs chargés.";
     } catch (error) {
@@ -184,6 +189,8 @@
     } finally {
       if (active === controller) {
         form.setAttribute("aria-busy", "false");
+        form.querySelector('button[type="submit"]').disabled = false;
+        byId("dashboard-loading").hidden = true;
       }
     }
   }

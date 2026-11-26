@@ -191,6 +191,33 @@ def extend_search_spec(spec):
         },
     }
 
+
+    # Ajouts SCRUM-25 : filtre commun à la recherche et à l’export.
+    upload_schema = {
+        "type": "string",
+        "pattern": (
+            r"^$|^[0-9a-fA-F]{8}(?:-[0-9a-fA-F]{4}){3}"
+            r"-[0-9a-fA-F]{12}$"
+        ),
+    }
+
+    spec["paths"]["/api/v1/logs"]["get"]["parameters"].append(
+        parameter(
+            "upload_id",
+            "Identifiant UUID de l’import. Limite les résultats aux "
+            "événements de cet import via loganalyzer.upload_id. "
+            "Normalisé en minuscules ; vide pour tous les imports.",
+            upload_schema,
+        )
+    )
+
+    schemas["SearchResults"]["properties"]["filters"]["properties"][
+        "upload_id"
+    ] = {
+        "type": "string",
+        "description": "UUID normalisé en minuscules, ou chaîne vide.",
+    }
+
     return extend_log_actions_spec(spec)
 
 

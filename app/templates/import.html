@@ -4,172 +4,236 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Importer des logs — LogAnalyzer</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      background: #f4f6fa;
-      color: #172033;
-    }
-    main { max-width: 1050px; margin: 40px auto; padding: 20px; }
-    section {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    #drop-zone {
-      border: 2px dashed #61759a;
-      padding: 32px;
-      text-align: center;
-      border-radius: 10px;
-    }
-    #drop-zone.dragover { background: #e8f0ff; }
-    button, input { font: inherit; }
-    button {
-      padding: 10px 16px;
-      margin: 6px 8px 0 0;
-      cursor: pointer;
-    }
-    button:disabled { cursor: default; opacity: .5; }
-    progress { width: 100%; margin-top: 20px; }
-    #errors { color: #a31818; }
-    .table-container { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-      vertical-align: top;
-    }
-    pre {
-      margin: 0;
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      max-width: 750px;
-    }
-  </style>
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='dashboard.css') }}">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='import.css') }}">
 </head>
-<body>
-<nav aria-label="Navigation principale" style="padding: 20px">
-  <a href="{{ url_for('home') }}">Importer des logs</a> ·
-  <a href="{{ url_for('search.search_page') }}">Rechercher des logs</a> ·
+
+{% macro navigation(label) %}
+<nav aria-label="{{ label }}">
+  <a href="{{ url_for('stats.dashboard_page') }}">Tableau de bord</a>
+  <a href="{{ url_for('home') }}" aria-current="page">Importer des logs</a>
+  <a href="{{ url_for('search.search_page') }}">Rechercher des logs</a>
+  <a href="{{ url_for('files.files_page') }}">Fichiers importés</a>
+  <a href="{{ url_for('search_history.history_page') }}">Historique des recherches</a>
   <a href="{{ url_for('api_docs.swagger_ui') }}">Swagger</a>
-<a href="{{ url_for('files.files_page') }}">Fichiers importés</a>
-
-    <a href="{{ url_for('search_history.history_page') }}">Historique des recherches</a>
-  <a href="{{ url_for('stats.dashboard_page') }}">Dashboard</a>
 </nav>
-<section aria-labelledby="tracking-title">
-  <h2 id="tracking-title">Suivi de l’import</h2>
+{% endmacro %}
 
-  <form id="tracking-form">
-    <label for="tracking-id">Identifiant de l’import</label>
-    <input
-      id="tracking-id"
-      type="text"
-      autocomplete="off"
-      placeholder="Identifiant de l’import"
-      style="width: 100%; box-sizing: border-box;">
-    <button type="submit">Consulter l’import</button>
-  </form>
+<body class="import-page">
+<a class="skip-link" href="#import-app">Aller au contenu</a>
 
-  <p id="tracking-message" role="status" aria-live="polite"></p>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="{{ url_for('stats.dashboard_page') }}">
+      LogAnalyzer<span>Monitoring SaaS</span>
+    </a>
+    {{ navigation('Navigation principale') }}
+    <p class="sidebar-note">Analyse des logs et de l’activité SaaS</p>
+  </aside>
 
-  <div id="tracking-panel" hidden>
-    <p>
-      <strong>Fichier :</strong>
-      <span id="tracking-filename"></span>
-    </p>
+  <div class="workspace">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">INGESTION DES DONNÉES</p>
+        <h1>Importer des logs</h1>
+      </div>
+      <a class="button button-outline"
+         href="{{ url_for('files.files_page') }}">Fichiers importés</a>
+    </header>
 
-    <p>
-      <strong>État :</strong>
-      <span id="tracking-status"></span>
-    </p>
+    <details class="mobile-navigation">
+      <summary>Menu de navigation</summary>
+      {{ navigation('Navigation mobile') }}
+    </details>
 
-    <p>
-      Attendus : <strong id="tracking-expected">—</strong>
-      · Indexés : <strong id="tracking-indexed">—</strong>
-      · Rejetés : <strong id="tracking-rejected">—</strong>
-    </p>
-
-    <progress
-      id="tracking-progress"
-      max="100"
-      aria-label="Progression du traitement">
-    </progress>
-
-    <p id="tracking-percent"></p>
-    <p id="tracking-explanation"></p>
-    <p id="tracking-error" role="alert" hidden></p>
-
-    <h3>Diagnostics et événements rejetés</h3>
-    <p id="tracking-no-rejections">
-      Aucun diagnostic disponible pour le moment.
-    </p>
-
-    <ol id="tracking-rejections"></ol>
-
-    <button id="tracking-more" type="button" hidden>
-      Afficher les diagnostics suivants
-    </button>
-  </div>
-</section>
-<main id="import-app" data-max-bytes="{{ max_upload_bytes }}">
-  <h1>Importer des logs</h1>
-  <p>Déposez votre fichier, vérifiez l’aperçu puis confirmez l’import.</p>
-
-  <section>
-    <div id="drop-zone">
-      <p>Glissez votre fichier ici ou choisissez-le sur votre ordinateur.</p>
-      <input
-        id="file-input"
-        type="file"
-        accept=".csv,.json,.jsonl,.txt"
-        aria-label="Choisir un fichier de logs">
-      <p>
-        CSV, JSON Lines (.json ou .jsonl) et TXT.
-        Limite : {{ max_upload_bytes // 1048576 }} Mio.
+    <main id="import-app" data-max-bytes="{{ max_upload_bytes }}">
+      <p class="intro">
+        Sélectionnez un fichier, vérifiez son aperçu puis confirmez son ingestion.
       </p>
-    </div>
 
-    <progress id="progress" max="100" value="0"
-              aria-label="Progression de l’envoi" hidden></progress>
+      <div class="import-grid">
+        <section class="panel structure-panel" aria-labelledby="structure-title">
+          <h2 id="structure-title">Structure attendue</h2>
+          <p class="hint">Chaque événement doit contenir ces cinq champs.</p>
 
-    <p id="status" role="status" aria-live="polite"></p>
-    <ul id="errors"></ul>
-  </section>
+          <div class="required-fields">
+            <code>timestamp</code><code>level</code><code>service</code>
+            <code>message</code><code>event_type</code>
+          </div>
 
-  <section id="preview-section" hidden>
-    <h2>Aperçu du fichier</h2>
-    <p id="preview-summary"></p>
-    <p>
-      Seuls les dix premiers événements sont prévisualisés.
-      Le fichier complet sera vérifié pendant l’ingestion.
-    </p>
+          <ul class="structure-list">
+            <li><strong>Date :</strong> ISO 8601 avec fuseau horaire.</li>
+            <li><strong>Niveaux :</strong> DEBUG, INFO, WARNING, ERROR, CRITICAL.</li>
+            <li><strong>Familles :</strong> http, application, sql ou business.</li>
+            <li><strong>JSON Lines :</strong> un objet JSON par ligne,
+              extension <code>.json</code> ou <code>.jsonl</code>.</li>
+            <li>Des champs supplémentaires sont requis selon la famille.</li>
+          </ul>
 
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Ligne du fichier</th>
-            <th>Événement</th>
-            <th>Vérification</th>
-          </tr>
-        </thead>
-        <tbody id="preview-body"></tbody>
-      </table>
-    </div>
+          <p class="hint">
+            L’aperçu vérifie les dix premiers événements.
+            Le fichier complet est contrôlé pendant l’ingestion.
+          </p>
 
-    <button id="confirm-button" type="button" disabled>
-      Confirmer l’import
-    </button>
-    <button id="cancel-button" type="button" disabled>
-      Annuler
-    </button>
-  </section>
-</main>
+          <a class="button button-outline"
+             href="{{ url_for('static', filename='exemple-logs.jsonl') }}"
+             download>Télécharger un exemple JSONL</a>
+        </section>
+
+        <section class="panel selection-panel" aria-labelledby="selection-title">
+          <h2 id="selection-title"><span class="step-number">1</span>Sélection du fichier</h2>
+
+          <div id="drop-zone">
+            <svg class="upload-icon" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 16V4m-5 5 5-5 5 5M4 16v4h16v-4"/>
+            </svg>
+            <p class="drop-title">Glissez votre fichier de logs ici</p>
+            <p class="hint">ou sélectionnez-le sur votre ordinateur</p>
+            <label class="file-picker">
+              <span class="file-picker-label">Sélectionner un fichier</span>
+              <input id="file-input" type="file"
+                     accept=".csv,.json,.jsonl,.txt"
+                     aria-label="Sélectionner un fichier de logs"
+                     aria-describedby="formats-help">
+            </label>
+          </div>
+
+          <div id="formats-help" class="formats-help">
+            <span class="format-tag">CSV</span>
+            <span class="format-tag">JSONL</span>
+            <span class="format-tag">TXT</span>
+            <span class="hint">
+              Maximum : {{ max_upload_bytes // 1048576 }} Mio
+            </span>
+          </div>
+
+          <div id="selected-file" class="selected-file" hidden>
+            <strong id="selected-file-name"></strong>
+            <span id="selected-file-size" class="hint"></span>
+          </div>
+        </section>
+
+        <section class="panel transfer-panel full-width"
+                 aria-labelledby="transfer-title">
+          <h2 id="transfer-title"><span class="step-number">2</span>Transfert et préparation</h2>
+
+          <progress id="progress" max="100" value="0"
+                    aria-label="Progression de l’envoi" hidden></progress>
+
+          <p id="status" role="status" aria-live="polite">
+            Aucun fichier sélectionné. Le transfert démarrera après la sélection.
+          </p>
+          <ul id="errors" aria-label="Erreurs de validation"></ul>
+        </section>
+
+        <section id="preview-section" class="panel full-width" hidden
+                 aria-labelledby="preview-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="preview-title"><span class="step-number">3</span>Aperçu et validation</h2>
+              <p id="preview-summary" class="hint"></p>
+            </div>
+            <span class="preview-label">10 premiers événements maximum</span>
+          </div>
+
+          <div class="table-container" tabindex="0" role="region"
+               aria-label="Aperçu du fichier">
+            <table class="preview-table">
+              <thead>
+                <tr>
+                  <th scope="col">Ligne</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Niveau</th>
+                  <th scope="col">Service</th>
+                  <th scope="col">Message et document</th>
+                  <th scope="col">Famille</th>
+                  <th scope="col">Validation</th>
+                </tr>
+              </thead>
+              <tbody id="preview-body"></tbody>
+            </table>
+          </div>
+
+          <p class="hint preview-notice">
+            L’aperçu ne garantit pas la validité du fichier complet.
+            Les éventuels rejets ultérieurs apparaîtront dans le suivi.
+          </p>
+
+          <div class="actions preview-actions">
+            <button id="cancel-button" class="button button-secondary"
+                    type="button" disabled>Annuler le dépôt</button>
+            <button id="confirm-button" class="button button-primary"
+                    type="button" disabled>Confirmer l’import</button>
+          </div>
+        </section>
+
+        <section class="panel tracking-section" aria-labelledby="tracking-title">
+          <h2 id="tracking-title"><span class="step-number">4</span>Suivi de l’import</h2>
+          <p class="hint">
+            Après confirmation, consultez l’avancement et les éventuels rejets.
+            Vous pouvez aussi retrouver un import par son identifiant.
+          </p>
+
+          <form id="tracking-form">
+            <label for="tracking-id">Identifiant de l’import</label>
+            <div class="tracking-controls">
+              <input id="tracking-id" type="text" autocomplete="off"
+                     placeholder="Identifiant de l’import">
+              <button class="button button-secondary"
+                      type="submit">Consulter</button>
+            </div>
+          </form>
+
+          <p id="tracking-message" role="status" aria-live="polite"></p>
+
+          <div id="tracking-panel" hidden>
+            <div class="tracking-heading">
+              <strong id="tracking-filename"></strong>
+              <span id="tracking-status" class="import-state"></span>
+            </div>
+
+            <div class="tracking-counts">
+              <div><span>Attendus</span><strong id="tracking-expected">—</strong></div>
+              <div><span>Indexés</span><strong id="tracking-indexed">—</strong></div>
+              <div><span>Rejetés</span><strong id="tracking-rejected">—</strong></div>
+            </div>
+
+            <progress id="tracking-progress" max="100"
+                      aria-label="Progression du traitement"></progress>
+            <p id="tracking-percent" class="hint"></p>
+            <p id="tracking-explanation"></p>
+            <p id="tracking-error" role="alert" hidden></p>
+
+            <h3>Diagnostics et événements rejetés</h3>
+            <p id="tracking-no-rejections" class="hint">
+              Aucun diagnostic disponible pour le moment.
+            </p>
+            <ol id="tracking-rejections"></ol>
+            <button id="tracking-more" class="button button-secondary"
+                    type="button" hidden>Afficher les diagnostics suivants</button>
+          </div>
+        </section>
+
+        <section class="panel recent-imports-panel" aria-labelledby="recent-imports-title">
+          <h2 id="recent-imports-title">Imports récents</h2>
+          <p id="recent-imports-message" class="hint"
+             role="status" aria-live="polite">Chargement des imports…</p>
+          <ul id="recent-imports-list" class="recent-imports-list"></ul>
+          <button id="recent-imports-retry" class="button button-secondary"
+                  type="button" hidden>Réessayer</button>
+          <a class="all-imports-link"
+             href="{{ url_for('files.files_page') }}">Voir tous les fichiers importés →</a>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
 <script src="{{ url_for('static', filename='import.js') }}" defer></script>
 <script src="{{ url_for('static', filename='tracking.js') }}" defer></script>
+<script src="{{ url_for('static', filename='import_ui.js') }}" defer></script>
 </body>
 </html>

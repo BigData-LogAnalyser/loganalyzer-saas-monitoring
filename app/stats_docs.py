@@ -301,4 +301,183 @@ def extend_stats_spec(spec):
         },
     }
 
+
+    # Ajouts SCRUM-25 : graphiques et contrôles des services.
+    cards = schemas["DashboardCards"]
+    cards["properties"]["critical_logs"] = {
+        **count,
+        "description": (
+            "Logs CRITICAL de la période sélectionnée, "
+            "avec filtres service et organisation."
+        ),
+    }
+    cards["required"].append("critical_logs")
+
+    schemas["DashboardTimelinePoint"] = obj({
+        "timestamp": {
+            **timestamp,
+            "description": (
+                "Début de l’intervalle ; le premier intervalle peut "
+                "commencer avant start. Seuls les événements de la "
+                "période sélectionnée sont comptés."
+            ),
+        },
+        "count": count,
+    })
+
+    schemas["DashboardLevelCount"] = obj({
+        "level": {
+            "type": "string",
+            "enum": ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+        },
+        "count": count,
+    })
+
+    schemas["DashboardServiceErrors"] = obj({
+        "service": text,
+        "error_count": count,
+    })
+
+    schemas["DashboardRecentEvent"] = obj({
+        "id": text,
+        "index": text,
+        "timestamp": {**timestamp, "nullable": True},
+        "level": nullable_text,
+        "service": nullable_text,
+        "message": nullable_text,
+    })
+
+    schemas["DashboardOverview"] = obj({
+        "period_total": {
+            **count,
+            "description": (
+                "Nombre exact de logs de la période sélectionnée, "
+                "avec filtres service et organisation."
+            ),
+        },
+        "interval_seconds": {
+            "type": "integer",
+            "minimum": 1,
+            "description": (
+                "Intervalle fixe du graphique temporel, en secondes ; "
+                "calculé selon la durée de la période pour obtenir "
+                "environ 60 intervalles."
+            ),
+        },
+        "logs_over_time": array(ref("DashboardTimelinePoint")),
+        "levels": {
+            **array(ref("DashboardLevelCount")),
+            "minItems": 5,
+            "maxItems": 5,
+            "description": "Les cinq niveaux sont présents, même à zéro.",
+        },
+        "errors_by_service": {
+            **array(ref("DashboardServiceErrors")),
+            "maxItems": 10,
+            "description": (
+                "Logs ERROR et CRITICAL par service ; dix premiers "
+                "services par nombre décroissant, puis nom croissant."
+            ),
+        },
+        "errors_service_limit": {"type": "integer", "enum": [10]},
+        "recent_events": {
+            **array(ref("DashboardRecentEvent")),
+            "maxItems": 5,
+            "description": (
+                "Cinq événements les plus récents au maximum ; "
+                "date décroissante puis event.id croissant."
+            ),
+        },
+    })
+
+    schemas["DashboardStats"]["properties"]["overview"] = ref(
+        "DashboardOverview"
+    )
+    schemas["DashboardStats"]["required"].append("overview")
+
+    operation["description"] += (
+        " Le bloc overview fournit les graphiques et les cinq "
+        "événements récents de la période filtrée. "
+        "critical_logs détaille la population CRITICAL déjà incluse "
+        "dans error_logs. Le préfixe Redis est désormais "
+        "loganalyzer:stats:v2: pour distinguer ce format de réponse."
+    )
+
+    schemas["ServiceStatus"] = obj({
+        "name": {
+            "type": "string",
+            "enum": [
+                "Webapp Flask", "Elasticsearch", "MongoDB",
+                "Redis", "Logstash",
+            ],
+        },
+        "status": {
+            "type": "string",
+            "enum": ["available", "degraded", "unavailable", "unknown"],
+        },
+        "message": text,
+        "duration_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "nullable": True,
+            "description": (
+                "Durée du contrôle en millisecondes ; null pour Flask."
+            ),
+        },
+    })
+
+    schemas["ServicesStatusResponse"] = obj({
+        "checked_at": timestamp,
+        "services": {
+            **array(ref("ServiceStatus")),
+            "minItems": 5,
+            "maxItems": 5,
+        },
+    })
+
+    service_tag = "État des services"
+    if not any(item.get("name") == service_tag for item in tags):
+        tags.append({
+            "name": service_tag,
+            "description": "Contrôles de disponibilité du dashboard.",
+        })
+
+    spec["paths"]["/api/v1/services/status"] = {
+        "get": {
+            "tags": [service_tag],
+            "operationId": "getServicesStatus",
+            "summary": "Vérifier la disponibilité des cinq services",
+            "description": (
+                "Flask est disponible lorsque cette requête aboutit. "
+                "Les contrôles Elasticsearch, MongoDB, Redis et Logstash "
+                "sont exécutés indépendamment en parallèle. "
+                "MongoDB et Redis sont contrôlés par ping ; Logstash "
+                "par son API et la présence du pipeline main. "
+                "Elasticsearch green correspond à available, yellow à "
+                "degraded et red à unavailable. Une réponse non reconnue "
+                "correspond à unknown ; une exception à unavailable. "
+                "HTTP 200 contient le bilan même si un service échoue. "
+                "Ce contrôle ne garantit pas une ingestion complète. "
+                "Kibana et le tracker ne sont pas contrôlés. "
+                "La réponse n’est pas mise en cache."
+            ),
+            "responses": {
+                "200": {
+                    **response(
+                        "Bilan de disponibilité des cinq services.",
+                        ref("ServicesStatusResponse"),
+                    ),
+                    "headers": {
+                        "Cache-Control": {
+                            "schema": {
+                                "type": "string",
+                                "enum": ["no-store"],
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    }
+
     return spec

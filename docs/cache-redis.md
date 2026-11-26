@@ -18,7 +18,7 @@ le retour des résultats calculés depuis les sources.
 ## Stockage et types
 
 - Base logique Redis : 0.
-- Préfixe : loganalyzer:stats:v1:
+- Préfixe : loganalyzer:stats:v2:
 - Clé : préfixe suivi d’une empreinte SHA-256.
 - Type Redis : string.
 - Encodage de la valeur : JSON UTF-8.

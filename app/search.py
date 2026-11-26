@@ -28,7 +28,8 @@ SORT_FIELDS = {
 }
 
 ALLOWED_PARAMETERS = {
-    "q", "general", "level", "service", "start", "end", "sort", "order", "page",
+    "q", "general", "level", "service", "start", "end",
+    "sort", "order", "page", "upload_id",
 }
 
 DATE_PATTERN = re.compile(
@@ -88,6 +89,16 @@ def parse_parameters(args):
         field: args.get(field, "").strip()
         for field in ALLOWED_PARAMETERS
     }
+
+    values["upload_id"] = values["upload_id"].lower()
+
+    if values["upload_id"] and not re.fullmatch(
+        r"[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}",
+        values["upload_id"],
+    ):
+        raise InvalidFilter(
+            "upload_id", "Identifiant d’import invalide."
+        )
 
     if len(values["q"]) > 500:
         raise InvalidFilter("q", "Le texte est limité à 500 caractères.")
@@ -159,6 +170,7 @@ def parse_parameters(args):
     return {
         "q": values["q"],
         "general": values["general"],
+        "upload_id": values["upload_id"],
         "level": values["level"],
         "service": values["service"],
         "start": (
@@ -219,6 +231,13 @@ def build_general_query(value):
 
 def build_query(parameters):
     filters = []
+
+    if parameters.get("upload_id"):
+        filters.append({
+            "term": {
+                "loganalyzer.upload_id": parameters["upload_id"]
+            }
+        })
 
     if parameters["level"]:
         filters.append({"term": {"log.level": parameters["level"]}})

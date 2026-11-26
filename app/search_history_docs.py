@@ -192,4 +192,49 @@ def extend_search_history_spec(spec):
         },
     }
 
+
+    # Ajouts SCRUM-25 : tri et conservation du filtre par import.
+    criteria = schemas["HistoryCriteria"]
+    criteria["required"] = [
+        field for field in criteria["required"] if field != "upload_id"
+    ]
+    criteria["properties"]["upload_id"] = {
+        "type": "string",
+        "description": (
+            "UUID de l’import ou chaîne vide. Peut être absent "
+            "des recherches enregistrées avant SCRUM-25."
+        ),
+    }
+
+    history_schema = schemas["SearchHistoryResponse"]
+    history_schema["properties"]["order"] = {
+        "type": "string",
+        "enum": ["asc", "desc"],
+    }
+    history_schema["required"].append("order")
+
+    operation = spec["paths"]["/api/v1/search-history"]["get"]
+    operation["description"] = operation["description"].replace(
+        "les plus récentes en premier.",
+        "les plus récentes en premier par défaut.",
+    )
+    operation["description"] += (
+        " Le paramètre order permet de trier la date d’exécution "
+        "dans les deux sens. Les critères peuvent inclure upload_id."
+    )
+    operation["parameters"].append({
+        "name": "order",
+        "in": "query",
+        "required": False,
+        "description": (
+            "Tri par date d’exécution : desc pour les plus récentes, "
+            "asc pour les plus anciennes."
+        ),
+        "schema": {
+            "type": "string",
+            "enum": ["asc", "desc"],
+            "default": "desc",
+        },
+    })
+
     return spec

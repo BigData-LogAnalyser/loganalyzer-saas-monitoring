@@ -4,88 +4,144 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dashboard — LogAnalyzer</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: #f4f6fa; color: #172b45;
-      font-family: system-ui, sans-serif; line-height: 1.5;
-    }
-    main { max-width: 1280px; margin: auto; padding: 28px 20px; }
-    nav { display: flex; flex-wrap: wrap; gap: 18px; }
-    section, article {
-      background: white; padding: 24px; border-radius: 12px;
-      margin: 20px 0;
-    }
-    h1, h2, h3 { line-height: 1.25; }
-    .filters, .cards {
-      display: grid; gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    label { display: flex; flex-direction: column; gap: 6px; }
-    input, button { font: inherit; padding: 10px; }
-    input { width: 100%; min-width: 0; }
-    button { cursor: pointer; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-    .cards article { margin: 0; border: 1px solid #dce3ed; }
-    .value { font-size: 2rem; font-weight: 700; margin: 12px 0; }
-    .hint { color: #465972; font-size: .95rem; }
-    .table-wrap { overflow-x: auto; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td {
-      padding: 12px; border-bottom: 1px solid #dce3ed;
-      text-align: left; vertical-align: top;
-    }
-    td { overflow-wrap: anywhere; }
-    [hidden] { display: none !important; }
-    #dashboard-message[data-error="true"] { color: #a11b1b; }
-  </style>
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='dashboard.css') }}">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='compact_filters.css') }}">
 </head>
 <body>
-<main>
-  <nav aria-label="Navigation principale">
-    <a href="{{ url_for('stats.dashboard_page') }}" aria-current="page">Dashboard</a>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/dashboard">LogAnalyzer<span>Monitoring SaaS</span></a>
+    <nav aria-label="Navigation principale">
+    <a href="{{ url_for('stats.dashboard_page') }}" aria-current="page">Tableau de bord</a>
     <a href="{{ url_for('home') }}">Importer des logs</a>
     <a href="{{ url_for('search.search_page') }}">Rechercher des logs</a>
     <a href="/files">Fichiers importés</a>
     <a href="/search-history">Historique des recherches</a>
     <a href="{{ url_for('api_docs.swagger_ui') }}">Swagger</a>
   </nav>
+    <p class="sidebar-note">Analyse des logs et de l’activité SaaS</p>
+  </aside>
 
-  <h1>Dashboard SaaS</h1>
+  <div class="workspace">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">VUE D’ENSEMBLE</p>
+        <h1>Tableau de bord</h1>
+      </div>
+      <a class="button button-outline" href="{{ url_for('home') }}">
+        Importer des logs
+      </a>
+    </header>
 
-  <section aria-labelledby="filters-title">
+    <details class="mobile-navigation">
+      <summary>Menu de navigation</summary>
+      <nav aria-label="Navigation mobile">
+    <a href="{{ url_for('stats.dashboard_page') }}" aria-current="page">Tableau de bord</a>
+    <a href="{{ url_for('home') }}">Importer des logs</a>
+    <a href="{{ url_for('search.search_page') }}">Rechercher des logs</a>
+    <a href="/files">Fichiers importés</a>
+    <a href="/search-history">Historique des recherches</a>
+    <a href="{{ url_for('api_docs.swagger_ui') }}">Swagger</a>
+  </nav>
+    </details>
+
+<main id="main-content">
+
+  <section id="services-health" class="panel services-panel"
+           aria-labelledby="services-title" aria-busy="false">
+    <div class="services-heading">
+      <div>
+        <h2 id="services-title">État des services</h2>
+        <p id="services-checked" class="hint">
+          Vérification en cours…
+        </p>
+      </div>
+      <button id="services-refresh" class="button button-secondary"
+              type="button">Vérifier</button>
+    </div>
+
+    <ul id="services-list" class="services-list"
+        aria-label="Disponibilité des cinq services"></ul>
+
+    <p id="services-message" class="hint" role="status"
+       aria-live="polite"></p>
+  </section>
+
+
+
+
+
+
+  <section class="panel filters-panel" aria-labelledby="filters-title">
     <h2 id="filters-title">Période et filtres</h2>
-    <form id="dashboard-form">
-      <div class="filters">
-        <label>Début inclus — UTC
-          <input id="dashboard-start" type="datetime-local" step="0.001">
-        </label>
-        <label>Fin exclue — UTC
-          <input id="dashboard-end" type="datetime-local" step="0.001">
-        </label>
-        <label>Service
+    <form data-compact-filters="dashboard" id="dashboard-form">
+      <div class="compact-primary">
+<label data-filter-field="preset" class="period-selector">Période
+        <select id="dashboard-preset">
+          <option value="24h" selected>24 dernières heures</option>
+          <option value="1h">Dernière heure</option>
+          <option value="7d">7 derniers jours</option>
+          <option value="30d">30 derniers jours</option>
+          <option value="custom">Période personnalisée</option>
+        </select>
+      </label>
+<label data-filter-field="service">Service
           <input id="dashboard-service" type="text" maxlength="64"
                  placeholder="Tous les services">
         </label>
-        <label>Organisation
+<label data-filter-field="organization">Organisation
           <input id="dashboard-organization" type="text" maxlength="128"
                  placeholder="Toutes les organisations">
         </label>
+        <div class="actions compact-actions">
+
+        <button class="button button-primary" type="submit">Actualiser</button>
+        <button class="button button-secondary" id="dashboard-reset" type="button">Réinitialiser</button>
+
+        </div>
       </div>
-      <p class="hint">
+
+      <details class="advanced-filters">
+        <summary>
+          Filtres avancés
+          <span class="advanced-count" hidden></span>
+        </summary>
+        <div class="advanced-fields">
+<label data-filter-field="start">Début inclus — UTC
+          <input id="dashboard-start" type="datetime-local" step="0.001">
+        </label>
+<label data-filter-field="end">Fin exclue — UTC
+          <input id="dashboard-end" type="datetime-local" step="0.001">
+        </label>
+        </div>
+        <details class="filter-help">
+          <summary>Comment utiliser ces filtres ?</summary>
+          <div>
+<p class="hint">
         Sans dates : les 24 dernières heures.
         Avec une fin seule : les 24 heures précédant cette fin.
         Avec un début seul : de ce début à maintenant.
         Les événements sont sélectionnés selon leur date, pas leur date d’import.
       </p>
-      <div class="actions">
-        <button type="submit">Afficher / Actualiser</button>
-        <button id="dashboard-reset" type="button">Réinitialiser</button>
-      </div>
+          </div>
+        </details>
+      </details>
+
+      <ul class="filter-active-list"
+          aria-label="Critères avancés renseignés" hidden></ul>
     </form>
   </section>
 
   <p id="dashboard-message" role="status" aria-live="polite"></p>
+
+  <div id="dashboard-loading" class="loading-cards"
+             aria-hidden="true" hidden>
+      <span></span><span></span><span></span><span></span>
+    </div>
 
   <div id="dashboard-results" hidden>
     <p id="dashboard-period"></p>
@@ -105,6 +161,7 @@
       <article>
         <h2>Logs ERROR / CRITICAL</h2>
         <p id="card-errors" class="value"></p>
+        <p id="card-critical" class="critical-detail"></p>
         <p class="hint">Période sélectionnée ; filtres service et organisation.</p>
       </article>
       <article>
@@ -117,6 +174,61 @@
       </article>
     </div>
 
+
+    <div id="dashboard-overview" class="overview-grid">
+      <section class="panel timeline-panel">
+        <div class="panel-heading">
+          <div>
+            <h2>Nombre de logs dans le temps</h2>
+            <p class="hint">Événements sur la période sélectionnée.</p>
+          </div>
+        </div>
+        <div id="dashboard-timeline" class="chart-container"></div>
+        <p id="dashboard-interval" class="hint"></p>
+      </section>
+
+      <section class="panel">
+        <h2>Répartition par niveau</h2>
+        <div id="dashboard-levels" class="levels-container"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Erreurs par service</h2>
+        <p class="hint">Logs ERROR et CRITICAL — dix premiers services.</p>
+        <div id="dashboard-services" class="service-bars"></div>
+      </section>
+    </div>
+
+    <section class="panel recent-panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Événements récents</h2>
+          <p class="hint">Les cinq derniers événements de la période sélectionnée.</p>
+        </div>
+        <a href="{{ url_for('search.search_page') }}">Rechercher des logs →</a>
+      </div>
+      <div class="table-wrap" tabindex="0"
+           role="region" aria-label="Événements récents">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Date — Africa/Tunis</th>
+              <th scope="col">Niveau</th>
+              <th scope="col">Service</th>
+              <th scope="col">Message</th>
+              <th scope="col">Détail</th>
+            </tr>
+          </thead>
+          <tbody id="search-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="section-heading">
+      <p class="eyebrow">ANALYSE DE L’ACTIVITÉ</p>
+      <h2>Indicateurs SaaS</h2>
+      <p class="hint">Performance HTTP, erreurs, SQL et usages.</p>
+    </div>
     <section>
       <h2>Temps de réponse HTTP moyen par endpoint</h2>
       <p class="hint">Événements HTTP avec endpoint et durée valides.</p>
@@ -193,6 +305,25 @@
     </section>
   </div>
 </main>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='popup_motion.js', v='scrum25-popup-1') }}" defer></script>
+<script src="{{ url_for('static', filename='dashboard_ui.js') }}" defer></script>
+<script src="{{ url_for('static', filename='dashboard_tooltips.js') }}" defer></script>
 <script src="{{ url_for('static', filename='dashboard.js') }}" defer></script>
+<script src="{{ url_for('static', filename='log_details.js') }}" defer></script>
+
+<dialog id="log-detail-dialog" aria-labelledby="log-detail-title">
+  <div class="panel-heading">
+    <h2 id="log-detail-title">Détail de l’événement</h2>
+    <button id="log-detail-close" class="button button-secondary"
+            type="button">Fermer</button>
+  </div>
+  <p id="log-detail-message" role="status" aria-live="polite"></p>
+  <pre id="log-detail-content"></pre>
+</dialog>
+
+<script src="{{ url_for('static', filename='services_health.js') }}" defer></script>
+<script src="{{ url_for('static', filename='compact_filters.js') }}" defer></script>
 </body>
 </html>

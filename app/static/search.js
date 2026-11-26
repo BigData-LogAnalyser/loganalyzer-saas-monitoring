@@ -46,6 +46,7 @@
     const cell = document.createElement("td");
     cell.textContent = value ?? "—";
     row.append(cell);
+    return cell;
   }
 
   async function loadPage(page) {
@@ -63,6 +64,7 @@
     count.textContent = "";
     pageInformation.textContent = "";
     results.setAttribute("aria-busy", "true");
+    form.querySelector('button[type="submit"]').disabled = true;
     setMessage("Recherche en cours…");
     exportFilters = null;
     exportButton.disabled = true;
@@ -91,7 +93,11 @@
           exportFilters.set(key, String(value));
         }
       }
-      exportButton.disabled = exporting;
+      exportButton.disabled = exporting || data.total === 0;
+      exportButton.dataset.empty = String(data.total === 0);
+      document.dispatchEvent(
+        new CustomEvent("search:loaded", { detail: data })
+      );
       count.textContent =
         `${data.total} résultat(s) — ${data.items.length} affiché(s) sur cette page.`;
 
@@ -102,7 +108,13 @@
         const row = document.createElement("tr");
 
         appendCell(row, documentData["@timestamp"]);
-        appendCell(row, documentData.log?.level);
+        const level = documentData.log?.level;
+        const levelCell = appendCell(row, "");
+        const badge = document.createElement("span");
+        badge.className = "level-badge";
+        badge.dataset.level = level || "";
+        badge.textContent = level || "—";
+        levelCell.append(badge);
         appendCell(row, documentData.service?.name);
         appendCell(row, documentData.message);
 
@@ -110,6 +122,10 @@
         const detailsButton = document.createElement("button");
         detailsButton.type = "button";
         detailsButton.textContent = "Détails";
+        detailsButton.className = "detail-button";
+        detailsButton.setAttribute(
+          "aria-label", `Voir le détail du log ${item.id}`
+        );
         detailsButton.dataset.logId = item.id;
         detailsButton.dataset.logIndex = item.index;
         actionsCell.append(detailsButton);
@@ -164,6 +180,7 @@
     } finally {
       if (controller === activeController) {
         results.setAttribute("aria-busy", "false");
+        form.querySelector('button[type="submit"]').disabled = false;
       }
     }
   }
@@ -226,7 +243,8 @@
         : error.message;
     } finally {
       exporting = false;
-      exportButton.disabled = exportFilters === null;
+      exportButton.disabled =
+        exportFilters === null || exportButton.dataset.empty === "true";
     }
   });
 
@@ -247,6 +265,40 @@
   previous.addEventListener("click", () => loadPage(currentPage - 1));
   next.addEventListener("click", () => loadPage(currentPage + 1));
 
-  activeFilters = readFilters();
-  loadPage(1);
+  function initializeFromUrl() {
+    const parameters = new URLSearchParams(window.location.search);
+
+    for (const name of new Set(parameters.keys())) {
+      const field = form.elements.namedItem(name);
+      if (!field || !("value" in field)) continue;
+
+      if (parameters.getAll(name).length !== 1) {
+        throw new Error(`Le filtre ${name} est fourni plusieurs fois.`);
+      }
+
+      let value = parameters.get(name);
+
+      if ((name === "start" || name === "end") && value) {
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          throw new Error(`Date invalide pour ${name}.`);
+        }
+        value = date.toISOString().slice(0, -1);
+      }
+
+      field.value = value;
+
+      if (value && !field.value) {
+        throw new Error(`Valeur invalide pour le filtre ${name}.`);
+      }
+    }
+  }
+
+  try {
+    initializeFromUrl();
+    activeFilters = readFilters();
+    loadPage(1);
+  } catch (error) {
+    setMessage(error.message, true);
+  }
 })();

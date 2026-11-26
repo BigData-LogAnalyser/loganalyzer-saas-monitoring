@@ -4,82 +4,69 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fichiers importés — LogAnalyzer</title>
-  <style>
-    body {
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      background: #f4f6fa;
-      color: #172033;
-    }
-    main { max-width: 1250px; margin: 40px auto; padding: 20px; }
-    nav { display: flex; flex-wrap: wrap; gap: 20px; }
-    section {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-    .filters {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    label { display: flex; flex-direction: column; gap: 6px; }
-    button, input, select { font: inherit; }
-    input, select {
-      padding: 10px;
-      min-width: 0;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    button { padding: 10px 16px; cursor: pointer; }
-    button:disabled { cursor: default; opacity: .5; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-    .table-container { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-      vertical-align: top;
-    }
-    td { overflow-wrap: anywhere; }
-    .filename { min-width: 180px; }
-    #files-message[data-error="true"] { color: #a31818; }
-    .pagination {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      margin-top: 20px;
-    }
-  </style>
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='dashboard.css') }}">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='import.css') }}">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='files.css') }}">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='compact_filters.css') }}">
 </head>
-<body>
-<main>
-  <nav aria-label="Navigation principale">
-    <a href="{{ url_for('home') }}">Importer des logs</a>
-    <a href="{{ url_for('search.search_page') }}">Rechercher des logs</a>
-    <a href="{{ url_for('files.files_page') }}" aria-current="page">
-      Fichiers importés
+<body class="files-page" data-tracking-autoload="false">
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/dashboard">
+      LogAnalyzer<span>Monitoring SaaS</span>
     </a>
-    <a href="{{ url_for('api_docs.swagger_ui') }}">Swagger</a>
-
-    <a href="{{ url_for('search_history.history_page') }}">Historique des recherches</a>
-  <a href="{{ url_for('stats.dashboard_page') }}">Dashboard</a>
+<nav aria-label="Navigation principale">
+  <a href="{{ url_for('stats.dashboard_page') }}">Tableau de bord</a>
+  <a href="{{ url_for('home') }}">Importer des logs</a>
+  <a href="{{ url_for('search.search_page') }}">Rechercher des logs</a>
+  <a href="{{ url_for('files.files_page') }}" aria-current="page">Fichiers importés</a>
+  <a href="{{ url_for('search_history.history_page') }}">Historique des recherches</a>
+  <a href="{{ url_for('api_docs.swagger_ui') }}">Swagger</a>
 </nav>
+    <p class="sidebar-note">Analyse des logs et de l’activité SaaS</p>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">GESTION DES IMPORTS</p>
+        <h1>Fichiers importés</h1>
+      </div>
+      <a class="button button-outline" href="{{ url_for('home') }}">
+        Importer des logs
+      </a>
+    </header>
+    <details class="mobile-navigation">
+      <summary>Menu de navigation</summary>
+<nav aria-label="Navigation mobile">
+  <a href="{{ url_for('stats.dashboard_page') }}">Tableau de bord</a>
+  <a href="{{ url_for('home') }}">Importer des logs</a>
+  <a href="{{ url_for('search.search_page') }}">Rechercher des logs</a>
+  <a href="{{ url_for('files.files_page') }}" aria-current="page">Fichiers importés</a>
+  <a href="{{ url_for('search_history.history_page') }}">Historique des recherches</a>
+  <a href="{{ url_for('api_docs.swagger_ui') }}">Swagger</a>
+</nav>
+    </details>
+<main id="main-content">
 
-  <h1>Fichiers importés</h1>
+
+
+
   <p>
     Consultez les imports confirmés et le résultat de leur traitement.
     Les aperçus non confirmés ne figurent pas dans cette liste.
   </p>
 
-  <section aria-labelledby="filters-title">
+  <section class="panel files-filters" aria-labelledby="filters-title">
     <h2 id="filters-title">Filtres et tri</h2>
-    <form id="files-form">
-      <div class="filters">
-        <label>
+    <form data-compact-filters="files" id="files-form">
+      <div class="compact-primary">
+<label data-filter-field="filename">
           Nom du fichier
           <input
             type="search"
@@ -88,7 +75,7 @@
             placeholder="Exemples : mixte, mite, .csv"
             aria-describedby="filename-help">
         </label>
-        <label>
+<label data-filter-field="status">
           Statut du traitement
           <select name="status">
             <option value="">Tous les statuts</option>
@@ -99,18 +86,29 @@
             <option value="ECHEC">Échec</option>
           </select>
         </label>
+        <div class="actions compact-actions">
 
-        <label>
+        <button class="button button-primary" type="submit">Filtrer / Actualiser</button>
+        <button class="button button-secondary" type="reset">Réinitialiser</button>
+
+        </div>
+      </div>
+
+      <details class="advanced-filters">
+        <summary>
+          Filtres avancés
+          <span class="advanced-count" hidden></span>
+        </summary>
+        <div class="advanced-fields">
+<label data-filter-field="start">
           Début de période — UTC
           <input type="datetime-local" name="start" step="1">
         </label>
-
-        <label>
+<label data-filter-field="end">
           Fin de période — UTC
           <input type="datetime-local" name="end" step="1">
         </label>
-
-        <label>
+<label data-filter-field="sort">
           Trier par
           <select name="sort">
             <option value="date">Date de confirmation</option>
@@ -120,52 +118,92 @@
             <option value="logs">Nombre de logs indexés</option>
           </select>
         </label>
-
-        <label>
+<label data-filter-field="order">
           Ordre
           <select name="order">
             <option value="desc">Décroissant</option>
             <option value="asc">Croissant</option>
           </select>
         </label>
-      </div>
-
-      <p>
+        </div>
+        <details class="filter-help">
+          <summary>Comment utiliser ces filtres ?</summary>
+          <div>
+<p>
         La période porte sur la confirmation de l’import après l’aperçu,
         et non sur la date des événements contenus dans le fichier.
         Les bornes sont inclusives.
       </p>
-
-      <p id="filename-help">
+<p id="filename-help">
         Une partie du nom suffit. Majuscules et minuscules sont équivalentes.
         À partir de 4 caractères contenant une lettre, une faute de frappe
         est tolérée sur une partie délimitée du nom.
       </p>
+          </div>
+        </details>
+      </details>
 
-      <div class="actions">
-        <button type="submit">Afficher / Actualiser</button>
-        <button type="reset">Réinitialiser</button>
-      </div>
+      <ul class="filter-active-list"
+          aria-label="Critères avancés renseignés" hidden></ul>
     </form>
   </section>
 
-  <section aria-labelledby="results-title">
+  <div id="files-layout" class="files-layout">
+<section class="panel files-list-panel" aria-labelledby="results-title">
     <h2 id="results-title">Liste des fichiers</h2>
     <p id="files-message" role="status" aria-live="polite"></p>
     <p id="files-count"></p>
+    <div class="files-toolbar" role="group"
+         aria-label="Actions sur le fichier sélectionné">
+      <button id="selected-file-detail"
+              class="button button-primary"
+              type="button" aria-controls="file-detail" disabled>
+        Voir les détails
+      </button>
+      <button id="selected-file-logs"
+              class="button button-outline"
+              type="button" disabled>
+        Voir les logs
+      </button>
+      <span id="files-selection-message" class="hint"
+            role="status" aria-live="polite">
+        Sélectionnez une ligne pour activer les actions.
+      </span>
+    </div>
 
-    <div class="table-container">
+
+    <div class="table-container" tabindex="0" role="region" aria-label="Fichiers importés">
       <table>
         <thead>
           <tr>
-            <th scope="col">Nom du fichier</th>
-            <th scope="col">Confirmation — UTC</th>
-            <th scope="col">Taille</th>
-            <th scope="col">Statut</th>
+            <th scope="col" data-sort-column="name">
+          <button type="button" class="sort-button" data-sort="name">
+            Nom du fichier<span aria-hidden="true"> ↕</span>
+          </button>
+        </th>
+            <th scope="col" data-sort-column="date">
+          <button type="button" class="sort-button" data-sort="date">
+            Confirmation — UTC<span aria-hidden="true"> ↕</span>
+          </button>
+        </th>
+            <th scope="col" data-sort-column="size">
+          <button type="button" class="sort-button" data-sort="size">
+            Taille<span aria-hidden="true"> ↕</span>
+          </button>
+        </th>
+            <th scope="col" data-sort-column="status">
+          <button type="button" class="sort-button" data-sort="status">
+            Statut<span aria-hidden="true"> ↕</span>
+          </button>
+        </th>
             <th scope="col">Logs attendus</th>
-            <th scope="col">Logs indexés</th>
+            <th scope="col" data-sort-column="logs">
+          <button type="button" class="sort-button" data-sort="logs">
+            Logs indexés<span aria-hidden="true"> ↕</span>
+          </button>
+        </th>
             <th scope="col">Logs rejetés</th>
-            <th scope="col">Action</th>
+            <th scope="col">Sélection</th>
           </tr>
         </thead>
         <tbody id="files-body"></tbody>
@@ -173,18 +211,77 @@
     </div>
 
     <div class="pagination">
-      <button id="files-previous" type="button" disabled>Précédent</button>
+      <button id="files-previous" class="button button-secondary" type="button" disabled>Précédent</button>
       <span id="files-page"></span>
-      <button id="files-next" type="button" disabled>Suivant</button>
+      <button id="files-next" class="button button-secondary" type="button" disabled>Suivant</button>
     </div>
 
     <p>
       20 fichiers par page. Les informations proviennent du suivi MongoDB.
       « — » indique une information non encore disponible.
-      Cliquez sur « Afficher / Actualiser » pour mettre la liste à jour.
+      Cliquez sur « Filtrer / Actualiser » pour mettre la liste à jour.
     </p>
   </section>
+<dialog id="file-detail" class="panel tracking-section file-detail" aria-labelledby="tracking-title">
+          <div class="panel-heading">
+      <h2 id="tracking-title" tabindex="-1">Détail du fichier</h2>
+      <button id="file-detail-close" class="button button-secondary"
+              type="button">Fermer</button>
+    </div>
+    <p id="file-detail-meta" class="hint"></p>
+
+          <p class="hint">
+            Après confirmation, consultez l’avancement et les éventuels rejets.
+            Le suivi est actualisé automatiquement pendant le traitement.
+          </p>
+
+          <form id="tracking-form" hidden>
+            <label for="tracking-id">Identifiant de l’import</label>
+            <div class="tracking-controls">
+              <input id="tracking-id" type="text" autocomplete="off"
+                     placeholder="Identifiant de l’import">
+              <button class="button button-secondary"
+                      type="submit">Consulter</button>
+            </div>
+          </form>
+
+          <p id="tracking-message" role="status" aria-live="polite"></p>
+
+          <div id="tracking-panel" hidden>
+            <div class="tracking-heading">
+              <strong id="tracking-filename"></strong>
+              <span id="tracking-status" class="import-state"></span>
+            </div>
+
+            <div class="tracking-counts">
+              <div><span>Attendus</span><strong id="tracking-expected">—</strong></div>
+              <div><span>Indexés</span><strong id="tracking-indexed">—</strong></div>
+              <div><span>Rejetés</span><strong id="tracking-rejected">—</strong></div>
+            </div>
+
+            <progress id="tracking-progress" max="100"
+                      aria-label="Progression du traitement"></progress>
+            <p id="tracking-percent" class="hint"></p>
+            <p id="tracking-explanation"></p>
+            <p id="tracking-error" role="alert" hidden></p>
+
+            <h3>Diagnostics et événements rejetés</h3>
+            <p id="tracking-no-rejections" class="hint">
+              Aucun diagnostic disponible pour le moment.
+            </p>
+            <ol id="tracking-rejections"></ol>
+            <button id="tracking-more" class="button button-secondary"
+                    type="button" hidden>Afficher les diagnostics suivants</button>
+          </div>
+        </dialog>
+</div>
 </main>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='popup_motion.js', v='scrum25-popup-1') }}" defer></script>
 <script src="{{ url_for('static', filename='files.js') }}" defer></script>
+<script src="{{ url_for('static', filename='tracking.js') }}" defer></script>
+<script src="{{ url_for('static', filename='files_detail.js') }}" defer></script>
+<script src="{{ url_for('static', filename='compact_filters.js') }}" defer></script>
 </body>
 </html>

@@ -612,3 +612,12 @@ else:
     from stats import register_stats
 
 register_stats(app, tracking_client)
+
+
+# Disponibilité des services du dashboard.
+if __package__:
+    from .service_health import register_service_health
+else:
+    from service_health import register_service_health
+
+register_service_health(app)
