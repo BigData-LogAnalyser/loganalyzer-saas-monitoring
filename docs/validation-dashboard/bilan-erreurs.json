@@ -1,0 +1,10 @@
+{
+  "method": "Flask test_client et dépendances simulées",
+  "checks_passed": [
+    "Sept paramètres invalides refusés en HTTP 400 avant tout accès Elasticsearch ou MongoDB",
+    "Calcul Elasticsearch en échec : HTTP 503 sans chiffres partiels",
+    "MongoDB indisponible : HTTP 503 ; aucun compteur de fichiers remplacé par zéro",
+    "Délai Elasticsearch dépassé : résultat refusé",
+    "Échec partiel des shards : résultat refusé"
+  ]
+}

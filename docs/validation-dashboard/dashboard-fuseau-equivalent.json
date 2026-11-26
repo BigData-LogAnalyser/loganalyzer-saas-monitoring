@@ -1,0 +1,134 @@
+{
+  "cards": {
+    "error_logs": 21,
+    "imported_files": 24,
+    "today_logs": 0,
+    "total_logs": 154
+  },
+  "duration_unit": "ms",
+  "filters": {
+    "end": "2026-11-05T00:00:00.000Z",
+    "organization": "",
+    "service": "",
+    "start": "2026-11-04T00:00:00.000Z"
+  },
+  "generated_at": "2026-11-26T13:46:47.481Z",
+  "period_bounds": "[start,end)",
+  "saas": {
+    "active_users": 2,
+    "active_users_exact": true,
+    "feature_usage": [
+      {
+        "feature": "tasks",
+        "usage_count": 21
+      }
+    ],
+    "http_5xx_by_service": [
+      {
+        "error_count": 0,
+        "error_rate_percent": 0.0,
+        "response_count": 91,
+        "service": "task-service"
+      }
+    ],
+    "http_latency_by_endpoint": [
+      {
+        "average_ms": 125.0,
+        "endpoint": "/api/tasks",
+        "request_count": 91
+      }
+    ],
+    "slow_sql": {
+      "execution_count": 21,
+      "slowest": [
+        {
+          "duration_ms": 1200.0,
+          "id": "00630930-4301-41ad-9462-ca93c12e4dfb:3",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "09a93f47-e63f-4a90-b97e-e3a53fd63ce2:4",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "0eb214e9-0c3c-4ae3-bbba-89f7bfa1785f:3",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "0ffaf2dc-18cd-47ce-b6df-93a332530ef1:3",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "10538eaa-7b37-47c6-a6b3-4f9f51fc6402:3",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "1c7a141c-c942-4664-b164-b688f73096cd:3",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "352eac00-49a1-4cfc-8dae-50d68f9d5a1f:3",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "37a8e1c9-2eda-49d1-a666-4c49ba9793be:4",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "3c546159-5a46-4963-8a78-0bf2bffb53f6:3",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        },
+        {
+          "duration_ms": 1200.0,
+          "id": "6e3397a6-1db9-42bd-a0dc-b7b9fb0f64ab:3",
+          "index": "loganalyzer-logs-2026.11.04",
+          "query_name": "list_tasks",
+          "service": "task-service",
+          "timestamp": "2026-11-04T10:00:02.000Z"
+        }
+      ],
+      "threshold_ms": 1000
+    }
+  },
+  "timezone": "Africa/Tunis",
+  "today": {
+    "date": "2026-11-26",
+    "end": "2026-11-26T23:00:00.000Z",
+    "start": "2026-11-25T23:00:00.000Z"
+  }
+}

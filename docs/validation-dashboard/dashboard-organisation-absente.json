@@ -1,0 +1,35 @@
+{
+  "cards": {
+    "error_logs": 0,
+    "imported_files": 24,
+    "today_logs": 0,
+    "total_logs": 0
+  },
+  "duration_unit": "ms",
+  "filters": {
+    "end": "2026-11-05T00:00:00.000Z",
+    "organization": "scrum23-organisation-inexistante",
+    "service": "",
+    "start": "2026-11-04T00:00:00.000Z"
+  },
+  "generated_at": "2026-11-26T13:46:47.379Z",
+  "period_bounds": "[start,end)",
+  "saas": {
+    "active_users": 0,
+    "active_users_exact": true,
+    "feature_usage": [],
+    "http_5xx_by_service": [],
+    "http_latency_by_endpoint": [],
+    "slow_sql": {
+      "execution_count": 0,
+      "slowest": [],
+      "threshold_ms": 1000
+    }
+  },
+  "timezone": "Africa/Tunis",
+  "today": {
+    "date": "2026-11-26",
+    "end": "2026-11-26T23:00:00.000Z",
+    "start": "2026-11-25T23:00:00.000Z"
+  }
+}

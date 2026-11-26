@@ -604,3 +604,11 @@ else:
     from search_history import register_search_history
 
 register_search_history(app, tracking_client, tracking_json_row)
+
+# Indicateurs du dashboard.
+if __package__:
+    from .stats import register_stats
+else:
+    from stats import register_stats
+
+register_stats(app, tracking_client)
