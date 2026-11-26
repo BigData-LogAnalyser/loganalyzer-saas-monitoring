@@ -260,4 +260,45 @@ def extend_stats_spec(spec):
         }
     }
 
+
+    # Contrat du cache Redis des KPI.
+    operation = spec["paths"]["/api/v1/stats"]["get"]
+
+    operation["description"] = operation["description"].replace(
+        "En cas de panne d’une source ou d’agrégation incomplète, "
+        "l’API renvoie HTTP 503 sans chiffres partiels.",
+        "Lorsqu’un recalcul est nécessaire, une panne d’une source "
+        "ou une agrégation incomplète produit HTTP 503 sans chiffres partiels.",
+    )
+
+    operation["description"] += (
+        " La réponse complète peut être mise en cache dans Redis. "
+        "TTL configurable avec STATS_CACHE_TTL_SECONDS : 60 secondes "
+        "par défaut, 0 pour désactiver, maximum 3600. "
+        "L’expiration est calculée depuis generated_at et limitée "
+        "au prochain minuit dans Africa/Tunis. "
+        "Pour une période relative, les bornes et la date du calcul "
+        "initial sont conservées sur un HIT. "
+        "Un import ne déclenche pas d’invalidation immédiate. "
+        "Un cache valide peut être servi pendant une panne des sources. "
+        "Si Redis est indisponible, le calcul utilise les sources."
+    )
+
+    operation["responses"]["200"]["headers"] = {
+        "X-Cache": {
+            "description": (
+                "HIT : réponse réutilisée ; MISS : calcul depuis les sources ; "
+                "BYPASS : cache désactivé ou indisponible."
+            ),
+            "schema": {
+                "type": "string",
+                "enum": ["HIT", "MISS", "BYPASS"],
+            },
+        },
+        "Cache-Control": {
+            "description": "Cache HTTP désactivé ; Redis est géré côté serveur.",
+            "schema": {"type": "string", "enum": ["no-store"]},
+        },
+    }
+
     return spec

@@ -74,3 +74,5 @@ et des vérifications correspondantes.
 [Dashboard SaaS — SCRUM-23](docs/dashboard.md)
 
 [Formules des KPI](docs/formules-kpi.md)
+
+[Cache Redis des KPI — SCRUM-24](docs/cache-redis.md)

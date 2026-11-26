@@ -124,3 +124,16 @@ Elles peuvent changer après de nouveaux imports.
 ![Paramètres de l’API des KPI](captures/dashboard/swagger-dashboard-parametres.png)
 
 ![Réponse HTTP 200 des KPI](captures/dashboard/swagger-dashboard-kpi-200.png)
+
+## Cache des indicateurs
+
+Une actualisation peut réutiliser les derniers résultats calculés.
+La durée de conservation est de 60 secondes par défaut, configurable.
+
+La date de calcul et la période affichées restent celles des résultats
+réutilisés. Un nouvel import peut ne pas apparaître immédiatement.
+
+Après expiration, une nouvelle actualisation recalcule les indicateurs.
+La page ne s’actualise pas automatiquement.
+
+[Contrat et fonctionnement du cache Redis](cache-redis.md)

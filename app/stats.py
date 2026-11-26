@@ -18,6 +18,12 @@ else:
     from validation import BUSINESS_PAIRS
 
 
+if __package__:
+    from .stats_cache import cache_stats
+else:
+    from stats_cache import cache_stats
+
+
 TIMEZONE = "Africa/Tunis"
 NS_PER_MS = 1_000_000
 GROUP_PAGE_SIZE = 500
@@ -398,6 +404,7 @@ def register_stats(app, client_factory):
         return render_template("dashboard.html")
 
     @stats.get("/api/v1/stats")
+    @cache_stats(parse_stats_parameters, TIMEZONE, threshold)
     def get_stats():
         now = datetime.now(timezone.utc)
 
