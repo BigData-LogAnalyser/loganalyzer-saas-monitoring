@@ -12,7 +12,7 @@ from redis import Redis
 from redis.exceptions import RedisError
 
 
-PREFIX = "loganalyzer:stats:v1:"
+PREFIX = "loganalyzer:stats:v2:"
 MAX_VALUE_BYTES = 1_048_576
 
 

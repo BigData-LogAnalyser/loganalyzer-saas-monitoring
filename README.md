@@ -76,3 +76,5 @@ et des vérifications correspondantes.
 [Formules des KPI](docs/formules-kpi.md)
 
 [Cache Redis des KPI — SCRUM-24](docs/cache-redis.md)
+
+[Guide utilisateur illustré](docs/guide-utilisateur.md)

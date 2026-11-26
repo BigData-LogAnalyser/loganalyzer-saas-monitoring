@@ -1,0 +1,69 @@
+.history-scope h2 { font-size: .95rem; }
+.history-scope p { color: var(--muted); font-size: .85rem; }
+.history-scope > p { margin-bottom: 10px; }
+.history-scope details { color: var(--muted); font-size: .8rem; }
+.history-scope summary { color: var(--blue-dark); }
+.history-scope details p { margin: 12px 0 0; }
+
+#history-results .panel-heading { align-items: center; }
+#history-title { margin-bottom: 5px; }
+#history-count { margin-bottom: 0; }
+#history-message { color: var(--muted); font-size: .85rem; }
+#history-message[data-error="true"] {
+  padding: 14px;
+  color: #9c2438;
+  background: #fff1f3;
+  border-radius: 8px;
+}
+.table-container { max-width: 100%; overflow-x: auto; }
+.history-page table { min-width: 900px; }
+.history-date { min-width: 165px; white-space: nowrap; }
+.history-text { min-width: 180px; max-width: 310px; }
+.query-block + .query-block { margin-top: 10px; }
+.query-label { display: block; color: var(--muted); font-size: .7rem; margin-bottom: 4px; }
+.query-block code {
+  display: block;
+  padding: 7px 9px;
+  border-radius: 5px;
+  background: #f0f3f8;
+  color: var(--text);
+  font-size: .8rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.history-criteria { min-width: 230px; margin: 0; padding: 0; list-style: none; }
+.history-criteria li {
+  margin-bottom: 6px;
+  padding: 5px 9px;
+  background: #edf3fc;
+  border-radius: 5px;
+  color: #36557b;
+  font-size: .75rem;
+  overflow-wrap: anywhere;
+}
+.history-result-count { font-weight: 700; font-variant-numeric: tabular-nums; }
+.replay-link { font-size: .8rem; white-space: nowrap; }
+.pagination { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 22px; }
+#history-page { font-size: .85rem; }
+.history-note { margin: 20px 0 0; }
+.sort-button {
+  padding: 0;
+  min-height: 32px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+}
+.sort-button:hover { color: var(--blue-dark); }
+.history-empty { padding: 42px 20px; text-align: center; }
+.history-empty svg { width: 52px; height: 52px; color: #8b9bb0; margin-bottom: 18px; }
+.history-empty h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.history-empty p { color: var(--muted); font-size: .85rem; }
+.history-empty .button { margin-top: 10px; }
+@media (max-width: 520px) {
+  #history-results .panel-heading { align-items: flex-start; }
+  .history-empty { padding: 28px 8px; }
+  .pagination { gap: 9px; }
+}

@@ -12,7 +12,7 @@ PAGE_SIZE = 20
 COLLECTION = "search_history"
 
 CRITERIA_FIELDS = (
-    "general", "q", "level", "service", "start", "end", "sort", "order",
+    "general", "q", "level", "service", "start", "end", "sort", "order", "upload_id",
 )
 
 
@@ -72,7 +72,7 @@ def register_search_history(app, client_factory, serialize_row):
 
     @history.get("/api/v1/search-history")
     def list_search_history():
-        unknown = set(request.args) - {"page"}
+        unknown = set(request.args) - {"page", "order"}
 
         if unknown:
             return history_response({
@@ -92,6 +92,21 @@ def register_search_history(app, client_factory, serialize_row):
                 },
             }, 400)
 
+        order = request.args.get("order", "desc").strip()
+
+        if (
+            len(request.args.getlist("order")) > 1
+            or order not in {"asc", "desc"}
+        ):
+            return history_response({
+                "error": {
+                    "code": "INVALID_FILTER",
+                    "field": "order",
+                    "message": "Fournissez une seule valeur : asc ou desc.",
+                },
+            }, 400)
+
+        direction = 1 if order == "asc" else -1
         page_text = request.args.get("page", "1").strip()
 
         if (
@@ -126,7 +141,7 @@ def register_search_history(app, client_factory, serialize_row):
                             "result_count": 1,
                         },
                     )
-                    .sort([("executed_at", -1), ("_id", -1)])
+                    .sort([("executed_at", direction), ("_id", direction)])
                     .skip((page - 1) * PAGE_SIZE)
                     .limit(PAGE_SIZE)
                     .max_time_ms(5000)
@@ -167,6 +182,7 @@ def register_search_history(app, client_factory, serialize_row):
             "has_previous": page > 1,
             "has_next": page < total_pages,
             "scope": "application",
+            "order": order,
         })
 
     @history.get("/search-history")

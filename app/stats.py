@@ -156,6 +156,126 @@ def grouped(client, index, filters, sources, aggregations=None):
     raise RuntimeError("Nombre maximal de groupes dépassé.")
 
 
+
+def collect_dashboard_overview(client, index, period, parameters):
+    """Données de la maquette, limitées à la période sélectionnée."""
+    start = datetime.fromisoformat(
+        parameters["start"].replace("Z", "+00:00")
+    )
+    end = datetime.fromisoformat(
+        parameters["end"].replace("Z", "+00:00")
+    )
+
+    # Environ 60 intervalles, quelle que soit la durée sélectionnée.
+    interval_seconds = max(
+        1,
+        int(((end - start).total_seconds() + 59) // 60),
+    )
+
+    result = checked_search(
+        client,
+        index,
+        query=query_with(period),
+        track_total_hits=True,
+        aggs={
+            "timeline": {
+                "date_histogram": {
+                    "field": "@timestamp",
+                    "fixed_interval": f"{interval_seconds}s",
+                    "time_zone": TIMEZONE,
+                    "min_doc_count": 0,
+                    "extended_bounds": {
+                        "min": iso(start),
+                        "max": iso(end - timedelta(milliseconds=1)),
+                    },
+                }
+            },
+            "levels": {
+                "filters": {
+                    "filters": {
+                        level: {"term": {"log.level": level}}
+                        for level in (
+                            "DEBUG", "INFO", "WARNING",
+                            "ERROR", "CRITICAL"
+                        )
+                    }
+                }
+            },
+            "recent": {
+                "top_hits": {
+                    "size": 5,
+                    "sort": [
+                        {"@timestamp": "desc"},
+                        {"event.id": "asc"},
+                    ],
+                    "_source": [
+                        "@timestamp", "log.level",
+                        "service.name", "message"
+                    ],
+                }
+            },
+        },
+    )
+
+    aggregations = result["aggregations"]
+
+    errors_by_service = [
+        {
+            "service": bucket["key"]["service"],
+            "error_count": bucket["doc_count"],
+        }
+        for bucket in grouped(
+            client,
+            index,
+            period + [{
+                "terms": {"log.level": ["ERROR", "CRITICAL"]}
+            }],
+            [{"service": {"terms": {"field": "service.name"}}}],
+        )
+    ]
+
+    errors_by_service.sort(
+        key=lambda row: (-row["error_count"], row["service"])
+    )
+
+    recent = []
+
+    for hit in aggregations["recent"]["hits"]["hits"]:
+        document = hit["_source"]
+
+        recent.append({
+            "id": hit["_id"],
+            "index": hit["_index"],
+            "timestamp": document.get("@timestamp"),
+            "level": document.get("log", {}).get("level"),
+            "service": document.get("service", {}).get("name"),
+            "message": document.get("message"),
+        })
+
+    return {
+        "period_total": result["hits"]["total"]["value"],
+        "interval_seconds": interval_seconds,
+        "logs_over_time": [
+            {
+                "timestamp": bucket["key_as_string"],
+                "count": bucket["doc_count"],
+            }
+            for bucket in aggregations["timeline"]["buckets"]
+        ],
+        "levels": [
+            {
+                "level": level,
+                "count": bucket["doc_count"],
+            }
+            for level, bucket
+            in aggregations["levels"]["buckets"].items()
+        ],
+        "errors_by_service": errors_by_service[:10],
+        "errors_service_limit": 10,
+        "recent_events": recent,
+    }
+
+
 def collect_stats(
     client,
     parameters,
@@ -365,8 +485,18 @@ def collect_stats(
             ),
         })
 
+    overview = collect_dashboard_overview(
+        client, index, period, parameters
+    )
+
     return {
+        "overview": overview,
         "cards": {
+            "critical_logs": next(
+                row["count"]
+                for row in overview["levels"]
+                if row["level"] == "CRITICAL"
+            ),
             "total_logs": summary["hits"]["total"]["value"],
             "today_logs": aggregations["today"]["doc_count"],
             "error_logs": aggregations["errors"]["doc_count"],

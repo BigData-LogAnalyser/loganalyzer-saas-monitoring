@@ -64,31 +64,46 @@
       row, statuses[item.status] || item.status
     );
     statusCell.title = item.status || "";
+    const badge = document.createElement("span");
+    badge.className = "file-status";
+    badge.dataset.state = item.status || "";
+    badge.textContent = statuses[item.status] || item.status || "—";
+    statusCell.replaceChildren(badge);
 
     appendCell(row, item.expected_count);
     appendCell(row, item.indexed_count);
     appendCell(row, item.rejected_count);
 
-    const action = document.createElement("td");
+    const selectionCell = document.createElement("td");
+    selectionCell.className = "file-selection-cell";
 
     if (item.upload_id) {
-      const link = document.createElement("a");
-      const parameters = new URLSearchParams({
-        upload_id: item.upload_id,
-      });
-      link.href = `/?${parameters.toString()}#tracking-title`;
-      link.textContent = "Consulter le suivi";
-      action.appendChild(link);
+      row.dataset.uploadId = item.upload_id;
+      row.dataset.filename = item.original_filename || "";
+      row.dataset.confirmedAt = item.confirmed_at || "";
+      row.dataset.sizeBytes = item.size_bytes ?? "";
+
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "selected-file";
+      radio.value = item.upload_id;
+      radio.setAttribute(
+        "aria-label",
+        `Sélectionner ${item.original_filename || "ce fichier"}`
+      );
+
+      selectionCell.appendChild(radio);
     } else {
-      action.textContent = "—";
+      selectionCell.textContent = "—";
     }
 
-    row.appendChild(action);
+    row.appendChild(selectionCell);
     body.appendChild(row);
   }
 
   async function loadPage(page) {
     if (controller) controller.abort();
+    document.dispatchEvent(new CustomEvent("files:loading"));
 
     const activeController = new AbortController();
     controller = activeController;
@@ -125,6 +140,9 @@
       }
 
       currentPage = data.page;
+      document.dispatchEvent(
+        new CustomEvent("files:loaded", { detail: data })
+      );
 
       for (const item of data.items) renderItem(item);
 

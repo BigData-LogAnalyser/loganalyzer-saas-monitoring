@@ -279,6 +279,14 @@
     }
   });
 
+  window.addEventListener("tracking-stop", () => {
+    if (active) {
+      clearTimeout(active.timer);
+      active.controller.abort();
+      active = null;
+    }
+  });
+
   window.addEventListener("import-confirmed", (event) => {
     startTracking(event.detail.uploadId);
   });
@@ -288,7 +296,7 @@
 
   if (parameters.has("upload_id")) {
     startTracking(parameters.get("upload_id"));
-  } else {
+  } else if (document.body.dataset.trackingAutoload !== "false") {
     try {
       const saved = localStorage.getItem(storageKey);
 
