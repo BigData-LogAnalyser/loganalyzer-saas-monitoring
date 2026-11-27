@@ -1,0 +1,47 @@
+.kibana-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.kibana-intro .hint { margin-bottom: 0; max-width: 850px; }
+.kibana-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.kibana-state {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: .8rem;
+  font-weight: 650;
+  background: #edf1f6;
+}
+.kibana-state[data-state="available"] { background: #e7f5ed; color: #116441; }
+.kibana-state[data-state="degraded"],
+.kibana-state[data-state="disabled"],
+.kibana-state[data-state="unconfigured"] { background: #fff3d6; color: #805800; }
+.kibana-state[data-state="unavailable"] { background: #fff0f2; color: #9b1c30; }
+.kibana-embedded { padding: 0; overflow: hidden; }
+#kibana-frame {
+  display: block;
+  width: 100%;
+  height: max(760px, calc(100vh - 260px));
+  border: 0;
+  background: white;
+}
+.kibana-frame-help {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+}
+.kibana-frame-help .hint { margin: 0; }
+.kibana-fallback { background: #fff9eb; border-color: #ebd397; }
+@media (max-width: 1000px) {
+  .kibana-intro { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 520px) {
+  .kibana-controls, .kibana-frame-help .button { width: 100%; }
+  .kibana-controls .button { flex: 1; }
+  #kibana-frame { height: 1100px; }
+}
