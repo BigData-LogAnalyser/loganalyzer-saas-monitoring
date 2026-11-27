@@ -78,3 +78,5 @@ et des vérifications correspondantes.
 [Cache Redis des KPI — SCRUM-24](docs/cache-redis.md)
 
 [Guide utilisateur illustré](docs/guide-utilisateur.md)
+
+[Dashboard Kibana : configuration, lecture et validation](docs/kibana.md)
