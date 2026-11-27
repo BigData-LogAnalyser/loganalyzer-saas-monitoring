@@ -2,13 +2,14 @@
 
 ## Navigation
 
-L’application comporte cinq écrans principaux : tableau de bord,
-import de logs, fichiers importés, recherche de logs et historique
-des recherches. La navigation latérale indique la page active.
+L’application comporte six écrans principaux : tableau de bord,
+import de logs, fichiers importés, recherche de logs, historique
+des recherches et visualisations Kibana. La navigation latérale indique la page active.
 Sur petit écran, les liens sont accessibles dans « Menu de navigation ».
 
-Swagger reste accessible pour consulter et essayer les API.
-Les visualisations Kibana sont traitées séparément dans SCRUM-26.
+Le bouton « Swagger », situé à côté d’« Importer des logs » dans
+l’en-tête du tableau de bord, ouvre la documentation API dans un nouvel onglet.
+Le menu « Visualisations Kibana » ouvre le dashboard intégré.
 
 ## Tableau de bord
 
@@ -32,7 +33,7 @@ le taux de réponses HTTP 5xx, les requêtes SQL lentes, les utilisateurs
 distincts et l’utilisation des fonctionnalités. Les utilisateurs actifs
 ne représentent pas des connexions simultanées.
 
-L’état de Flask, Elasticsearch, MongoDB, Redis et Logstash est vérifié
+L’état de Flask, Elasticsearch, MongoDB, Redis, Logstash et Kibana est vérifié
 automatiquement toutes les 30 secondes. Le bouton « Vérifier » déclenche
 un nouveau contrôle. Un contrôle de disponibilité ne garantit pas
 le succès d’une ingestion complète.
@@ -122,6 +123,34 @@ l’exécute de nouveau. Le résultat peut différer si les données ont changé
 
 ![Historique des recherches](captures/interfaces/historique-desktop.png)
 
+## Visualisations Kibana
+
+Ouvrir « Visualisations Kibana » dans le menu.
+Le dashboard présente le temps de réponse HTTP moyen par route,
+l’évolution des erreurs HTTP 5xx et les utilisateurs actifs distincts.
+
+Le sélecteur de période intégré à Kibana filtre les trois panneaux.
+Cette période est indépendante de celle du tableau de bord Flask.
+L’affichage intégré démarre sur les 30 derniers jours.
+
+« Ouvrir dans Kibana » ouvre le dashboard dans un nouvel onglet.
+« Vérifier / Recharger » contrôle sa disponibilité et recharge
+l’affichage intégré ; la période peut revenir à sa valeur initiale.
+
+Si le service est indisponible, un message remplace le dashboard.
+Si le service répond mais que l’affichage reste incorrect,
+utiliser le bouton de signalement du problème d’affichage,
+puis réessayer ou ouvrir directement Kibana.
+
+Le contrôle automatique de disponibilité ne constitue pas
+un rafraîchissement automatique des données des graphiques.
+
+Les utilisateurs actifs sont des identifiants distincts sur la période,
+et non des connexions simultanées. Le décompte Kibana peut être approximatif.
+Sur la journée vide testée, la carte affiche « N/A ».
+
+[Configuration, formules et validation Kibana](kibana.md)
+
 ## Messages et états
 
 - Chargement : un message indique l’opération en cours et les commandes
@@ -153,6 +182,11 @@ les parcours ni les animations.
 
 ![Recherche de logs à 720 px](captures/interfaces/recherche-tablette-720.png)
 
+
+La nouvelle page Kibana a également été vérifiée manuellement
+par le porteur du projet à 324 et 720 px : navigation,
+sélecteur de période et ouverture directe utilisables.
+
 ## Écarts justifiés par rapport aux maquettes
 
 | Écart | Justification |
@@ -161,13 +195,13 @@ les parcours ni les animations.
 | Détails des fichiers en popup plutôt qu’en panneau latéral | Conserver la position du tableau et proposer le même principe de consultation aux différentes largeurs. |
 | Actions communes après sélection d’un fichier | Éviter les boutons répétés sur chaque ligne et supprimer le lien redondant « Suivi complet ». |
 | Structure attendue placée avant la sélection du fichier | Garder la sélection et la progression du transfert à la suite sur petit écran. |
-| Cinq contrôles de services dans le dashboard | Présenter les contrôles disponibles sur Flask, Elasticsearch, MongoDB, Redis et Logstash ; Kibana et le tracker ne sont pas surveillés par ce bloc. |
+| Six contrôles de services dans le dashboard | Présenter les contrôles disponibles sur Flask, Elasticsearch, MongoDB, Redis, Logstash et Kibana. Le tracker conserve son contrôle de santé Docker. |
 | Indicateurs SaaS ajoutés sous la vue d’ensemble | Intégrer les indicateurs effectivement développés dans SCRUM-23. |
 | Détails des logs accessibles par la ligne en responsive | Économiser la place de la colonne d’actions et faciliter l’utilisation tactile. |
 | Pagination de 20 fichiers, 20 recherches historiques et 50 logs | Respecter les tailles de page actuellement prises en charge par les API. |
 | Annulation du dépôt après réception de l’aperçu | L’interface actuelle ne propose pas d’interruption du transfert en cours, contrairement à l’intention de la maquette. |
 | États affichés selon la situation réelle | Les blocs explicatifs de chargement, vide et erreur des maquettes ne sont pas reproduits en permanence dans les écrans. |
 
-Les couleurs et la navigation sont harmonisées entre les cinq écrans.
+Les couleurs et la navigation sont harmonisées entre les six écrans.
 Les chiffres des maquettes étaient illustratifs ; les interfaces
 présentent les résultats des données et filtres réellement utilisés.

@@ -1,0 +1,3383 @@
+{
+  "ticket": "SCRUM-18",
+  "run_id": "20261127T195705Z-b8dfe3cf",
+  "started_at": "2026-11-27T19:57:05.794883+00:00",
+  "python_version": "3.11.18",
+  "scope": "Uploads HTTP réels, imports confirmés et comparaison aux références.",
+  "processing_error_test": "À réaliser séparément ; non couvert par ce script.",
+  "cases": [
+    {
+      "name": "valide-csv",
+      "started_at": "2026-11-27T19:57:05.798592+00:00",
+      "result": "ECHEC",
+      "source": "valides/logs.csv",
+      "source_sha256": "05f97799b072d7ebedcb90b469d268d2f84ba9c4595b8a3ee319c9e693bb5deb",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+      "preview_http_status": 201,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+        "preview": {
+          "can_confirm": true,
+          "errors": [],
+          "events": [
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 2
+            },
+            {
+              "errors": [],
+              "event": {
+                "error_code": "REPORT_TIMEOUT",
+                "error_message": "Délai de génération dépassé",
+                "event_type": "application",
+                "level": "ERROR",
+                "message": "Rapport indisponible",
+                "service": "report-service",
+                "timestamp": "2026-11-04T10:00:01.000Z"
+              },
+              "source_line": 3
+            },
+            {
+              "errors": [],
+              "event": {
+                "db_query": "list_tasks",
+                "event_type": "sql",
+                "level": "WARNING",
+                "message": "Requête SQL lente",
+                "service": "task-service",
+                "sql_duration_ms": 1200,
+                "timestamp": "2026-11-04T10:00:02.000Z"
+              },
+              "source_line": 4
+            },
+            {
+              "errors": [],
+              "event": {
+                "action": "task-created",
+                "event_type": "business",
+                "feature": "tasks",
+                "level": "INFO",
+                "message": "Tâche créée; titre \"Démo\"",
+                "organization_id": "ORG1",
+                "service": "task-service",
+                "timestamp": "2026-11-04T11:00:03.000+01:00",
+                "user_id": "U2"
+              },
+              "source_line": 5
+            }
+          ],
+          "preview_count": 4,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 669,
+        "state": "BROUILLON",
+        "upload_id": "1457419c-a411-403b-81c1-84d74e412aa1"
+      },
+      "upload_id": "1457419c-a411-403b-81c1-84d74e412aa1",
+      "confirmation_response": {
+        "message": "Import enregistré ; en attente de traitement.",
+        "status": "EN_ATTENTE",
+        "upload_id": "1457419c-a411-403b-81c1-84d74e412aa1"
+      },
+      "import_record": {
+        "confirmed_at": "2026-11-27T19:57:05.820Z",
+        "error": null,
+        "expected_count": 4,
+        "finished_at": "2026-11-27T19:57:08.831Z",
+        "indexed_count": 4,
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+        "progress_percent": 100,
+        "reading_complete": true,
+        "rejected_count": 0,
+        "schema_version": "1.0",
+        "size_bytes": 669,
+        "status": "TERMINE",
+        "updated_at": "2026-11-27T19:57:08.831Z",
+        "upload_id": "1457419c-a411-403b-81c1-84d74e412aa1"
+      },
+      "observed_states": [
+        {
+          "status": "EN_ATTENTE",
+          "observed_at": "2026-11-27T19:57:05.839451+00:00"
+        },
+        {
+          "status": "EN_COURS",
+          "observed_at": "2026-11-27T19:57:06.854314+00:00"
+        },
+        {
+          "status": "TERMINE",
+          "observed_at": "2026-11-27T19:57:08.880577+00:00"
+        }
+      ],
+      "indexed_documents": [
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "1457419c-a411-403b-81c1-84d74e412aa1:2",
+          "_score": 3.7162786,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "1457419c-a411-403b-81c1-84d74e412aa1",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+              "source_line": 2,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "1457419c-a411-403b-81c1-84d74e412aa1:2",
+                "event",
+                "2026-11-27T19:57:06.943201424Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "2",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+                "1457419c-a411-403b-81c1-84d74e412aa1",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "1457419c-a411-403b-81c1-84d74e412aa1:2",
+                "event",
+                "2026-11-27T19:57:06.943201424Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "2",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+                "1457419c-a411-403b-81c1-84d74e412aa1",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:06.943201424Z",
+              "kind": "event",
+              "id": "1457419c-a411-403b-81c1-84d74e412aa1:2",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "1457419c-a411-403b-81c1-84d74e412aa1:3",
+          "_score": 3.7162786,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:01.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv"
+              },
+              "level": "ERROR"
+            },
+            "service": {
+              "name": "report-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "1457419c-a411-403b-81c1-84d74e412aa1",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+              "source_line": 3,
+              "search_values": [
+                "saas.application",
+                "1457419c-a411-403b-81c1-84d74e412aa1:3",
+                "event",
+                "2026-11-27T19:57:06.944453053Z",
+                "Délai de génération dépassé",
+                "REPORT_TIMEOUT",
+                "Rapport indisponible",
+                "3",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+                "1457419c-a411-403b-81c1-84d74e412aa1",
+                "1.0",
+                "report-service",
+                "ERROR",
+                "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv",
+                "8.17.0",
+                "2026-11-04T10:00:01.000Z"
+              ],
+              "search_text": [
+                "saas.application",
+                "1457419c-a411-403b-81c1-84d74e412aa1:3",
+                "event",
+                "2026-11-27T19:57:06.944453053Z",
+                "Délai de génération dépassé",
+                "REPORT_TIMEOUT",
+                "Rapport indisponible",
+                "3",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+                "1457419c-a411-403b-81c1-84d74e412aa1",
+                "1.0",
+                "report-service",
+                "ERROR",
+                "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv",
+                "8.17.0",
+                "2026-11-04T10:00:01.000Z"
+              ]
+            },
+            "message": "Rapport indisponible",
+            "error": {
+              "code": "REPORT_TIMEOUT",
+              "message": "Délai de génération dépassé"
+            },
+            "event": {
+              "ingested": "2026-11-27T19:57:06.944453053Z",
+              "kind": "event",
+              "id": "1457419c-a411-403b-81c1-84d74e412aa1:3",
+              "dataset": "saas.application"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "1457419c-a411-403b-81c1-84d74e412aa1:4",
+          "_score": 3.7162786,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:02.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "saas": {
+              "database": {
+                "query_name": "list_tasks"
+              }
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv"
+              },
+              "level": "WARNING"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "1457419c-a411-403b-81c1-84d74e412aa1",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+              "source_line": 4,
+              "search_values": [
+                "saas.database",
+                "1457419c-a411-403b-81c1-84d74e412aa1:4",
+                "event",
+                "2026-11-27T19:57:06.945094545Z",
+                "1200000000",
+                "Requête SQL lente",
+                "4",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+                "1457419c-a411-403b-81c1-84d74e412aa1",
+                "1.0",
+                "task-service",
+                "WARNING",
+                "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv",
+                "list_tasks",
+                "8.17.0",
+                "2026-11-04T10:00:02.000Z"
+              ],
+              "search_text": [
+                "saas.database",
+                "1457419c-a411-403b-81c1-84d74e412aa1:4",
+                "event",
+                "2026-11-27T19:57:06.945094545Z",
+                "1200000000",
+                "Requête SQL lente",
+                "4",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+                "1457419c-a411-403b-81c1-84d74e412aa1",
+                "1.0",
+                "task-service",
+                "WARNING",
+                "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv",
+                "list_tasks",
+                "8.17.0",
+                "2026-11-04T10:00:02.000Z"
+              ]
+            },
+            "message": "Requête SQL lente",
+            "event": {
+              "duration": 1200000000,
+              "ingested": "2026-11-27T19:57:06.945094545Z",
+              "kind": "event",
+              "id": "1457419c-a411-403b-81c1-84d74e412aa1:4",
+              "dataset": "saas.database"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "1457419c-a411-403b-81c1-84d74e412aa1:5",
+          "_score": 3.7162786,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:03.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv"
+              },
+              "level": "INFO"
+            },
+            "saas": {
+              "feature": "tasks"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "1457419c-a411-403b-81c1-84d74e412aa1",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+              "source_line": 5,
+              "search_values": [
+                "U2",
+                "saas.business",
+                "1457419c-a411-403b-81c1-84d74e412aa1:5",
+                "task-created",
+                "event",
+                "2026-11-27T19:57:06.945465909Z",
+                "Tâche créée; titre \"Démo\"",
+                "ORG1",
+                "5",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+                "1457419c-a411-403b-81c1-84d74e412aa1",
+                "1.0",
+                "task-service",
+                "tasks",
+                "INFO",
+                "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv",
+                "8.17.0",
+                "2026-11-04T10:00:03.000Z"
+              ],
+              "search_text": [
+                "U2",
+                "saas.business",
+                "1457419c-a411-403b-81c1-84d74e412aa1:5",
+                "task-created",
+                "event",
+                "2026-11-27T19:57:06.945465909Z",
+                "Tâche créée; titre \"Démo\"",
+                "ORG1",
+                "5",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv",
+                "1457419c-a411-403b-81c1-84d74e412aa1",
+                "1.0",
+                "task-service",
+                "tasks",
+                "INFO",
+                "/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv",
+                "8.17.0",
+                "2026-11-04T10:00:03.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "message": "Tâche créée; titre \"Démo\"",
+            "event": {
+              "ingested": "2026-11-27T19:57:06.945465909Z",
+              "kind": "event",
+              "action": "task-created",
+              "id": "1457419c-a411-403b-81c1-84d74e412aa1:5",
+              "dataset": "saas.business"
+            },
+            "user": {
+              "id": "U2"
+            }
+          }
+        }
+      ],
+      "diagnostics": [],
+      "error": "Document de la ligne 2 différent de la cible : {\"attendu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"level\": \"INFO\", \"file\": {\"path\": \"/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv\"}}, \"service\": {\"name\": \"task-service\"}, \"message\": \"Liste des tâches consultée\", \"event\": {\"dataset\": \"saas.http\", \"kind\": \"event\", \"id\": \"1457419c-a411-403b-81c1-84d74e412aa1:2\", \"duration\": 125000000}, \"loganalyzer\": {\"upload_id\": \"1457419c-a411-403b-81c1-84d74e412aa1\", \"source_line\": 2, \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv\", \"schema_version\": \"1.0\"}, \"user\": {\"id\": \"U1\"}, \"organization\": {\"id\": \"ORG1\"}, \"url\": {\"path\": \"/api/tasks\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}}, \"obtenu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"file\": {\"path\": \"/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv\"}, \"level\": \"INFO\"}, \"service\": {\"name\": \"task-service\"}, \"loganalyzer\": {\"schema_version\": \"1.0\", \"upload_id\": \"1457419c-a411-403b-81c1-84d74e412aa1\", \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv\", \"source_line\": 2, \"search_values\": [\"/api/tasks\", \"U1\", \"saas.http\", \"1457419c-a411-403b-81c1-84d74e412aa1:2\", \"event\", \"2026-11-27T19:57:06.943201424Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"2\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv\", \"1457419c-a411-403b-81c1-84d74e412aa1\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"], \"search_text\": [\"/api/tasks\", \"U1\", \"saas.http\", \"1457419c-a411-403b-81c1-84d74e412aa1:2\", \"event\", \"2026-11-27T19:57:06.943201424Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"2\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv\", \"1457419c-a411-403b-81c1-84d74e412aa1\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"]}, \"organization\": {\"id\": \"ORG1\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}, \"message\": \"Liste des tâches consultée\", \"event\": {\"duration\": 125000000, \"kind\": \"event\", \"id\": \"1457419c-a411-403b-81c1-84d74e412aa1:2\", \"dataset\": \"saas.http\"}, \"user\": {\"id\": \"U1\"}, \"url\": {\"path\": \"/api/tasks\"}}}",
+      "traceback": "Traceback (most recent call last):\n  File \"/checks/validate_ingestion.py\", line 310, in run_case\n    function()\n  File \"/checks/validate_ingestion.py\", line 327, in <lambda>\n    self.run_case(f\"valide-{extension}\", lambda ext=extension: self.accepted(\n                                                               ^^^^^^^^^^^^^^\n  File \"/checks/validate_ingestion.py\", line 267, in accepted\n    check_reference_documents(documents, self.targets, metadata, path.suffix[1:], since)\n  File \"/checks/validate_ingestion.py\", line 93, in check_reference_documents\n    require(\n  File \"/checks/validate_ingestion.py\", line 27, in require\n    raise AssertionError(message)\nAssertionError: Document de la ligne 2 différent de la cible : {\"attendu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"level\": \"INFO\", \"file\": {\"path\": \"/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv\"}}, \"service\": {\"name\": \"task-service\"}, \"message\": \"Liste des tâches consultée\", \"event\": {\"dataset\": \"saas.http\", \"kind\": \"event\", \"id\": \"1457419c-a411-403b-81c1-84d74e412aa1:2\", \"duration\": 125000000}, \"loganalyzer\": {\"upload_id\": \"1457419c-a411-403b-81c1-84d74e412aa1\", \"source_line\": 2, \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv\", \"schema_version\": \"1.0\"}, \"user\": {\"id\": \"U1\"}, \"organization\": {\"id\": \"ORG1\"}, \"url\": {\"path\": \"/api/tasks\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}}, \"obtenu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"file\": {\"path\": \"/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv\"}, \"level\": \"INFO\"}, \"service\": {\"name\": \"task-service\"}, \"loganalyzer\": {\"schema_version\": \"1.0\", \"upload_id\": \"1457419c-a411-403b-81c1-84d74e412aa1\", \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv\", \"source_line\": 2, \"search_values\": [\"/api/tasks\", \"U1\", \"saas.http\", \"1457419c-a411-403b-81c1-84d74e412aa1:2\", \"event\", \"2026-11-27T19:57:06.943201424Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"2\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv\", \"1457419c-a411-403b-81c1-84d74e412aa1\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"], \"search_text\": [\"/api/tasks\", \"U1\", \"saas.http\", \"1457419c-a411-403b-81c1-84d74e412aa1:2\", \"event\", \"2026-11-27T19:57:06.943201424Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"2\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-csv.csv\", \"1457419c-a411-403b-81c1-84d74e412aa1\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/1457419c-a411-403b-81c1-84d74e412aa1/source.csv\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"]}, \"organization\": {\"id\": \"ORG1\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}, \"message\": \"Liste des tâches consultée\", \"event\": {\"duration\": 125000000, \"kind\": \"event\", \"id\": \"1457419c-a411-403b-81c1-84d74e412aa1:2\", \"dataset\": \"saas.http\"}, \"user\": {\"id\": \"U1\"}, \"url\": {\"path\": \"/api/tasks\"}}}\n",
+      "finished_at": "2026-11-27T19:57:08.904069+00:00"
+    },
+    {
+      "name": "valide-jsonl",
+      "started_at": "2026-11-27T19:57:08.905478+00:00",
+      "result": "ECHEC",
+      "source": "valides/logs.jsonl",
+      "source_sha256": "71f7851ebd451ee71a7745af7c4d76aa3024bc4814eb03006de9ce87ae834afb",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+      "preview_http_status": 201,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+        "preview": {
+          "can_confirm": true,
+          "errors": [],
+          "events": [
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 1
+            },
+            {
+              "errors": [],
+              "event": {
+                "error_code": "REPORT_TIMEOUT",
+                "error_message": "Délai de génération dépassé",
+                "event_type": "application",
+                "level": "ERROR",
+                "message": "Rapport indisponible",
+                "service": "report-service",
+                "timestamp": "2026-11-04T10:00:01.000Z"
+              },
+              "source_line": 2
+            },
+            {
+              "errors": [],
+              "event": {
+                "db_query": "list_tasks",
+                "event_type": "sql",
+                "level": "WARNING",
+                "message": "Requête SQL lente",
+                "service": "task-service",
+                "sql_duration_ms": 1200,
+                "timestamp": "2026-11-04T10:00:02.000Z"
+              },
+              "source_line": 3
+            },
+            {
+              "errors": [],
+              "event": {
+                "action": "task-created",
+                "event_type": "business",
+                "feature": "tasks",
+                "level": "INFO",
+                "message": "Tâche créée; titre \"Démo\"",
+                "organization_id": "ORG1",
+                "service": "task-service",
+                "timestamp": "2026-11-04T11:00:03.000+01:00",
+                "user_id": "U2"
+              },
+              "source_line": 4
+            }
+          ],
+          "preview_count": 4,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 973,
+        "state": "BROUILLON",
+        "upload_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f"
+      },
+      "upload_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+      "confirmation_response": {
+        "message": "Import enregistré ; en attente de traitement.",
+        "status": "EN_ATTENTE",
+        "upload_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f"
+      },
+      "import_record": {
+        "confirmed_at": "2026-11-27T19:57:08.944Z",
+        "error": null,
+        "expected_count": 4,
+        "finished_at": "2026-11-27T19:57:12.884Z",
+        "indexed_count": 4,
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+        "progress_percent": 100,
+        "reading_complete": true,
+        "rejected_count": 0,
+        "schema_version": "1.0",
+        "size_bytes": 973,
+        "status": "TERMINE",
+        "updated_at": "2026-11-27T19:57:12.884Z",
+        "upload_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f"
+      },
+      "observed_states": [
+        {
+          "status": "EN_ATTENTE",
+          "observed_at": "2026-11-27T19:57:08.963984+00:00"
+        },
+        {
+          "status": "EN_COURS",
+          "observed_at": "2026-11-27T19:57:10.989386+00:00"
+        },
+        {
+          "status": "TERMINE",
+          "observed_at": "2026-11-27T19:57:13.020734+00:00"
+        }
+      ],
+      "indexed_documents": [
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f:1",
+          "_score": 3.7376695,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+              "source_line": 1,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f:1",
+                "event",
+                "2026-11-27T19:57:11.002422678Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "1",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f:1",
+                "event",
+                "2026-11-27T19:57:11.002422678Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "1",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:11.002422678Z",
+              "kind": "event",
+              "id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f:1",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f:2",
+          "_score": 3.7376695,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:01.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl"
+              },
+              "level": "ERROR"
+            },
+            "service": {
+              "name": "report-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+              "source_line": 2,
+              "search_values": [
+                "saas.application",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f:2",
+                "event",
+                "2026-11-27T19:57:11.003232738Z",
+                "Délai de génération dépassé",
+                "REPORT_TIMEOUT",
+                "Rapport indisponible",
+                "2",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+                "1.0",
+                "report-service",
+                "ERROR",
+                "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:01.000Z"
+              ],
+              "search_text": [
+                "saas.application",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f:2",
+                "event",
+                "2026-11-27T19:57:11.003232738Z",
+                "Délai de génération dépassé",
+                "REPORT_TIMEOUT",
+                "Rapport indisponible",
+                "2",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+                "1.0",
+                "report-service",
+                "ERROR",
+                "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:01.000Z"
+              ]
+            },
+            "message": "Rapport indisponible",
+            "error": {
+              "code": "REPORT_TIMEOUT",
+              "message": "Délai de génération dépassé"
+            },
+            "event": {
+              "ingested": "2026-11-27T19:57:11.003232738Z",
+              "kind": "event",
+              "id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f:2",
+              "dataset": "saas.application"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f:3",
+          "_score": 3.7376695,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:02.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "saas": {
+              "database": {
+                "query_name": "list_tasks"
+              }
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl"
+              },
+              "level": "WARNING"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+              "source_line": 3,
+              "search_values": [
+                "saas.database",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f:3",
+                "event",
+                "2026-11-27T19:57:11.003602343Z",
+                "1200000000",
+                "Requête SQL lente",
+                "3",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+                "1.0",
+                "task-service",
+                "WARNING",
+                "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl",
+                "list_tasks",
+                "8.17.0",
+                "2026-11-04T10:00:02.000Z"
+              ],
+              "search_text": [
+                "saas.database",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f:3",
+                "event",
+                "2026-11-27T19:57:11.003602343Z",
+                "1200000000",
+                "Requête SQL lente",
+                "3",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+                "1.0",
+                "task-service",
+                "WARNING",
+                "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl",
+                "list_tasks",
+                "8.17.0",
+                "2026-11-04T10:00:02.000Z"
+              ]
+            },
+            "message": "Requête SQL lente",
+            "event": {
+              "duration": 1200000000,
+              "ingested": "2026-11-27T19:57:11.003602343Z",
+              "kind": "event",
+              "id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f:3",
+              "dataset": "saas.database"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f:4",
+          "_score": 3.7376695,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:03.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "saas": {
+              "feature": "tasks"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+              "source_line": 4,
+              "search_values": [
+                "U2",
+                "saas.business",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f:4",
+                "task-created",
+                "event",
+                "2026-11-27T19:57:11.003916105Z",
+                "Tâche créée; titre \"Démo\"",
+                "ORG1",
+                "4",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+                "1.0",
+                "task-service",
+                "tasks",
+                "INFO",
+                "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:03.000Z"
+              ],
+              "search_text": [
+                "U2",
+                "saas.business",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f:4",
+                "task-created",
+                "event",
+                "2026-11-27T19:57:11.003916105Z",
+                "Tâche créée; titre \"Démo\"",
+                "ORG1",
+                "4",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl",
+                "2036accd-55ce-46d2-9e40-6aa4fe396e2f",
+                "1.0",
+                "task-service",
+                "tasks",
+                "INFO",
+                "/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:03.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "message": "Tâche créée; titre \"Démo\"",
+            "event": {
+              "ingested": "2026-11-27T19:57:11.003916105Z",
+              "kind": "event",
+              "action": "task-created",
+              "id": "2036accd-55ce-46d2-9e40-6aa4fe396e2f:4",
+              "dataset": "saas.business"
+            },
+            "user": {
+              "id": "U2"
+            }
+          }
+        }
+      ],
+      "diagnostics": [],
+      "error": "Document de la ligne 1 différent de la cible : {\"attendu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"level\": \"INFO\", \"file\": {\"path\": \"/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl\"}}, \"service\": {\"name\": \"task-service\"}, \"message\": \"Liste des tâches consultée\", \"event\": {\"dataset\": \"saas.http\", \"kind\": \"event\", \"id\": \"2036accd-55ce-46d2-9e40-6aa4fe396e2f:1\", \"duration\": 125000000}, \"loganalyzer\": {\"upload_id\": \"2036accd-55ce-46d2-9e40-6aa4fe396e2f\", \"source_line\": 1, \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl\", \"schema_version\": \"1.0\"}, \"user\": {\"id\": \"U1\"}, \"organization\": {\"id\": \"ORG1\"}, \"url\": {\"path\": \"/api/tasks\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}}, \"obtenu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"file\": {\"path\": \"/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl\"}, \"level\": \"INFO\"}, \"service\": {\"name\": \"task-service\"}, \"loganalyzer\": {\"schema_version\": \"1.0\", \"upload_id\": \"2036accd-55ce-46d2-9e40-6aa4fe396e2f\", \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl\", \"source_line\": 1, \"search_values\": [\"/api/tasks\", \"U1\", \"saas.http\", \"2036accd-55ce-46d2-9e40-6aa4fe396e2f:1\", \"event\", \"2026-11-27T19:57:11.002422678Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"1\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl\", \"2036accd-55ce-46d2-9e40-6aa4fe396e2f\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"], \"search_text\": [\"/api/tasks\", \"U1\", \"saas.http\", \"2036accd-55ce-46d2-9e40-6aa4fe396e2f:1\", \"event\", \"2026-11-27T19:57:11.002422678Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"1\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl\", \"2036accd-55ce-46d2-9e40-6aa4fe396e2f\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"]}, \"organization\": {\"id\": \"ORG1\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}, \"message\": \"Liste des tâches consultée\", \"event\": {\"duration\": 125000000, \"kind\": \"event\", \"id\": \"2036accd-55ce-46d2-9e40-6aa4fe396e2f:1\", \"dataset\": \"saas.http\"}, \"user\": {\"id\": \"U1\"}, \"url\": {\"path\": \"/api/tasks\"}}}",
+      "traceback": "Traceback (most recent call last):\n  File \"/checks/validate_ingestion.py\", line 310, in run_case\n    function()\n  File \"/checks/validate_ingestion.py\", line 327, in <lambda>\n    self.run_case(f\"valide-{extension}\", lambda ext=extension: self.accepted(\n                                                               ^^^^^^^^^^^^^^\n  File \"/checks/validate_ingestion.py\", line 267, in accepted\n    check_reference_documents(documents, self.targets, metadata, path.suffix[1:], since)\n  File \"/checks/validate_ingestion.py\", line 93, in check_reference_documents\n    require(\n  File \"/checks/validate_ingestion.py\", line 27, in require\n    raise AssertionError(message)\nAssertionError: Document de la ligne 1 différent de la cible : {\"attendu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"level\": \"INFO\", \"file\": {\"path\": \"/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl\"}}, \"service\": {\"name\": \"task-service\"}, \"message\": \"Liste des tâches consultée\", \"event\": {\"dataset\": \"saas.http\", \"kind\": \"event\", \"id\": \"2036accd-55ce-46d2-9e40-6aa4fe396e2f:1\", \"duration\": 125000000}, \"loganalyzer\": {\"upload_id\": \"2036accd-55ce-46d2-9e40-6aa4fe396e2f\", \"source_line\": 1, \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl\", \"schema_version\": \"1.0\"}, \"user\": {\"id\": \"U1\"}, \"organization\": {\"id\": \"ORG1\"}, \"url\": {\"path\": \"/api/tasks\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}}, \"obtenu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"file\": {\"path\": \"/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl\"}, \"level\": \"INFO\"}, \"service\": {\"name\": \"task-service\"}, \"loganalyzer\": {\"schema_version\": \"1.0\", \"upload_id\": \"2036accd-55ce-46d2-9e40-6aa4fe396e2f\", \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl\", \"source_line\": 1, \"search_values\": [\"/api/tasks\", \"U1\", \"saas.http\", \"2036accd-55ce-46d2-9e40-6aa4fe396e2f:1\", \"event\", \"2026-11-27T19:57:11.002422678Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"1\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl\", \"2036accd-55ce-46d2-9e40-6aa4fe396e2f\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"], \"search_text\": [\"/api/tasks\", \"U1\", \"saas.http\", \"2036accd-55ce-46d2-9e40-6aa4fe396e2f:1\", \"event\", \"2026-11-27T19:57:11.002422678Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"1\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-jsonl.jsonl\", \"2036accd-55ce-46d2-9e40-6aa4fe396e2f\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/2036accd-55ce-46d2-9e40-6aa4fe396e2f/source.jsonl\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"]}, \"organization\": {\"id\": \"ORG1\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}, \"message\": \"Liste des tâches consultée\", \"event\": {\"duration\": 125000000, \"kind\": \"event\", \"id\": \"2036accd-55ce-46d2-9e40-6aa4fe396e2f:1\", \"dataset\": \"saas.http\"}, \"user\": {\"id\": \"U1\"}, \"url\": {\"path\": \"/api/tasks\"}}}\n",
+      "finished_at": "2026-11-27T19:57:13.046114+00:00"
+    },
+    {
+      "name": "valide-txt",
+      "started_at": "2026-11-27T19:57:13.048592+00:00",
+      "result": "ECHEC",
+      "source": "valides/logs.txt",
+      "source_sha256": "2aaf780bb2df99738725881044f14aa1e7026eab56d6d7f0c7acf0dd59a4257b",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+      "preview_http_status": 201,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+        "preview": {
+          "can_confirm": true,
+          "errors": [],
+          "events": [
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 1
+            },
+            {
+              "errors": [],
+              "event": {
+                "error_code": "REPORT_TIMEOUT",
+                "error_message": "Délai de génération dépassé",
+                "event_type": "application",
+                "level": "ERROR",
+                "message": "Rapport indisponible",
+                "service": "report-service",
+                "timestamp": "2026-11-04T10:00:01.000Z"
+              },
+              "source_line": 2
+            },
+            {
+              "errors": [],
+              "event": {
+                "db_query": "list_tasks",
+                "event_type": "sql",
+                "level": "WARNING",
+                "message": "Requête SQL lente",
+                "service": "task-service",
+                "sql_duration_ms": 1200,
+                "timestamp": "2026-11-04T10:00:02.000Z"
+              },
+              "source_line": 3
+            },
+            {
+              "errors": [],
+              "event": {
+                "action": "task-created",
+                "event_type": "business",
+                "feature": "tasks",
+                "level": "INFO",
+                "message": "Tâche créée; titre \"Démo\"",
+                "organization_id": "ORG1",
+                "service": "task-service",
+                "timestamp": "2026-11-04T11:00:03.000+01:00",
+                "user_id": "U2"
+              },
+              "source_line": 4
+            }
+          ],
+          "preview_count": 4,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 472,
+        "state": "BROUILLON",
+        "upload_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec"
+      },
+      "upload_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+      "confirmation_response": {
+        "message": "Import enregistré ; en attente de traitement.",
+        "status": "EN_ATTENTE",
+        "upload_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec"
+      },
+      "import_record": {
+        "confirmed_at": "2026-11-27T19:57:13.093Z",
+        "error": null,
+        "expected_count": 4,
+        "finished_at": "2026-11-27T19:57:16.941Z",
+        "indexed_count": 4,
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+        "progress_percent": 100,
+        "reading_complete": true,
+        "rejected_count": 0,
+        "schema_version": "1.0",
+        "size_bytes": 472,
+        "status": "TERMINE",
+        "updated_at": "2026-11-27T19:57:16.941Z",
+        "upload_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec"
+      },
+      "observed_states": [
+        {
+          "status": "EN_ATTENTE",
+          "observed_at": "2026-11-27T19:57:13.126102+00:00"
+        },
+        {
+          "status": "EN_COURS",
+          "observed_at": "2026-11-27T19:57:15.160134+00:00"
+        },
+        {
+          "status": "TERMINE",
+          "observed_at": "2026-11-27T19:57:17.195080+00:00"
+        }
+      ],
+      "indexed_documents": [
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec:1",
+          "_score": 3.7586126,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+              "source_line": 1,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec:1",
+                "event",
+                "2026-11-27T19:57:15.038487661Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "1",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec:1",
+                "event",
+                "2026-11-27T19:57:15.038487661Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "1",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:15.038487661Z",
+              "kind": "event",
+              "id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec:1",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec:2",
+          "_score": 3.7586126,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:01.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt"
+              },
+              "level": "ERROR"
+            },
+            "service": {
+              "name": "report-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+              "source_line": 2,
+              "search_values": [
+                "saas.application",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec:2",
+                "event",
+                "2026-11-27T19:57:15.039203987Z",
+                "Délai de génération dépassé",
+                "REPORT_TIMEOUT",
+                "Rapport indisponible",
+                "2",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+                "1.0",
+                "report-service",
+                "ERROR",
+                "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt",
+                "8.17.0",
+                "2026-11-04T10:00:01.000Z"
+              ],
+              "search_text": [
+                "saas.application",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec:2",
+                "event",
+                "2026-11-27T19:57:15.039203987Z",
+                "Délai de génération dépassé",
+                "REPORT_TIMEOUT",
+                "Rapport indisponible",
+                "2",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+                "1.0",
+                "report-service",
+                "ERROR",
+                "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt",
+                "8.17.0",
+                "2026-11-04T10:00:01.000Z"
+              ]
+            },
+            "message": "Rapport indisponible",
+            "error": {
+              "code": "REPORT_TIMEOUT",
+              "message": "Délai de génération dépassé"
+            },
+            "event": {
+              "ingested": "2026-11-27T19:57:15.039203987Z",
+              "kind": "event",
+              "id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec:2",
+              "dataset": "saas.application"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec:3",
+          "_score": 3.7586126,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:02.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "saas": {
+              "database": {
+                "query_name": "list_tasks"
+              }
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt"
+              },
+              "level": "WARNING"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+              "source_line": 3,
+              "search_values": [
+                "saas.database",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec:3",
+                "event",
+                "2026-11-27T19:57:15.040130837Z",
+                "1200000000",
+                "Requête SQL lente",
+                "3",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+                "1.0",
+                "task-service",
+                "WARNING",
+                "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt",
+                "list_tasks",
+                "8.17.0",
+                "2026-11-04T10:00:02.000Z"
+              ],
+              "search_text": [
+                "saas.database",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec:3",
+                "event",
+                "2026-11-27T19:57:15.040130837Z",
+                "1200000000",
+                "Requête SQL lente",
+                "3",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+                "1.0",
+                "task-service",
+                "WARNING",
+                "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt",
+                "list_tasks",
+                "8.17.0",
+                "2026-11-04T10:00:02.000Z"
+              ]
+            },
+            "message": "Requête SQL lente",
+            "event": {
+              "duration": 1200000000,
+              "ingested": "2026-11-27T19:57:15.040130837Z",
+              "kind": "event",
+              "id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec:3",
+              "dataset": "saas.database"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec:4",
+          "_score": 3.7586126,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:03.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt"
+              },
+              "level": "INFO"
+            },
+            "saas": {
+              "feature": "tasks"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+              "source_line": 4,
+              "search_values": [
+                "U2",
+                "saas.business",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec:4",
+                "task-created",
+                "event",
+                "2026-11-27T19:57:15.040441741Z",
+                "Tâche créée; titre \"Démo\"",
+                "ORG1",
+                "4",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+                "1.0",
+                "task-service",
+                "tasks",
+                "INFO",
+                "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt",
+                "8.17.0",
+                "2026-11-04T10:00:03.000Z"
+              ],
+              "search_text": [
+                "U2",
+                "saas.business",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec:4",
+                "task-created",
+                "event",
+                "2026-11-27T19:57:15.040441741Z",
+                "Tâche créée; titre \"Démo\"",
+                "ORG1",
+                "4",
+                "scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt",
+                "9d891c06-e5f9-4f56-a092-aa8d310f00ec",
+                "1.0",
+                "task-service",
+                "tasks",
+                "INFO",
+                "/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt",
+                "8.17.0",
+                "2026-11-04T10:00:03.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "message": "Tâche créée; titre \"Démo\"",
+            "event": {
+              "ingested": "2026-11-27T19:57:15.040441741Z",
+              "kind": "event",
+              "action": "task-created",
+              "id": "9d891c06-e5f9-4f56-a092-aa8d310f00ec:4",
+              "dataset": "saas.business"
+            },
+            "user": {
+              "id": "U2"
+            }
+          }
+        }
+      ],
+      "diagnostics": [],
+      "error": "Document de la ligne 1 différent de la cible : {\"attendu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"level\": \"INFO\", \"file\": {\"path\": \"/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt\"}}, \"service\": {\"name\": \"task-service\"}, \"message\": \"Liste des tâches consultée\", \"event\": {\"dataset\": \"saas.http\", \"kind\": \"event\", \"id\": \"9d891c06-e5f9-4f56-a092-aa8d310f00ec:1\", \"duration\": 125000000}, \"loganalyzer\": {\"upload_id\": \"9d891c06-e5f9-4f56-a092-aa8d310f00ec\", \"source_line\": 1, \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt\", \"schema_version\": \"1.0\"}, \"user\": {\"id\": \"U1\"}, \"organization\": {\"id\": \"ORG1\"}, \"url\": {\"path\": \"/api/tasks\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}}, \"obtenu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"file\": {\"path\": \"/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt\"}, \"level\": \"INFO\"}, \"service\": {\"name\": \"task-service\"}, \"loganalyzer\": {\"schema_version\": \"1.0\", \"upload_id\": \"9d891c06-e5f9-4f56-a092-aa8d310f00ec\", \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt\", \"source_line\": 1, \"search_values\": [\"/api/tasks\", \"U1\", \"saas.http\", \"9d891c06-e5f9-4f56-a092-aa8d310f00ec:1\", \"event\", \"2026-11-27T19:57:15.038487661Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"1\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt\", \"9d891c06-e5f9-4f56-a092-aa8d310f00ec\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"], \"search_text\": [\"/api/tasks\", \"U1\", \"saas.http\", \"9d891c06-e5f9-4f56-a092-aa8d310f00ec:1\", \"event\", \"2026-11-27T19:57:15.038487661Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"1\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt\", \"9d891c06-e5f9-4f56-a092-aa8d310f00ec\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"]}, \"organization\": {\"id\": \"ORG1\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}, \"message\": \"Liste des tâches consultée\", \"event\": {\"duration\": 125000000, \"kind\": \"event\", \"id\": \"9d891c06-e5f9-4f56-a092-aa8d310f00ec:1\", \"dataset\": \"saas.http\"}, \"user\": {\"id\": \"U1\"}, \"url\": {\"path\": \"/api/tasks\"}}}",
+      "traceback": "Traceback (most recent call last):\n  File \"/checks/validate_ingestion.py\", line 310, in run_case\n    function()\n  File \"/checks/validate_ingestion.py\", line 327, in <lambda>\n    self.run_case(f\"valide-{extension}\", lambda ext=extension: self.accepted(\n                                                               ^^^^^^^^^^^^^^\n  File \"/checks/validate_ingestion.py\", line 267, in accepted\n    check_reference_documents(documents, self.targets, metadata, path.suffix[1:], since)\n  File \"/checks/validate_ingestion.py\", line 93, in check_reference_documents\n    require(\n  File \"/checks/validate_ingestion.py\", line 27, in require\n    raise AssertionError(message)\nAssertionError: Document de la ligne 1 différent de la cible : {\"attendu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"level\": \"INFO\", \"file\": {\"path\": \"/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt\"}}, \"service\": {\"name\": \"task-service\"}, \"message\": \"Liste des tâches consultée\", \"event\": {\"dataset\": \"saas.http\", \"kind\": \"event\", \"id\": \"9d891c06-e5f9-4f56-a092-aa8d310f00ec:1\", \"duration\": 125000000}, \"loganalyzer\": {\"upload_id\": \"9d891c06-e5f9-4f56-a092-aa8d310f00ec\", \"source_line\": 1, \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt\", \"schema_version\": \"1.0\"}, \"user\": {\"id\": \"U1\"}, \"organization\": {\"id\": \"ORG1\"}, \"url\": {\"path\": \"/api/tasks\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}}, \"obtenu\": {\"@timestamp\": \"2026-11-04T10:00:00.000Z\", \"ecs\": {\"version\": \"8.17.0\"}, \"log\": {\"file\": {\"path\": \"/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt\"}, \"level\": \"INFO\"}, \"service\": {\"name\": \"task-service\"}, \"loganalyzer\": {\"schema_version\": \"1.0\", \"upload_id\": \"9d891c06-e5f9-4f56-a092-aa8d310f00ec\", \"original_filename\": \"scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt\", \"source_line\": 1, \"search_values\": [\"/api/tasks\", \"U1\", \"saas.http\", \"9d891c06-e5f9-4f56-a092-aa8d310f00ec:1\", \"event\", \"2026-11-27T19:57:15.038487661Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"1\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt\", \"9d891c06-e5f9-4f56-a092-aa8d310f00ec\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"], \"search_text\": [\"/api/tasks\", \"U1\", \"saas.http\", \"9d891c06-e5f9-4f56-a092-aa8d310f00ec:1\", \"event\", \"2026-11-27T19:57:15.038487661Z\", \"125000000\", \"Liste des tâches consultée\", \"200\", \"GET\", \"ORG1\", \"1\", \"scrum18-20261127T195705Z-b8dfe3cf-valide-txt.txt\", \"9d891c06-e5f9-4f56-a092-aa8d310f00ec\", \"1.0\", \"task-service\", \"INFO\", \"/uploads/confirmed/9d891c06-e5f9-4f56-a092-aa8d310f00ec/source.txt\", \"8.17.0\", \"2026-11-04T10:00:00.000Z\"]}, \"organization\": {\"id\": \"ORG1\"}, \"http\": {\"request\": {\"method\": \"GET\"}, \"response\": {\"status_code\": 200}}, \"message\": \"Liste des tâches consultée\", \"event\": {\"duration\": 125000000, \"kind\": \"event\", \"id\": \"9d891c06-e5f9-4f56-a092-aa8d310f00ec:1\", \"dataset\": \"saas.http\"}, \"user\": {\"id\": \"U1\"}, \"url\": {\"path\": \"/api/tasks\"}}}\n",
+      "finished_at": "2026-11-27T19:57:17.221482+00:00"
+    },
+    {
+      "name": "invalide-csv",
+      "started_at": "2026-11-27T19:57:17.225284+00:00",
+      "result": "OK",
+      "source": "invalides/logs.csv",
+      "source_sha256": "edf883a8fd52dfc41435312841a6cd4cc78b225af0301ef9421ba267991e96d3",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-invalide-csv.csv",
+      "preview_http_status": 422,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-invalide-csv.csv",
+        "preview": {
+          "can_confirm": false,
+          "errors": [
+            {
+              "code": "REQUIRED_FIELD",
+              "field": "service",
+              "message": "Champ requis absent.",
+              "source_line": 2
+            },
+            {
+              "code": "INVALID_TIMESTAMP",
+              "field": "timestamp",
+              "message": "Date ou fuseau non conforme.",
+              "source_line": 3
+            },
+            {
+              "code": "INVALID_LEVEL",
+              "field": "level",
+              "message": "Niveau de log non autorisé.",
+              "source_line": 4
+            },
+            {
+              "code": "INVALID_VALUE",
+              "field": "status_code",
+              "message": "Statut attendu entre 100 et 599.",
+              "source_line": 5
+            },
+            {
+              "code": "INVALID_DURATION",
+              "field": "response_time_ms",
+              "message": "Entier décimal sans signe attendu.",
+              "source_line": 6
+            },
+            {
+              "code": "FIELD_NOT_ALLOWED",
+              "field": "sql_duration_ms",
+              "message": "Champ interdit pour cette famille.",
+              "source_line": 7
+            }
+          ],
+          "events": [
+            {
+              "errors": [
+                {
+                  "code": "REQUIRED_FIELD",
+                  "field": "service",
+                  "message": "Champ requis absent."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 2
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_TIMESTAMP",
+                  "field": "timestamp",
+                  "message": "Date ou fuseau non conforme."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00",
+                "user_id": "U1"
+              },
+              "source_line": 3
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_LEVEL",
+                  "field": "level",
+                  "message": "Niveau de log non autorisé."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "FATAL",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 4
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_VALUE",
+                  "field": "status_code",
+                  "message": "Statut attendu entre 100 et 599."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 700,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 5
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_DURATION",
+                  "field": "response_time_ms",
+                  "message": "Entier décimal sans signe attendu."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 6
+            },
+            {
+              "errors": [
+                {
+                  "code": "FIELD_NOT_ALLOWED",
+                  "field": "sql_duration_ms",
+                  "message": "Champ interdit pour cette famille."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "sql_duration_ms": 100,
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 7
+            }
+          ],
+          "preview_count": 6,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 869
+      },
+      "finished_at": "2026-11-27T19:57:17.256389+00:00"
+    },
+    {
+      "name": "invalide-jsonl",
+      "started_at": "2026-11-27T19:57:17.263080+00:00",
+      "result": "OK",
+      "source": "invalides/logs.jsonl",
+      "source_sha256": "d44a4d93a6d8e0578c43cf0d06974b13721f86e65417ae3ed53bc0808b96b864",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-invalide-jsonl.jsonl",
+      "preview_http_status": 422,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-invalide-jsonl.jsonl",
+        "preview": {
+          "can_confirm": false,
+          "errors": [
+            {
+              "code": "REQUIRED_FIELD",
+              "field": "service",
+              "message": "Champ requis absent.",
+              "source_line": 1
+            },
+            {
+              "code": "INVALID_TIMESTAMP",
+              "field": "timestamp",
+              "message": "Date ou fuseau non conforme.",
+              "source_line": 2
+            },
+            {
+              "code": "INVALID_LEVEL",
+              "field": "level",
+              "message": "Niveau de log non autorisé.",
+              "source_line": 3
+            },
+            {
+              "code": "INVALID_VALUE",
+              "field": "status_code",
+              "message": "Statut attendu entre 100 et 599.",
+              "source_line": 4
+            },
+            {
+              "code": "INVALID_DURATION",
+              "field": "response_time_ms",
+              "message": "Durée entière hors limites autorisées.",
+              "source_line": 5
+            },
+            {
+              "code": "FIELD_NOT_ALLOWED",
+              "field": "sql_duration_ms",
+              "message": "Champ interdit pour cette famille.",
+              "source_line": 6
+            }
+          ],
+          "events": [
+            {
+              "errors": [
+                {
+                  "code": "REQUIRED_FIELD",
+                  "field": "service",
+                  "message": "Champ requis absent."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 1
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_TIMESTAMP",
+                  "field": "timestamp",
+                  "message": "Date ou fuseau non conforme."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00",
+                "user_id": "U1"
+              },
+              "source_line": 2
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_LEVEL",
+                  "field": "level",
+                  "message": "Niveau de log non autorisé."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "FATAL",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 3
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_VALUE",
+                  "field": "status_code",
+                  "message": "Statut attendu entre 100 et 599."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 700,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 4
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_DURATION",
+                  "field": "response_time_ms",
+                  "message": "Durée entière hors limites autorisées."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": -1,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 5
+            },
+            {
+              "errors": [
+                {
+                  "code": "FIELD_NOT_ALLOWED",
+                  "field": "sql_duration_ms",
+                  "message": "Champ interdit pour cette famille."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "sql_duration_ms": 100,
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 6
+            }
+          ],
+          "preview_count": 6,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 1720
+      },
+      "finished_at": "2026-11-27T19:57:17.285298+00:00"
+    },
+    {
+      "name": "invalide-txt",
+      "started_at": "2026-11-27T19:57:17.289332+00:00",
+      "result": "OK",
+      "source": "invalides/logs.txt",
+      "source_sha256": "e1f28ca81ebfda4f237b2809d30aef93d8445016460987f7ab7b9191591345d8",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-invalide-txt.txt",
+      "preview_http_status": 422,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-invalide-txt.txt",
+        "preview": {
+          "can_confirm": false,
+          "errors": [
+            {
+              "code": "REQUIRED_FIELD",
+              "field": "service",
+              "message": "Champ requis absent.",
+              "source_line": 1
+            },
+            {
+              "code": "INVALID_TIMESTAMP",
+              "field": "timestamp",
+              "message": "Date ou fuseau non conforme.",
+              "source_line": 2
+            },
+            {
+              "code": "INVALID_LEVEL",
+              "field": "level",
+              "message": "Niveau de log non autorisé.",
+              "source_line": 3
+            },
+            {
+              "code": "INVALID_VALUE",
+              "field": "status_code",
+              "message": "Statut attendu entre 100 et 599.",
+              "source_line": 4
+            },
+            {
+              "code": "INVALID_DURATION",
+              "field": "response_time_ms",
+              "message": "Entier décimal sans signe attendu.",
+              "source_line": 5
+            },
+            {
+              "code": "FIELD_NOT_ALLOWED",
+              "field": "sql_duration_ms",
+              "message": "Champ interdit pour cette famille.",
+              "source_line": 6
+            }
+          ],
+          "events": [
+            {
+              "errors": [
+                {
+                  "code": "REQUIRED_FIELD",
+                  "field": "service",
+                  "message": "Champ requis absent."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 1
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_TIMESTAMP",
+                  "field": "timestamp",
+                  "message": "Date ou fuseau non conforme."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00",
+                "user_id": "U1"
+              },
+              "source_line": 2
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_LEVEL",
+                  "field": "level",
+                  "message": "Niveau de log non autorisé."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "FATAL",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 3
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_VALUE",
+                  "field": "status_code",
+                  "message": "Statut attendu entre 100 et 599."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 700,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 4
+            },
+            {
+              "errors": [
+                {
+                  "code": "INVALID_DURATION",
+                  "field": "response_time_ms",
+                  "message": "Entier décimal sans signe attendu."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 5
+            },
+            {
+              "errors": [
+                {
+                  "code": "FIELD_NOT_ALLOWED",
+                  "field": "sql_duration_ms",
+                  "message": "Champ interdit pour cette famille."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "sql_duration_ms": 100,
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 6
+            }
+          ],
+          "preview_count": 6,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 676
+      },
+      "finished_at": "2026-11-27T19:57:17.322770+00:00"
+    },
+    {
+      "name": "structure-json-malforme",
+      "started_at": "2026-11-27T19:57:17.330230+00:00",
+      "result": "OK",
+      "source": "invalides/json-malforme.jsonl",
+      "source_sha256": "b831ac17d709fd8fc997971eb0c72367f86c1215316896c8aad61bfe769de420",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-json-malforme.jsonl",
+      "preview_http_status": 422,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-json-malforme.jsonl",
+        "preview": {
+          "can_confirm": false,
+          "errors": [
+            {
+              "code": "JSON_SYNTAX",
+              "field": null,
+              "message": "Ligne JSON mal formée.",
+              "source_line": 1
+            }
+          ],
+          "events": [
+            {
+              "errors": [
+                {
+                  "code": "JSON_SYNTAX",
+                  "field": null,
+                  "message": "Ligne JSON mal formée."
+                }
+              ],
+              "event": null,
+              "source_line": 1
+            }
+          ],
+          "preview_count": 1,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 14
+      },
+      "finished_at": "2026-11-27T19:57:17.354351+00:00"
+    },
+    {
+      "name": "structure-json-cle-dupliquee",
+      "started_at": "2026-11-27T19:57:17.359473+00:00",
+      "result": "OK",
+      "source": "invalides/json-cle-dupliquee.jsonl",
+      "source_sha256": "78e79d254fd6a7ef3e0ccf695e0313ebac422071f9e242d1cf72b6a71de42d35",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-json-cle-dupliquee.jsonl",
+      "preview_http_status": 422,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-json-cle-dupliquee.jsonl",
+        "preview": {
+          "can_confirm": false,
+          "errors": [
+            {
+              "code": "JSON_DUPLICATE_KEY",
+              "field": null,
+              "message": "Clé dupliquée : timestamp.",
+              "source_line": 1
+            }
+          ],
+          "events": [
+            {
+              "errors": [
+                {
+                  "code": "JSON_DUPLICATE_KEY",
+                  "field": null,
+                  "message": "Clé dupliquée : timestamp."
+                }
+              ],
+              "event": null,
+              "source_line": 1
+            }
+          ],
+          "preview_count": 1,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 72
+      },
+      "finished_at": "2026-11-27T19:57:17.391418+00:00"
+    },
+    {
+      "name": "structure-json-type-incorrect",
+      "started_at": "2026-11-27T19:57:17.399048+00:00",
+      "result": "OK",
+      "source": "invalides/json-type-incorrect.jsonl",
+      "source_sha256": "0de8716cf938ff87f16d40a6181772f5596fa2ce04e84da326badabba32b5083",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-json-type-incorrect.jsonl",
+      "preview_http_status": 422,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-json-type-incorrect.jsonl",
+        "preview": {
+          "can_confirm": false,
+          "errors": [
+            {
+              "code": "INVALID_TYPE",
+              "field": "status_code",
+              "message": "Un entier est attendu.",
+              "source_line": 1
+            }
+          ],
+          "events": [
+            {
+              "errors": [
+                {
+                  "code": "INVALID_TYPE",
+                  "field": "status_code",
+                  "message": "Un entier est attendu."
+                }
+              ],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": "200",
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 1
+            }
+          ],
+          "preview_count": 1,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 298
+      },
+      "finished_at": "2026-11-27T19:57:17.423557+00:00"
+    },
+    {
+      "name": "structure-csv-entete-incorrect",
+      "started_at": "2026-11-27T19:57:17.428825+00:00",
+      "result": "OK",
+      "source": "invalides/csv-entete-incorrect.csv",
+      "source_sha256": "5c589d3f63a28cf6a7c743d60378c2e76b66981c4379a5df4a929adfad3b0f17",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-csv-entete-incorrect.csv",
+      "preview_http_status": 422,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-csv-entete-incorrect.csv",
+        "preview": {
+          "can_confirm": false,
+          "errors": [
+            {
+              "code": "CSV_HEADER",
+              "field": null,
+              "message": "L’en-tête CSV ne respecte pas le contrat.",
+              "source_line": null
+            }
+          ],
+          "events": [],
+          "preview_count": 0,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 42
+      },
+      "finished_at": "2026-11-27T19:57:17.461351+00:00"
+    },
+    {
+      "name": "structure-txt-colonnes-manquantes",
+      "started_at": "2026-11-27T19:57:17.469565+00:00",
+      "result": "OK",
+      "source": "invalides/txt-colonnes-manquantes.txt",
+      "source_sha256": "f63f10f186acc189395f90c5e619e56877c2d4ff4d890084bd016cb122829cb9",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-txt-colonnes-manquantes.txt",
+      "preview_http_status": 422,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-structure-txt-colonnes-manquantes.txt",
+        "preview": {
+          "can_confirm": false,
+          "errors": [
+            {
+              "code": "ROW_STRUCTURE",
+              "field": null,
+              "message": "18 colonnes attendues ; 2 reçues.",
+              "source_line": 1
+            }
+          ],
+          "events": [
+            {
+              "errors": [
+                {
+                  "code": "ROW_STRUCTURE",
+                  "field": null,
+                  "message": "18 colonnes attendues ; 2 reçues."
+                }
+              ],
+              "event": null,
+              "source_line": 1
+            }
+          ],
+          "preview_count": 1,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 26
+      },
+      "finished_at": "2026-11-27T19:57:17.492574+00:00"
+    },
+    {
+      "name": "mixte-jsonl",
+      "started_at": "2026-11-27T19:57:17.497405+00:00",
+      "result": "OK",
+      "source": "mixte.jsonl",
+      "source_sha256": "72565f6ad381b421c3108861ac64cc451476188f8c671cb95b8b30193ef1f563",
+      "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+      "preview_http_status": 201,
+      "preview_response": {
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+        "preview": {
+          "can_confirm": true,
+          "errors": [],
+          "events": [
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 1
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 2
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 3
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 4
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 5
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 6
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 7
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 8
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 9
+            },
+            {
+              "errors": [],
+              "event": {
+                "endpoint": "/api/tasks",
+                "event_type": "http",
+                "http_method": "GET",
+                "level": "INFO",
+                "message": "Liste des tâches consultée",
+                "organization_id": "ORG1",
+                "response_time_ms": 125,
+                "service": "task-service",
+                "status_code": 200,
+                "timestamp": "2026-11-04T10:00:00.000Z",
+                "user_id": "U1"
+              },
+              "source_line": 10
+            }
+          ],
+          "preview_count": 10,
+          "preview_limit": 10,
+          "scope": "Aperçu uniquement ; aucun bilan global d’ingestion."
+        },
+        "size_bytes": 3424,
+        "state": "BROUILLON",
+        "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534"
+      },
+      "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+      "confirmation_response": {
+        "message": "Import enregistré ; en attente de traitement.",
+        "status": "EN_ATTENTE",
+        "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534"
+      },
+      "import_record": {
+        "confirmed_at": "2026-11-27T19:57:17.549Z",
+        "error": null,
+        "expected_count": 12,
+        "finished_at": "2026-11-27T19:57:21.066Z",
+        "indexed_count": 10,
+        "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+        "progress_percent": 100,
+        "reading_complete": true,
+        "rejected_count": 2,
+        "schema_version": "1.0",
+        "size_bytes": 3424,
+        "status": "PARTIEL",
+        "updated_at": "2026-11-27T19:57:21.066Z",
+        "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534"
+      },
+      "observed_states": [
+        {
+          "status": "EN_ATTENTE",
+          "observed_at": "2026-11-27T19:57:17.568488+00:00"
+        },
+        {
+          "status": "EN_COURS",
+          "observed_at": "2026-11-27T19:57:19.604229+00:00"
+        },
+        {
+          "status": "PARTIEL",
+          "observed_at": "2026-11-27T19:57:21.643810+00:00"
+        }
+      ],
+      "indexed_documents": [
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:1",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 1,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:1",
+                "event",
+                "2026-11-27T19:57:19.183712953Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "1",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:1",
+                "event",
+                "2026-11-27T19:57:19.183712953Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "1",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.183712953Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:1",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:2",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 2,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:2",
+                "event",
+                "2026-11-27T19:57:19.184438395Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "2",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:2",
+                "event",
+                "2026-11-27T19:57:19.184438395Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "2",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.184438395Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:2",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:3",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 3,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:3",
+                "event",
+                "2026-11-27T19:57:19.184730006Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "3",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:3",
+                "event",
+                "2026-11-27T19:57:19.184730006Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "3",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.184730006Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:3",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:4",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 4,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:4",
+                "event",
+                "2026-11-27T19:57:19.184986986Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "4",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:4",
+                "event",
+                "2026-11-27T19:57:19.184986986Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "4",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.184986986Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:4",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:5",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 5,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:5",
+                "event",
+                "2026-11-27T19:57:19.185223225Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "5",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:5",
+                "event",
+                "2026-11-27T19:57:19.185223225Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "5",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.185223225Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:5",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:6",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 6,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:6",
+                "event",
+                "2026-11-27T19:57:19.185439305Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "6",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:6",
+                "event",
+                "2026-11-27T19:57:19.185439305Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "6",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.185439305Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:6",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:7",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 7,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:7",
+                "event",
+                "2026-11-27T19:57:19.185648848Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "7",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:7",
+                "event",
+                "2026-11-27T19:57:19.185648848Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "7",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.185648848Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:7",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:8",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 8,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:8",
+                "event",
+                "2026-11-27T19:57:19.185856106Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "8",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:8",
+                "event",
+                "2026-11-27T19:57:19.185856106Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "8",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.185856106Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:8",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:9",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 9,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:9",
+                "event",
+                "2026-11-27T19:57:19.186062449Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "9",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:9",
+                "event",
+                "2026-11-27T19:57:19.186062449Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "9",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.186062449Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:9",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        },
+        {
+          "_index": "loganalyzer-logs-2026.11.04",
+          "_id": "6ff4123b-8662-4986-aac6-e706c10c2534:10",
+          "_score": 2.9618306,
+          "_source": {
+            "@timestamp": "2026-11-04T10:00:00.000Z",
+            "ecs": {
+              "version": "8.17.0"
+            },
+            "log": {
+              "file": {
+                "path": "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl"
+              },
+              "level": "INFO"
+            },
+            "service": {
+              "name": "task-service"
+            },
+            "loganalyzer": {
+              "schema_version": "1.0",
+              "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534",
+              "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+              "source_line": 10,
+              "search_values": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:10",
+                "event",
+                "2026-11-27T19:57:19.186379716Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "10",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ],
+              "search_text": [
+                "/api/tasks",
+                "U1",
+                "saas.http",
+                "6ff4123b-8662-4986-aac6-e706c10c2534:10",
+                "event",
+                "2026-11-27T19:57:19.186379716Z",
+                "125000000",
+                "Liste des tâches consultée",
+                "200",
+                "GET",
+                "ORG1",
+                "10",
+                "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+                "6ff4123b-8662-4986-aac6-e706c10c2534",
+                "1.0",
+                "task-service",
+                "INFO",
+                "/uploads/confirmed/6ff4123b-8662-4986-aac6-e706c10c2534/source.jsonl",
+                "8.17.0",
+                "2026-11-04T10:00:00.000Z"
+              ]
+            },
+            "organization": {
+              "id": "ORG1"
+            },
+            "http": {
+              "request": {
+                "method": "GET"
+              },
+              "response": {
+                "status_code": 200
+              }
+            },
+            "message": "Liste des tâches consultée",
+            "event": {
+              "duration": 125000000,
+              "ingested": "2026-11-27T19:57:19.186379716Z",
+              "kind": "event",
+              "id": "6ff4123b-8662-4986-aac6-e706c10c2534:10",
+              "dataset": "saas.http"
+            },
+            "user": {
+              "id": "U1"
+            },
+            "url": {
+              "path": "/api/tasks"
+            }
+          }
+        }
+      ],
+      "diagnostics": [
+        {
+          "errors": [
+            {
+              "code": "REQUIRED_FIELD",
+              "field": "service",
+              "message": "Champ requis absent."
+            }
+          ],
+          "failure_kind": "data",
+          "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+          "raw": "{\"timestamp\": \"2026-11-04T10:00:00.000Z\", \"level\": \"INFO\", \"message\": \"Liste des tâches consultée\", \"event_type\": \"http\", \"endpoint\": \"/api/tasks\", \"http_method\": \"GET\", \"status_code\": 200, \"response_time_ms\": 125, \"user_id\": \"U1\", \"organization_id\": \"ORG1\"}",
+          "recorded_at": "2026-11-27T19:57:21.063Z",
+          "source_line": 11,
+          "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534"
+        },
+        {
+          "errors": [
+            {
+              "code": "INVALID_TIMESTAMP",
+              "field": "timestamp",
+              "message": "Date ou fuseau non conforme."
+            }
+          ],
+          "failure_kind": "data",
+          "original_filename": "scrum18-20261127T195705Z-b8dfe3cf-mixte-jsonl.jsonl",
+          "raw": "{\"timestamp\": \"2026-11-04T10:00:00\", \"level\": \"INFO\", \"service\": \"task-service\", \"message\": \"Liste des tâches consultée\", \"event_type\": \"http\", \"endpoint\": \"/api/tasks\", \"http_method\": \"GET\", \"status_code\": 200, \"response_time_ms\": 125, \"user_id\": \"U1\", \"organization_id\": \"ORG1\"}",
+          "recorded_at": "2026-11-27T19:57:21.065Z",
+          "source_line": 12,
+          "upload_id": "6ff4123b-8662-4986-aac6-e706c10c2534"
+        }
+      ],
+      "finished_at": "2026-11-27T19:57:21.675347+00:00"
+    }
+  ],
+  "references_sha256": {
+    "attendus.json": "3a0a50d9e5ca1b19eeb6fc1f348e09f917abe69422f92c6f851b7381ac54f80f",
+    "cibles/01-http.json": "e55711fa545b2e6a54421c57e3ebc5bdf3e6f9a1f12152fd345b1eea36afcbdc",
+    "cibles/02-application.json": "7d5c72fada7953064e5120987452f8291a70faadc5894dca90526085663a33a0",
+    "cibles/03-sql.json": "052f8a8af9d67e0d1cae17b4cb66e54e54feb12fde09c7f6da7257c58dc56bcb",
+    "cibles/04-business.json": "0ab6383f73a64e651a0154c734ad8f78e8f4b1a0fc724615a12c693efa6ffd12"
+  },
+  "finished_at": "2026-11-27T19:57:21.682906+00:00",
+  "passed": 9,
+  "failed": 3,
+  "result": "ECHEC"
+}

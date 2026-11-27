@@ -9,7 +9,7 @@
   const checked = byId("services-checked");
 
   const names = [
-    "Webapp Flask", "Elasticsearch", "MongoDB", "Redis", "Logstash",
+    "Webapp Flask", "Elasticsearch", "MongoDB", "Redis", "Logstash", "Kibana",
   ];
   const labels = {
     available: "Disponible",

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visualisations Kibana — LogAnalyzer</title>
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='dashboard.css') }}">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='kibana.css') }}">
+  <script defer src="{{ url_for('static', filename='kibana.js') }}"></script>
+</head>
+{% macro navigation(label) %}
+<nav aria-label="{{ label }}">
+  <a href="/dashboard">Tableau de bord</a>
+  <a href="{{ url_for('home') }}">Importer des logs</a>
+  <a href="/logs">Rechercher des logs</a>
+  <a href="/files">Fichiers importés</a>
+  <a href="/search-history">Historique des recherches</a>
+  <a href="{{ url_for('kibana.kibana_page') }}" aria-current="page">
+    Visualisations Kibana
+  </a>
+</nav>
+{% endmacro %}
+<body>
+<a class="skip-link" href="#main-content">Aller au contenu</a>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/dashboard">
+      LogAnalyzer<span>Monitoring SaaS</span>
+    </a>
+    {{ navigation('Navigation principale') }}
+    <p class="sidebar-note">Analyse des logs et de l’activité SaaS</p>
+  </aside>
+  <div class="workspace">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ANALYSE DES DONNÉES</p>
+        <h1>Visualisations Kibana</h1>
+      </div>
+      {% if kibana.dashboard_url %}
+      <a class="button button-outline" href="{{ kibana.dashboard_url }}"
+         target="_blank" rel="noopener noreferrer">
+        Ouvrir dans Kibana ↗
+      </a>
+      {% else %}
+      <button class="button button-secondary" disabled
+              title="Le dashboard Kibana n’est pas configuré">
+        Ouvrir dans Kibana
+      </button>
+      {% endif %}
+    </header>
+
+    <details class="mobile-navigation">
+      <summary>Menu de navigation</summary>
+      {{ navigation('Navigation mobile') }}
+    </details>
+
+    <main id="main-content">
+      <section class="panel kibana-intro">
+        <div>
+          <h2>Dashboard de monitoring SaaS</h2>
+          <p class="hint">
+            Explorez les temps de réponse HTTP par route, les erreurs
+            serveur 5xx et les utilisateurs actifs distincts.
+            Utilisez la période du dashboard pour filtrer les données.
+          </p>
+        </div>
+        <div class="kibana-controls">
+          <span id="kibana-state" class="kibana-state"
+                data-state="checking">Vérification…</span>
+          <button id="kibana-retry" class="button button-secondary"
+                  type="button">Vérifier / Recharger</button>
+        </div>
+      </section>
+
+      <p id="kibana-status" class="hint" role="status" aria-live="polite">
+        Vérification de la disponibilité du dashboard…
+      </p>
+
+      <section id="kibana-fallback" class="panel kibana-fallback" hidden
+               aria-labelledby="kibana-fallback-title">
+        <h2 id="kibana-fallback-title">Dashboard intégré indisponible</h2>
+        <p id="kibana-fallback-message">
+          Vous pouvez ouvrir le dashboard directement dans Kibana.
+        </p>
+        {% if kibana.dashboard_url %}
+        <a class="button button-outline" href="{{ kibana.dashboard_url }}"
+           target="_blank" rel="noopener noreferrer">Ouvrir dans Kibana ↗</a>
+        {% endif %}
+      </section>
+
+      <section id="kibana-embedded" class="panel kibana-embedded" hidden
+               aria-label="Dashboard Kibana intégré">
+        <iframe id="kibana-frame" title="Monitoring SaaS — Dashboard Kibana"
+                data-src="{{ kibana.embed_url }}"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+        <div class="kibana-frame-help">
+          <p class="hint">
+            Si le dashboard reste vide ou affiche une erreur,
+            ouvrez-le dans Kibana ou réessayez.
+          </p>
+          <button id="kibana-display-error" class="button button-secondary"
+                  type="button">Signaler un problème d’affichage</button>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

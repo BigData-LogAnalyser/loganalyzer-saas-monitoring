@@ -470,7 +470,7 @@ tbody tr:focus-within {
 .services-heading .button { font-size: .8rem; }
 .services-list {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
   list-style: none;
   margin: 0;
@@ -560,4 +560,17 @@ tbody tr:focus-within {
 .smooth-details-content {
   display: flow-root;
   overflow: hidden;
+}
+
+/* Actions de l’en-tête : Swagger et import. */
+.topbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+@media (max-width: 520px) {
+  .topbar-actions { width: 100%; }
+  .topbar-actions .button { flex: 1; }
 }

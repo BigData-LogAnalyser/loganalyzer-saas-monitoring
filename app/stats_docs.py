@@ -408,7 +408,7 @@ def extend_stats_spec(spec):
             "type": "string",
             "enum": [
                 "Webapp Flask", "Elasticsearch", "MongoDB",
-                "Redis", "Logstash",
+                "Redis", "Logstash", "Kibana",
             ],
         },
         "status": {
@@ -446,10 +446,10 @@ def extend_stats_spec(spec):
         "get": {
             "tags": [service_tag],
             "operationId": "getServicesStatus",
-            "summary": "Vérifier la disponibilité des cinq services",
+            "summary": "Vérifier la disponibilité des six services",
             "description": (
                 "Flask est disponible lorsque cette requête aboutit. "
-                "Les contrôles Elasticsearch, MongoDB, Redis et Logstash "
+                "Les contrôles Elasticsearch, MongoDB, Redis, Logstash et Kibana "
                 "sont exécutés indépendamment en parallèle. "
                 "MongoDB et Redis sont contrôlés par ping ; Logstash "
                 "par son API et la présence du pipeline main. "
@@ -458,13 +458,16 @@ def extend_stats_spec(spec):
                 "correspond à unknown ; une exception à unavailable. "
                 "HTTP 200 contient le bilan même si un service échoue. "
                 "Ce contrôle ne garantit pas une ingestion complète. "
-                "Kibana et le tracker ne sont pas contrôlés. "
+                "Kibana est contrôlé par /api/status : available et degraded "
+                "conservent leur sens ; unavailable et critical correspondent "
+                "à unavailable. Ce contrôle ne garantit pas l’affichage intégré. "
+                "Le tracker n’est pas contrôlé. "
                 "La réponse n’est pas mise en cache."
             ),
             "responses": {
                 "200": {
                     **response(
-                        "Bilan de disponibilité des cinq services.",
+                        "Bilan de disponibilité des six services.",
                         ref("ServicesStatusResponse"),
                     ),
                     "headers": {

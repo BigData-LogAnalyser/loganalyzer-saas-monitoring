@@ -57,6 +57,7 @@ services:
       SERVER_HOST: "0.0.0.0"
       ELASTICSEARCH_HOSTS: '["http://elasticsearch:9200"]'
       NODE_OPTIONS: "--max-old-space-size=512"
+      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: "${KIBANA_SAVED_OBJECTS_KEY:?Définir KIBANA_SAVED_OBJECTS_KEY dans .env}"
     mem_limit: 1g
     ports:
       - "127.0.0.1:${KIBANA_PORT}:5601"
@@ -117,6 +118,10 @@ services:
       REDIS_HOST: "${REDIS_HOST}"
       REDIS_PORT: "${REDIS_PORT}"
       STATS_CACHE_TTL_SECONDS: "${STATS_CACHE_TTL_SECONDS:-60}"
+      KIBANA_PUBLIC_URL: "${KIBANA_PUBLIC_URL:-http://localhost:5602}"
+      KIBANA_INTERNAL_URL: "http://kibana:5601"
+      KIBANA_DASHBOARD_ID: "${KIBANA_DASHBOARD_ID:-9c0891b8-e4be-4eef-96e1-1c2c89af4c58}"
+      KIBANA_EMBED_ENABLED: "${KIBANA_EMBED_ENABLED:-true}"
     ports:
       - "127.0.0.1:${WEB_PORT}:8000"
     volumes:

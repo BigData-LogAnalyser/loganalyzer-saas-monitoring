@@ -5,6 +5,7 @@ import os
 import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
+from urllib.error import HTTPError
 from urllib.request import urlopen
 
 from flask import Blueprint, jsonify
@@ -111,6 +112,54 @@ def check_logstash():
     }
 
 
+
+def check_kibana():
+    base = os.environ.get(
+        "KIBANA_INTERNAL_URL", "http://kibana:5601"
+    ).strip().rstrip("/")
+
+    try:
+        data = read_json(base + "/api/status")
+    except HTTPError as error:
+        # Kibana peut renvoyer 503 avec un bilan JSON exploitable.
+        if error.code != 503:
+            raise
+        with error:
+            raw = error.read(262145)
+        if len(raw) > 262144:
+            raise ValueError("Réponse de contrôle trop volumineuse.")
+        data = json.loads(raw)
+
+    level = data.get("status", {}).get("overall", {}).get("level")
+    states = {
+        "available": (
+            "available",
+            "L’API de disponibilité Kibana indique un service opérationnel.",
+        ),
+        "degraded": (
+            "degraded",
+            "Kibana répond, mais certaines fonctionnalités sont dégradées.",
+        ),
+        "unavailable": (
+            "unavailable",
+            "Kibana indique que le service est indisponible.",
+        ),
+        "critical": (
+            "unavailable",
+            "Kibana indique un état critique.",
+        ),
+    }
+    status, message = states.get(level, (
+        "unknown", "L’état de Kibana n’a pas pu être interprété."
+    ))
+    return {
+        "status": status,
+        "message": message + (
+            " Ce contrôle ne garantit pas l’affichage intégré du dashboard."
+        ),
+    }
+
+
 def run_check(name, function):
     started = time.monotonic()
 
@@ -142,10 +191,11 @@ def register_service_health(app):
             ("MongoDB", check_mongodb),
             ("Redis", check_redis),
             ("Logstash", check_logstash),
+            ("Kibana", check_kibana),
         ]
 
         # Contrôles indépendants exécutés en parallèle.
-        with ThreadPoolExecutor(max_workers=4) as executor:
+        with ThreadPoolExecutor(max_workers=5) as executor:
             futures = [
                 executor.submit(run_check, name, function)
                 for name, function in checks

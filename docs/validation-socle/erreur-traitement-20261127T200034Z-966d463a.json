@@ -1,0 +1,58 @@
+{
+  "ticket": "SCRUM-18",
+  "run_id": "20261127T200034Z-966d463a",
+  "started_at": "2026-11-27T20:00:34.577526+00:00",
+  "scenario": "Erreur HTTP 503 contrôlée pendant le traitement",
+  "scope": "Coordinateur et client HTTP réels, destinataire HTTP contrôlé, MongoDB temporaire réel et vérification Elasticsearch réelle.",
+  "result": "OK",
+  "cleanup": {
+    "temporary_files_removed": true,
+    "temporary_database_removed": true
+  },
+  "baseline": {
+    "filename": "bilan-20261127T195849Z-ee489653.json",
+    "sha256": "6ad14277f98a8ca2bfc3c9c0aa7876a97837b2e8f8fee9b70c95f53801eeeaf9",
+    "run_id": "20261127T195849Z-ee489653",
+    "passed": 12
+  },
+  "temporary_database": "loganalyzer_scrum18_check_cc95a91e888d4ef28c902792fa256995",
+  "upload_id": "7490606a-cefd-44c2-b840-5ed8a91ff5b3",
+  "source_sha256": "71f7851ebd451ee71a7745af7c4d76aa3024bc4814eb03006de9ce87ae834afb",
+  "import_record": {
+    "_id": "7490606a-cefd-44c2-b840-5ed8a91ff5b3",
+    "upload_id": "7490606a-cefd-44c2-b840-5ed8a91ff5b3",
+    "original_filename": "scrum18-erreur-traitement.jsonl",
+    "source_relative_path": "confirmed/7490606a-cefd-44c2-b840-5ed8a91ff5b3/source.jsonl",
+    "size_bytes": 973,
+    "schema_version": "1.0",
+    "status": "ECHEC",
+    "confirmed_at": "2026-11-27T20:00:34.734000+00:00",
+    "expected_count": 4,
+    "indexed_count": 0,
+    "rejected_count": 0,
+    "reading_complete": false,
+    "source_sha256": "71f7851ebd451ee71a7745af7c4d76aa3024bc4814eb03006de9ce87ae834afb",
+    "updated_at": "2026-11-27T20:00:34.902000+00:00",
+    "error": {
+      "code": "LOGSTASH_HTTP",
+      "message": "Logstash a refusé la transmission : HTTP 503."
+    },
+    "finished_at": "2026-11-27T20:00:34.902000+00:00",
+    "progress_percent": 0
+  },
+  "http_requests_received": [
+    {
+      "format": "jsonl",
+      "raw": "{\"timestamp\": \"2026-11-04T10:00:00.000Z\", \"level\": \"INFO\", \"service\": \"task-service\", \"message\": \"Liste des tâches consultée\", \"event_type\": \"http\", \"endpoint\": \"/api/tasks\", \"http_method\": \"GET\", \"status_code\": 200, \"response_time_ms\": 125, \"user_id\": \"U1\", \"organization_id\": \"ORG1\"}",
+      "context": {
+        "upload_id": "7490606a-cefd-44c2-b840-5ed8a91ff5b3",
+        "source_line": 1,
+        "original_filename": "scrum18-erreur-traitement.jsonl",
+        "source_path": "/tmp/scrum18-processing-e4uovwta/confirmed/7490606a-cefd-44c2-b840-5ed8a91ff5b3/source.jsonl"
+      }
+    }
+  ],
+  "elasticsearch_indexed_lines": [],
+  "tracker_logs": "Import 7490606a-cefd-44c2-b840-5ed8a91ff5b3 : envoi de 4 événements.\nÉchec de l'import 7490606a-cefd-44c2-b840-5ed8a91ff5b3\nTraceback (most recent call last):\n  File \"/app/logstash_client.py\", line 55, in send_event\n    with urlopen(request, timeout=timeout) as response:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 216, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 525, in open\n    response = meth(req, response)\n               ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 634, in http_response\n    response = self.parent.error(\n               ^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 563, in error\n    return self._call_chain(*args)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 496, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.11/urllib/request.py\", line 643, in http_error_default\n    raise HTTPError(req.full_url, code, msg, hdrs, fp)\nurllib.error.HTTPError: HTTP Error 503: Service Unavailable\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/app/main.py\", line 270, in process_import\n    send_event(\n  File \"/app/logstash_client.py\", line 60, in send_event\n    raise ImportTransportError(\nlogstash_client.ImportTransportError: Logstash a refusé la transmission : HTTP 503.\n",
+  "finished_at": "2026-11-27T20:00:34.948474+00:00"
+}

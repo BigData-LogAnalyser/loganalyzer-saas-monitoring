@@ -621,3 +621,12 @@ else:
     from service_health import register_service_health
 
 register_service_health(app)
+
+
+# Dashboard Kibana intégré.
+if __package__:
+    from .kibana import register_kibana
+else:
+    from kibana import register_kibana
+
+register_kibana(app)
