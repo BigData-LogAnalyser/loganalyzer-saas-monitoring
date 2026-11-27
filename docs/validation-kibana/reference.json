@@ -1,0 +1,35 @@
+{
+  "timezone": "Africa/Tunis",
+  "days": {
+    "2026-11-25": {
+      "start_inclusive": "2026-11-25T00:00:00+01:00",
+      "end_exclusive": "2026-11-26T00:00:00+01:00",
+      "total_logs": 0,
+      "http_by_endpoint": {},
+      "http_5xx_by_service": {},
+      "http_5xx_total": 0,
+      "active_users_exact": 0
+    },
+    "2026-11-26": {
+      "start_inclusive": "2026-11-26T00:00:00+01:00",
+      "end_exclusive": "2026-11-27T00:00:00+01:00",
+      "total_logs": 7,
+      "http_by_endpoint": {
+        "/api/tasks": {
+          "requests": 3,
+          "durations_ms": [
+            125.0,
+            500.0,
+            750.0
+          ],
+          "average_ms": 458.3333333333333
+        }
+      },
+      "http_5xx_by_service": {
+        "task-service": 2
+      },
+      "http_5xx_total": 2,
+      "active_users_exact": 2
+    }
+  }
+}
