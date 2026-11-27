@@ -174,3 +174,51 @@ et un point de temps HTTP moyen cohérent avec la référence de 458,33 ms.
 
 - [Gestion des objets Kibana 8.19](https://www.elastic.co/guide/en/kibana/8.19/managing-saved-objects.html)
 - [Agrégation de cardinalité Elasticsearch](https://www.elastic.co/docs/reference/aggregations/search-aggregations-metrics-cardinality-aggregation)
+
+## Intégration dans Flask
+
+La page `/kibana` est accessible depuis la navigation principale.
+Le dashboard de l’espace Default est affiché dans une iframe.
+Le bouton « Ouvrir dans Kibana » permet aussi de l’ouvrir séparément.
+
+| Configuration | Rôle |
+|---|---|
+| KIBANA_PUBLIC_URL | Adresse accessible depuis le navigateur ; http://localhost:5602 dans l’environnement local |
+| KIBANA_DASHBOARD_ID | Identifiant du dashboard importé |
+| KIBANA_EMBED_ENABLED | Autorisation de l’affichage intégré, true ou false |
+| KIBANA_INTERNAL_URL | Adresse utilisée par Flask ; fixée à http://kibana:5601 dans Docker Compose |
+
+L’adresse interne Docker ne doit pas remplacer l’adresse navigateur.
+`localhost` désigne la machine du navigateur : la configuration fournie
+convient à l’utilisation locale du projet.
+
+La route `/api/v1/kibana/status` vérifie la configuration, le service
+et l’existence du dashboard. Elle ne garantit pas que le navigateur
+autorise effectivement son affichage dans une iframe.
+
+Le contrôle des six services utilise séparément `/api/status` de Kibana.
+Il mesure la disponibilité du service, pas le contenu du dashboard.
+
+En cas d’indisponibilité, la page propose un message de remplacement.
+Un problème d’affichage peut aussi être signalé depuis la page.
+Le bouton « Vérifier / Recharger » permet de réessayer.
+
+L’affichage initial utilise les 30 derniers jours.
+Le contrôle de disponibilité est périodique ; il ne constitue pas
+un rafraîchissement automatique des données des visualisations.
+
+## Clé persistante et limite du profil utilisateur
+
+Le service Kibana reçoit `XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY`
+depuis `KIBANA_SAVED_OBJECTS_KEY`, définie dans le fichier local `.env`.
+Cette clé doit contenir au moins 32 caractères, être conservée lors
+des redémarrages et ne pas être versionnée. Le fichier `.env.example`
+contient uniquement une variable vide à renseigner avant démarrage.
+
+La configuration de cette clé a permis de vérifier une réponse HTTP 200
+de `/api/streams/_status`, auparavant en erreur 500.
+
+Dans cette installation sans authentification, les appels au profil
+utilisateur Kibana renvoient 404 et une promesse non gérée apparaît
+dans la console. Cette limitation reste ouverte dans le registre
+des défauts ; elle ne doit pas être présentée comme corrigée.

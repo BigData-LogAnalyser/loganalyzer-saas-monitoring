@@ -53,6 +53,44 @@ def http_json(url, data=None, content_type="application/json"):
         return error.code, json.loads(error.read())
 
 
+def check_general_search_fields(source):
+    """Contrôler les champs de recherche dérivés du document."""
+    technical = source["loganalyzer"]
+    fields = {
+        name: technical.pop(name, None)
+        for name in ("search_text", "search_values")
+    }
+
+    pending = [
+        value for key, value in source.items()
+        if not key.startswith("_") and key != "@version"
+    ]
+    values = []
+
+    while pending:
+        value = pending.pop()
+        if isinstance(value, dict):
+            pending.extend(value.values())
+        elif isinstance(value, list):
+            pending.extend(value)
+        elif value is not None:
+            values.append(
+                ("true" if value else "false")
+                if isinstance(value, bool) else str(value)
+            )
+
+    for name, actual in fields.items():
+        require(
+            isinstance(actual, list)
+            and all(isinstance(value, str) for value in actual),
+            f"Champ dérivé {name} absent ou de type incorrect.",
+        )
+        require(
+            Counter(actual) == Counter(values),
+            f"Contenu du champ dérivé {name} incorrect.",
+        )
+
+
 def check_reference_documents(documents, targets, metadata, extension, since):
     first = 2 if extension == "csv" else 1
     by_line = {}
@@ -71,6 +109,7 @@ def check_reference_documents(documents, targets, metadata, extension, since):
         number = first + offset
         hit = by_line[number]
         actual = deepcopy(hit["_source"])
+        check_general_search_fields(actual)
         expected = deepcopy(target)
         event_id = f'{metadata["upload_id"]}:{number}'
 

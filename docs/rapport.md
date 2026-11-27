@@ -188,7 +188,7 @@ Aucune dépendance Python supplémentaire n’a été ajoutée.
 Les fichiers JavaScript et CSS de Swagger UI sont chargés depuis
 jsDelivr ; leur chargement nécessite un accès Internet.
 
-La documentation décrit six routes : santé de Flask, prévisualisation,
+Lors des essais d’ingestion décrits ici, la documentation couvrait six routes : santé de Flask, prévisualisation,
 confirmation, annulation d’un brouillon, suivi et consultation des rejets.
 
 ### Méthode
@@ -318,3 +318,122 @@ section à partir du test automatisé. Il n’a pas été rejoué avec Swagger.
 Swagger facilite la documentation et les appels manuels de l’API.
 Il ne remplace pas les scripts qui comparent automatiquement
 les résultats aux références et ne rédige pas le rapport.
+
+## 3. Recherche, détail et export
+
+La recherche interroge les logs Elasticsearch avec des filtres
+de texte, niveau, service, dates et identifiant d’import.
+Les résultats indiquent le total, proposent le tri et une pagination
+de 50 logs par page.
+
+Le détail présente les champs et le document JSON dans une popup.
+L’export CSV reprend les filtres sur toutes les pages, dans la limite
+de 10 000 logs et 20 Mio. Il relit les données au moment de l’export.
+
+Les dates de recherche sont inclusives aux deux bornes.
+Cette convention diffère de celle des indicateurs, à fin exclue.
+
+Références : [recherche](recherche.md), [détail et export](detail-export.md).
+
+## 4. Fichiers importés et historique
+
+La liste des fichiers exploite les métadonnées MongoDB.
+Elle propose le tri, la pagination et les filtres.
+La sélection d’un fichier active les actions de suivi et de recherche
+de ses logs.
+
+L’historique MongoDB conserve les critères, la date et le nombre
+de résultats d’une recherche. La relance réexécute les critères ;
+elle ne restitue pas un instantané des anciens résultats.
+Sans authentification, cet historique est commun à l’application.
+
+Références : [fichiers](fichiers.md),
+[historique](historique-recherches.md),
+[schéma MongoDB](schema-historique-recherches.md).
+
+## 5. Indicateurs du tableau de bord
+
+Les quatre cartes présentent le total des logs, les logs du jour
+dans Africa/Tunis, les logs ERROR/CRITICAL de la période
+et le nombre global d’imports confirmés.
+
+Les indicateurs SaaS couvrent les moyennes HTTP en millisecondes,
+les taux HTTP 5xx, les exécutions SQL lentes, les utilisateurs distincts
+et l’utilisation des fonctionnalités.
+Leurs populations, filtres et bornes sont documentés séparément.
+
+Le nombre d’utilisateurs distincts ne mesure pas des connexions
+simultanées. Les logs ERROR/CRITICAL ne sont pas équivalents
+aux réponses HTTP 5xx.
+
+Références : [dashboard](dashboard.md), [formules](formules-kpi.md).
+
+## 6. Cache Redis
+
+Redis met en cache les résultats des indicateurs pendant une durée
+configurable, de 60 secondes par défaut.
+Les contrôles existants couvrent notamment les réponses MISS/HIT,
+l’expiration et le comportement lorsque le cache est indisponible.
+
+Une réponse en cache peut précéder un import récent.
+La date du calcul permet de situer la fraîcheur des résultats.
+Le projet ne revendique pas une invalidation immédiate après import.
+
+Références : [cache](cache-redis.md),
+[bilan de validation](validation-cache/bilan-cache.json).
+
+## 7. Interface et intégration Kibana
+
+L’interface comporte six écrans avec navigation adaptée aux petits écrans.
+Les détails sont consultés dans des popups avec fermeture au bouton
+ou avec Échap. Les transitions respectent la réduction des mouvements.
+
+Swagger est accessible dans l’en-tête du tableau de bord et s’ouvre
+dans un nouvel onglet. Le menu principal donne accès à Kibana.
+
+Le dashboard Kibana regroupe trois visualisations : temps HTTP moyen
+par route, évolution des erreurs HTTP 5xx et utilisateurs distincts.
+Il utilise les données indexées dans Elasticsearch.
+Son sélecteur temporel est indépendant des filtres Flask.
+
+Le dashboard, les trois visualisations et la vue de données sont exportés
+en NDJSON. La restauration a été vérifiée dans un espace séparé.
+L’intégration iframe a également été confirmée dans l’application.
+
+Les contrôles de disponibilité surveillent six services.
+Ils ne garantissent ni une ingestion complète ni l’affichage d’une iframe.
+Le rafraîchissement du contrôle ne signifie pas celui des graphiques.
+
+Références : [guide illustré](guide-utilisateur.md),
+[Kibana et résultats de référence](kibana.md).
+
+## 8. Revue du socle et résultats récents
+
+SCRUM-27 relie les exigences, les fonctionnalités et les preuves.
+Les validations antérieures sont conservées et distinguées des
+contrôles réexécutés pendant la revue.
+
+La revalidation automatisée de l’ingestion du 27 novembre a obtenu
+12 scénarios réussis, zéro échec.
+Le scénario HTTP 503 contrôlé a également réussi :
+4 événements attendus, zéro indexé et zéro faux rejet de données.
+Ses fichiers temporaires et sa base MongoDB de test ont été supprimés.
+
+Le validateur historique a dû être actualisé pour vérifier les champs
+dérivés search_text et search_values, ajoutés pour la recherche générale.
+Les essais initiaux en échec restent conservés avec le nouveau bilan.
+
+Les validations sur petits jeux ne constituent pas des tests de charge.
+La revue globale reste en cours ; ces résultats ne suffisent pas
+à déclarer chaque exigence de l’énoncé conforme.
+
+Bilans récents :
+
+- [Douze scénarios](validation-socle/bilan-20261127T195849Z-ee489653.json)
+- [Erreur HTTP 503](validation-socle/erreur-traitement-20261127T200034Z-966d463a.json)
+
+Documents de synthèse :
+
+- [Matrice de couverture](validation-socle.md)
+- [Parcours de démonstration](parcours-demonstration.md)
+- [Défauts, écarts et priorités](defauts-socle.md)

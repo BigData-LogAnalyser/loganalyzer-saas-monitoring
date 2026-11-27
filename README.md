@@ -17,7 +17,7 @@ l’activité d’une application SaaS.
 - Suivre les imports et conserver l’historique des recherches.
 - Consulter des indicateurs et des visualisations.
 
-## Architecture prévue
+## Architecture
 
 - Flask : interface web et API.
 - Logstash : parsing et normalisation des logs.
@@ -29,15 +29,23 @@ l’activité d’une application SaaS.
 
 ## État du projet
 
-L’analyse et la conception initiales sont terminées.
-L’environnement Docker comprend sept services opérationnels :
+Les modules d’import, de suivi, de recherche, de détail et d’export CSV,
+de consultation des fichiers, d’historique, de KPI et de cache Redis
+sont implémentés et disposent de validations documentées.
+
+L’interface comporte six écrans, dont une page intégrant le dashboard
+Kibana. Swagger est accessible depuis l’en-tête du tableau de bord
+et s’ouvre dans un nouvel onglet.
+
+L’environnement Docker comprend sept services :
 Flask, Elasticsearch, Logstash, Kibana, MongoDB, Redis et le tracker.
+Le tableau de bord surveille six services ; le tracker dispose
+de son contrôle de santé Docker.
 
-La page d’accueil Flask, l’accès à Kibana, les communications
-entre services et la persistance des données ont été vérifiés.
-
-Les fonctionnalités d’import, de recherche, de suivi des imports
-et les indicateurs métier seront développés dans les prochains tickets.
+SCRUM-27 porte sur la revue du socle, la traçabilité des preuves,
+les parcours de démonstration et les écarts restants.
+L’implémentation des modules ne signifie pas que tous les critères
+de l’énoncé sont déjà déclarés conformes.
 
 ## Organisation et documentation
 
@@ -80,3 +88,9 @@ et des vérifications correspondantes.
 [Guide utilisateur illustré](docs/guide-utilisateur.md)
 
 [Dashboard Kibana : configuration, lecture et validation](docs/kibana.md)
+
+- [Validation du socle et matrice de couverture](docs/validation-socle.md)
+
+- [Parcours de démonstration](docs/parcours-demonstration.md)
+
+- [Défauts et écarts priorisés](docs/defauts-socle.md)
